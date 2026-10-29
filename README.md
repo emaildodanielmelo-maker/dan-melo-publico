@@ -6,10 +6,10 @@ Soluções e painéis públicos de Daniel Melo. Cada solução fica em sua próp
 
 | Solução | Acessar online | Pasta |
 | --- | --- | --- |
-| Atlas da Segurança Pública — Brasil | [Abrir o painel](https://emaildodanielmelo-maker.github.io/dan-melo-publico/atlas-seguranca-brasil/) | [`atlas-seguranca-brasil/`](atlas-seguranca-brasil/) |
-| Bússola Política | [Fazer o teste](https://emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica/) | [`bussola-politica/`](bussola-politica/) |
+| Atlas da Segurança Pública — Brasil | [Abrir o painel](https://danmelo.com.br/atlas-seguranca-brasil/) | [`atlas-seguranca-brasil/`](atlas-seguranca-brasil/) |
+| Bússola Política | [Fazer o teste](https://danmelo.com.br/bussola-politica/) | [`bussola-politica/`](bussola-politica/) |
 
-O portfólio com busca e filtro por tema está em https://emaildodanielmelo-maker.github.io/dan-melo-publico/.
+O portfólio com busca e filtro por tema está em https://danmelo.com.br/.
 
 ## Como usar
 

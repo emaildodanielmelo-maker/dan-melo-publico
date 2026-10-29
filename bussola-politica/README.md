@@ -2,7 +2,7 @@
 
 Teste educativo de posicionamento político em três eixos (economia, costumes e instituições), com 19 correntes de referência explicadas e um card para os Stories. Roda inteiro no navegador: **sem IA, sem servidor, sem cadastro e sem coleta de dados.**
 
-**Acessar online:** https://emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica/
+**Acessar online:** https://danmelo.com.br/bussola-politica/
 
 ## Arquivos
 
