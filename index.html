@@ -33,7 +33,14 @@
     .card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--borda); border-radius:12px; padding:20px; }
     .card:hover, .card:focus-within { border-color:var(--link); }
     .card[hidden] { display:none; }
-    .icone { font-size:1.8rem; line-height:1; margin-bottom:10px; }
+    .topo { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
+    .icone { font-size:1.8rem; line-height:1; }
+    .selo { font-size:.7rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--borda); color:var(--suave); }
+    .selo.assinantes { border-color:var(--link); color:var(--link); }
+    .secao-assinantes { margin-top:40px; }
+    .secao-assinantes h2 { font-size:1.3rem; margin:0 0 6px; color:var(--destaque); }
+    .secao-assinantes > p { color:var(--suave); margin:0 0 16px; max-width:60ch; }
+    .em-breve { background:var(--card); border:1px dashed var(--borda); border-radius:12px; padding:20px; color:var(--suave); }
     .card h2 { margin:0 0 6px; font-size:1.15rem; color:var(--link); }
     .card p { margin:0 0 12px; color:var(--suave); font-size:.95rem; }
     .tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; padding:0; list-style:none; }
@@ -65,7 +72,7 @@
     <!-- Para adicionar uma solução, copie um <article class="card"> e ajuste data-tags (separadas por vírgula, minúsculas) -->
     <div class="grade" id="grade">
       <article class="card" data-tags="dados,segurança pública,painel">
-        <div class="icone" aria-hidden="true">🗺️</div>
+        <div class="topo"><div class="icone" aria-hidden="true">🗺️</div><span class="selo">Público</span></div>
         <h2>Atlas da Segurança Pública — Brasil</h2>
         <p>Painel interativo com mapa, ranking, regiões, histórico, comparação entre UFs e simulações. Dados do Anuário FBSP e do SINESP-VDE, com denominadores do IBGE e do SENATRAN.</p>
         <ul class="tags"><li>dados</li><li>segurança pública</li><li>painel</li></ul>
@@ -76,7 +83,7 @@
       </article>
 
       <article class="card" data-tags="educação,política,teste">
-        <div class="icone" aria-hidden="true">🧭</div>
+        <div class="topo"><div class="icone" aria-hidden="true">🧭</div><span class="selo">Público</span></div>
         <h2>Bússola Política</h2>
         <p>Teste educativo de posicionamento em três eixos (economia, costumes e instituições), com 19 correntes explicadas e card para os Stories. Sem IA, sem cadastro e sem coleta de dados.</p>
         <ul class="tags"><li>educação</li><li>política</li><li>teste</li></ul>
@@ -88,6 +95,24 @@
       </article>
     </div>
     <p class="vazio" id="vazio" hidden>Nenhuma solução encontrada para esse filtro.</p>
+
+    <section class="secao-assinantes" id="area-de-assinantes" aria-labelledby="titulo-assinantes">
+      <h2 id="titulo-assinantes">Área de assinantes</h2>
+      <p>Soluções exclusivas para quem acompanha meu conteúdo como assinante. O acesso é liberado por e-mail.</p>
+      <div class="em-breve">Em breve, as primeiras soluções da área de assinantes aparecerão aqui.</div>
+
+      <!-- Modelo para quando existir a primeira solução de assinantes. Mostre só título e descrição (nunca o conteúdo), e troque o href pelo endereço da área protegida:
+      <div class="grade" style="margin-top:16px">
+        <article class="card" data-tags="assinantes,tema">
+          <div class="topo"><div class="icone" aria-hidden="true">🔒</div><span class="selo assinantes">Assinantes</span></div>
+          <h2>Nome da solução</h2>
+          <p>Descrição curta.</p>
+          <ul class="tags"><li>assinantes</li><li>tema</li></ul>
+          <div class="acoes"><a href="ENDERECO_DA_AREA_PROTEGIDA">Entrar com meu e-mail →</a></div>
+        </article>
+      </div>
+      -->
+    </section>
 
     <footer>
       Código-fonte e arquivos para baixar: <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">repositório no GitHub</a>.
