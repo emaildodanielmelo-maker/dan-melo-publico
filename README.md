@@ -32,4 +32,6 @@ O portfólio com busca e filtro por tema está em https://emaildodanielmelo-make
 
 O conteúdo de assinantes **não** fica neste repositório. Ele vive em outro repositório, privado, e este portfólio só mostra a vitrine (título e descrição) na seção "Área de assinantes" da `index.html`. O modelo do cartão está em comentário nessa seção.
 
+A lista de espera (mentoria e comunidade) é um formulário do Tally, aberto pelo botão "Quero entrar na lista" da `index.html`. As respostas ficam na conta do Tally, não neste repositório.
+
 Tudo neste repositório é público, inclusive o histórico. Não coloque chaves, senhas ou dados pessoais. O único contato publicado de propósito é o e-mail profissional do portfólio.
