@@ -3,124 +3,361 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F4F1EA" />
   <title>Dan Melo | Soluções públicas</title>
-  <meta name="description" content="Portfólio de soluções, painéis e ferramentas abertas de Daniel Melo. Tudo funciona direto no navegador, sem instalar nada." />
+  <meta name="description" content="Ferramentas e painéis que Daniel Melo constrói e deixa abertos. Funcionam direto no navegador, sem cadastro e sem instalar nada." />
+  <meta name="author" content="@danielmelo_eu" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dan Melo | Soluções públicas" />
-  <meta property="og:description" content="Painéis e ferramentas abertas que funcionam direto no navegador." />
+  <meta property="og:description" content="Ferramentas e painéis abertos que funcionam direto no navegador, sem cadastro." />
   <meta property="og:locale" content="pt_BR" />
   <style>
-    :root { --bg:#f6f8f9; --card:#fff; --texto:#10252c; --suave:#51666d; --borda:#d9e2e5; --destaque:#112a32; --link:#0b6b78; --chip:#e6f0f2; --chip-ativo:#0b6b78; --chip-ativo-texto:#fff; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#0d1a1f; --card:#13262d; --texto:#e8f0f2; --suave:#9fb4ba; --borda:#26414a; --destaque:#e8f0f2; --link:#5cc4d1; --chip:#1b3640; --chip-ativo:#5cc4d1; --chip-ativo-texto:#0d1a1f; }
+    /* Fontes hospedadas no repositório: a página não faz pedidos a servidores externos */
+    @font-face { font-family:"Archivo"; font-weight:500; font-display:swap; src:url("./assets/fonts/archivo-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family:"Archivo"; font-weight:700; font-display:swap; src:url("./assets/fonts/archivo-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family:"Archivo"; font-weight:900; font-display:swap; src:url("./assets/fonts/archivo-latin-900-normal.woff2") format("woff2"); }
+    @font-face { font-family:"Instrument Serif"; font-style:italic; font-weight:400; font-display:swap; src:url("./assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family:"JetBrains Mono"; font-weight:500; font-display:swap; src:url("./assets/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family:"JetBrains Mono"; font-weight:700; font-display:swap; src:url("./assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family:"Caveat"; font-weight:700; font-display:swap; src:url("./assets/fonts/caveat-latin-700-normal.woff2") format("woff2"); }
+
+    :root {
+      --papel:#F4F1EA; --preto:#141414; --roxo:#6A4CF0; --lilas:#9A83FF; --lilas-claro:#E4DDFB; --bege:#E6E1D6;
+      --texto:#3A3833; --suave:#5B5750; --branco:#FFFFFF;
+      --titulo:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --serifa:"Instrument Serif",Georgia,serif;
+      --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+      --mao:"Caveat","Segoe Print",cursive;
     }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--texto); line-height:1.5; }
-    main { max-width:960px; margin:0 auto; padding:48px 16px; }
-    header { margin-bottom:28px; }
-    h1 { font-size:2rem; margin:0 0 8px; color:var(--destaque); }
-    p.sub { color:var(--suave); margin:0 0 6px; max-width:60ch; }
-    p.sub a { color:var(--link); }
-    .filtros { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:20px; }
-    .filtros input { flex:1 1 220px; min-width:0; padding:10px 14px; font:inherit; color:var(--texto); background:var(--card); border:1px solid var(--borda); border-radius:10px; }
-    .filtros input:focus-visible { outline:2px solid var(--link); outline-offset:1px; }
+    html { scroll-behavior:smooth; scroll-padding-top:84px; }
+    body { margin:0; font-family:var(--titulo); font-weight:500; background:var(--papel); color:var(--texto); line-height:1.55; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    :focus-visible { outline:3px solid var(--roxo); outline-offset:3px; }
+    .wrap { max-width:1140px; margin:0 auto; padding:0 24px; }
+
+    /* Peças da identidade */
+    .tag { display:inline-block; font-family:var(--mono); font-weight:500; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--papel); background:var(--roxo); padding:5px 10px; border-radius:4px; }
+    .tag.escura { background:var(--preto); }
+    .apoio { font-family:var(--serifa); font-style:italic; font-size:1.45rem; line-height:1.2; color:var(--suave); margin:14px 0 6px; }
+    h1, h2, h3 { font-family:var(--titulo); font-weight:900; letter-spacing:-.03em; color:var(--preto); margin:0; }
+    .rx { color:var(--roxo); }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:999px; font-family:var(--titulo); font-weight:700; font-size:1rem; text-decoration:none; border:2px solid var(--preto); background:var(--preto); color:var(--papel); transition:transform .15s,box-shadow .15s,background .15s; }
+    .btn:hover { transform:translate(-2px,-2px); box-shadow:4px 4px 0 var(--roxo); }
+    .btn.vazado { background:transparent; color:var(--preto); }
+    .btn.vazado:hover { background:var(--lilas-claro); box-shadow:4px 4px 0 var(--preto); }
+    .btn.claro { background:var(--papel); color:var(--preto); border-color:var(--papel); }
+    .btn.claro:hover { box-shadow:4px 4px 0 var(--preto); }
+
+    /* Navegação */
+    .nav { position:sticky; top:0; z-index:10; background:#F4F1EAEE; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:2px solid var(--preto); }
+    .nav .wrap { display:flex; align-items:center; justify-content:space-between; height:68px; gap:16px; }
+    .marca { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:900; font-size:1.15rem; letter-spacing:-.02em; color:var(--preto); }
+    .marca img { width:38px; height:38px; border-radius:50%; border:2px solid var(--preto); background:var(--branco); display:block; }
+    .nav-links { display:flex; align-items:center; gap:4px; }
+    .nav-links a { text-decoration:none; font-weight:700; font-size:.92rem; color:var(--preto); padding:9px 14px; border-radius:999px; }
+    .nav-links a:hover { background:var(--lilas-claro); }
+    .nav-links a.ig { display:flex; align-items:center; gap:8px; background:var(--preto); color:var(--papel); font-family:var(--mono); font-weight:500; font-size:.82rem; margin-left:6px; }
+    .nav-links a.ig:hover { background:var(--roxo); }
+    .ig-ico { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.8; }
+    .ig-ico .dot { fill:currentColor; stroke:none; }
+
+    /* Hero */
+    .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; padding-top:64px; padding-bottom:32px; }
+    h1 { font-size:clamp(2.5rem,6vw,4.7rem); line-height:.98; margin:6px 0 22px; }
+    .lead { font-size:1.15rem; max-width:50ch; margin:0 0 30px; color:var(--texto); }
+    .botoes { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:26px; }
+    .nota-mao { font-family:var(--mao); font-weight:700; font-size:1.5rem; color:var(--roxo); transform:rotate(-4deg); white-space:nowrap; margin-left:6px; }
+    .garantias { font-family:var(--mono); font-weight:500; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--suave); margin:0; }
+    .garantias span { color:var(--roxo); margin:0 8px; }
+
+    .foto-area { position:relative; display:grid; place-items:center; padding:24px 0; }
+    .polaroid { position:relative; width:min(380px,100%); background:var(--branco); padding:16px 16px 20px; border:2px solid var(--preto); box-shadow:8px 8px 0 var(--preto); transform:rotate(3deg); }
+    .polaroid img { display:block; width:100%; height:auto; aspect-ratio:1; background:var(--branco); }
+    .polaroid figcaption { font-family:var(--mao); font-weight:700; font-size:1.7rem; line-height:1; text-align:center; color:var(--preto); margin-top:12px; }
+    .fita { position:absolute; top:-18px; left:50%; width:120px; height:34px; transform:translateX(-50%) rotate(-3deg); background:#E4DDFBCC; border:1px solid #9A83FF55; }
+    .carimbo { position:absolute; left:-22px; bottom:44px; font-family:var(--mono); font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; color:var(--roxo); background:var(--papel); border:4px solid var(--roxo); padding:6px 12px; transform:rotate(-6deg); }
+    .adesivo { position:absolute; right:-14px; top:6px; width:92px; height:92px; border-radius:50%; background:var(--roxo); color:var(--papel); display:grid; place-items:center; text-align:center; font-weight:900; font-size:1rem; line-height:1.05; letter-spacing:-.02em; transform:rotate(8deg); border:3px solid var(--preto); }
+    .adesivo small { display:block; font-family:var(--mono); font-weight:500; font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+
+    /* Seções */
+    section { padding:96px 0; }
+    #solucoes { padding-top:64px; }
+    h2 { font-size:clamp(2rem,4.4vw,3.2rem); line-height:1.02; }
+    .intro { font-size:1.1rem; max-width:56ch; margin:14px 0 36px; }
+
+    /* Busca e filtros */
+    .filtros { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:16px; }
+    .busca { flex:1 1 240px; max-width:340px; }
+    .busca input { width:100%; padding:12px 18px; font:inherit; font-weight:500; color:var(--preto); background:var(--branco); border:2px solid var(--preto); border-radius:999px; }
+    .busca input:focus-visible { outline:3px solid var(--roxo); outline-offset:2px; }
     .chips { display:flex; flex-wrap:wrap; gap:8px; }
-    .chip { font:inherit; font-size:.85rem; padding:6px 12px; border-radius:999px; border:1px solid var(--borda); background:var(--chip); color:var(--texto); cursor:pointer; }
-    .chip:focus-visible { outline:2px solid var(--link); outline-offset:1px; }
-    .chip[aria-pressed="true"] { background:var(--chip-ativo); color:var(--chip-ativo-texto); border-color:var(--chip-ativo); }
-    .contagem { color:var(--suave); font-size:.9rem; margin:0 0 16px; }
-    .grade { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
-    .card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--borda); border-radius:12px; padding:20px; }
-    .card:hover, .card:focus-within { border-color:var(--link); }
+    .chip { font-family:var(--mono); font-weight:500; font-size:.78rem; letter-spacing:.04em; padding:9px 14px; border-radius:999px; border:2px solid var(--preto); background:transparent; color:var(--preto); cursor:pointer; transition:background .15s; }
+    .chip:hover { background:var(--lilas-claro); }
+    .chip[aria-pressed="true"] { background:var(--preto); color:var(--papel); }
+    .contagem { font-family:var(--mono); font-size:.8rem; color:var(--suave); margin:0 0 24px; }
+
+    /* Cartões */
+    .grade { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:28px; }
+    .card { display:flex; flex-direction:column; background:var(--branco); border:2px solid var(--preto); border-radius:22px; overflow:hidden; transition:transform .18s,box-shadow .18s; }
+    .card:hover, .card:focus-within { transform:translate(-4px,-4px); box-shadow:8px 8px 0 var(--roxo); }
     .card[hidden] { display:none; }
-    .topo { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
-    .icone { font-size:1.8rem; line-height:1; }
-    .selo { font-size:.7rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--borda); color:var(--suave); }
-    .selo.assinantes { border-color:var(--link); color:var(--link); }
-    .secao-assinantes { margin-top:40px; }
-    .secao-assinantes h2 { font-size:1.3rem; margin:0 0 6px; color:var(--destaque); }
-    .secao-assinantes > p { color:var(--suave); margin:0 0 16px; max-width:60ch; }
-    .em-breve { background:var(--card); border:1px dashed var(--borda); border-radius:12px; padding:20px; color:var(--suave); }
-    .card h2 { margin:0 0 6px; font-size:1.15rem; color:var(--link); }
-    .card p { margin:0 0 12px; color:var(--suave); font-size:.95rem; }
-    .tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; padding:0; list-style:none; }
-    .tags li { font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--chip); color:var(--suave); }
-    .acoes { display:flex; flex-wrap:wrap; gap:14px; margin-top:auto; font-size:.92rem; }
-    .acoes a { color:var(--link); font-weight:600; text-decoration:none; }
-    .acoes a.sec { font-weight:400; }
-    .acoes a:hover, .acoes a:focus-visible { text-decoration:underline; }
-    .vazio { color:var(--suave); padding:24px 0; }
-    footer { margin-top:40px; font-size:.9rem; color:var(--suave); }
-    footer a { color:var(--link); }
+    .thumb { position:relative; aspect-ratio:2/1; border-bottom:2px solid var(--preto); }
+    .thumb.preto { background:var(--preto); }
+    .thumb.roxo { background:var(--roxo); }
+    .thumb svg { width:100%; height:100%; display:block; }
+    .thumb .tag { position:absolute; top:14px; left:14px; }
+    .thumb .tag.clara { background:var(--papel); color:var(--preto); }
+    .selo { position:absolute; top:12px; right:14px; font-family:var(--mono); font-weight:700; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--papel); background:var(--preto); border:2px solid var(--papel); padding:3px 9px; transform:rotate(4deg); }
+    .selo.assinantes { background:var(--lilas); color:var(--preto); border-color:var(--preto); }
+    .card-corpo { display:flex; flex-direction:column; flex:1; padding:24px; }
+    .card .apoio { margin:0 0 4px; font-size:1.3rem; }
+    .card h3 { font-size:1.55rem; line-height:1.05; margin-bottom:12px; }
+    .card p { margin:0 0 16px; font-size:.97rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 22px; padding:0; list-style:none; }
+    .tags li { font-family:var(--mono); font-weight:500; font-size:.72rem; padding:4px 10px; border-radius:4px; background:var(--bege); color:var(--texto); }
+    .acoes { display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; margin-top:auto; }
+    .acoes .btn { padding:12px 20px; font-size:.95rem; }
+    .acoes a.sec { color:var(--roxo); font-weight:700; font-size:.92rem; }
+    .vazio { font-family:var(--mono); color:var(--suave); padding:28px 0; }
+
+    /* Como navegar */
+    .como { background:var(--bege); border-block:2px solid var(--preto); }
+    .passos { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:0; padding:0; list-style:none; }
+    .passos li { background:var(--papel); border:2px solid var(--preto); border-radius:20px; padding:28px; }
+    .passos .num { font-family:var(--mono); font-weight:700; font-size:.85rem; letter-spacing:.08em; color:var(--papel); background:var(--roxo); display:inline-block; padding:4px 10px; border-radius:4px; margin-bottom:16px; }
+    .passos h3 { font-size:1.4rem; line-height:1.1; margin-bottom:8px; }
+    .passos p { margin:0; font-size:.98rem; }
+
+    /* Área de assinantes */
+    .assinantes-faixa { background:var(--preto); color:#D8D3C8; }
+    .assinantes-faixa h2 { color:var(--papel); }
+    .assinantes-faixa .rx { color:var(--lilas); }
+    .assinantes-faixa .apoio { color:#A8A296; }
+    .assinantes-faixa .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:start; }
+    .em-breve { display:inline-block; font-family:var(--mono); font-weight:700; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; color:var(--lilas); border:4px solid var(--lilas); padding:4px 12px; transform:rotate(-3deg); margin-bottom:22px; }
+    .beneficios { margin:0; padding:0; list-style:none; display:grid; gap:14px; }
+    .beneficios li { display:flex; gap:16px; align-items:flex-start; padding:18px 20px; border-radius:16px; border:2px solid #3A3833; }
+    .beneficios .ico { font-family:var(--mono); font-weight:700; color:var(--lilas); font-size:.85rem; letter-spacing:.06em; padding-top:3px; }
+    .beneficios b { display:block; color:var(--papel); font-weight:700; }
+    .beneficios small { font-size:.92rem; color:#A8A296; }
+    .voce { grid-column:1 / -1; background:var(--roxo); color:var(--papel); border-radius:22px; padding:36px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px 32px; }
+    .voce .tag { background:var(--preto); }
+    .voce p { font-family:var(--titulo); font-weight:900; font-size:clamp(1.5rem,3vw,2.2rem); line-height:1.05; letter-spacing:-.03em; color:var(--papel); margin:12px 0 0; max-width:24ch; }
+    .assinantes-faixa .grade { grid-column:1 / -1; }
+
+    /* Rodapé */
+    footer { background:var(--papel); border-top:2px solid var(--preto); padding:32px 0; font-size:.92rem; }
+    footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px 28px; }
+    footer .quem { display:flex; align-items:center; gap:12px; }
+    footer .quem img { width:34px; height:34px; border-radius:50%; border:2px solid var(--preto); background:var(--branco); }
+    footer a { color:var(--roxo); font-weight:700; }
+    footer .links { display:flex; flex-wrap:wrap; gap:8px 22px; font-family:var(--mono); font-size:.8rem; }
+
+    @media (max-width:900px) {
+      .hero .wrap, .assinantes-faixa .wrap { grid-template-columns:1fr; gap:44px; }
+      .hero .wrap { padding-top:44px; padding-bottom:64px; }
+      .foto-area { padding-bottom:12px; }
+      .polaroid { width:min(300px,78%); }
+      .passos { grid-template-columns:1fr; }
+      .nota-mao { display:none; }
+      section { padding:64px 0; }
+    }
+    @media (max-width:640px) {
+      .nav-links a:not(.ig) { display:none; }
+      .grade { grid-template-columns:1fr; }
+      .busca { max-width:none; }
+      .carimbo { left:-8px; }
+      .adesivo { right:-6px; width:80px; height:80px; font-size:.9rem; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .btn, .card { transition:none; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Soluções públicas</h1>
-      <p class="sub">Painéis e ferramentas abertas que funcionam direto no navegador, sem instalar nada. Por Daniel Melo, <a href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">@danielmelo_eu</a>.</p>
-    </header>
+  <header class="nav">
+    <div class="wrap">
+      <a class="marca" href="#topo" aria-label="Dan Melo, início">
+        <img src="./assets/dan.webp" alt="" width="38" height="38" />
+        Dan Melo
+      </a>
+      <nav class="nav-links" aria-label="Seções da página">
+        <a href="#solucoes">Soluções</a>
+        <a href="#como-navegar">Como navegar</a>
+        <a href="#area-de-assinantes">Área de assinantes</a>
+        <a class="ig" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener" aria-label="Instagram de @danielmelo_eu"><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg>@danielmelo_eu</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="filtros">
-      <input id="busca" type="search" placeholder="Buscar solução…" aria-label="Buscar solução" />
-      <div class="chips" id="chips" role="group" aria-label="Filtrar por tema">
-        <button class="chip" type="button" data-tag="" aria-pressed="true">Todas</button>
+  <main id="topo">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <span class="tag">Soluções abertas · por Dan Melo</span>
+          <p class="apoio">Tudo o que eu construo, deixo aberto.</p>
+          <h1>Ferramentas e painéis pra <span class="rx">você usar</span>.</h1>
+          <p class="lead">Cada solução abre direto no navegador. Sem cadastro, sem instalar nada. Se quiser ver como foi feita, o código também está aberto.</p>
+          <div class="botoes">
+            <a class="btn" href="#solucoes">Ver as soluções →</a>
+            <span class="nota-mao" aria-hidden="true">← começa por aqui</span>
+            <a class="btn vazado" href="#como-navegar">Como navegar</a>
+          </div>
+          <p class="garantias">Grátis<span>·</span>Sem cadastro<span>·</span>Código aberto</p>
+        </div>
+
+        <figure class="foto-area" style="margin:0">
+          <div class="polaroid">
+            <span class="fita" aria-hidden="true"></span>
+            <img src="./assets/dan.webp" alt="Daniel Melo falando ao microfone em um evento" width="720" height="720" />
+            <figcaption>oi, eu sou o Dan</figcaption>
+            <span class="carimbo" aria-hidden="true">Sem cadastro</span>
+            <span class="adesivo" aria-hidden="true"><span>100%<small>grátis</small></span></span>
+          </div>
+        </figure>
       </div>
     </div>
-    <p class="contagem" id="contagem" aria-live="polite"></p>
 
-    <!-- Para adicionar uma solução, copie um <article class="card"> e ajuste data-tags (separadas por vírgula, minúsculas) -->
-    <div class="grade" id="grade">
-      <article class="card" data-tags="dados,segurança pública,painel">
-        <div class="topo"><div class="icone" aria-hidden="true">🗺️</div><span class="selo">Público</span></div>
-        <h2>Atlas da Segurança Pública — Brasil</h2>
-        <p>Painel interativo com mapa, ranking, regiões, histórico, comparação entre UFs e simulações. Dados do Anuário FBSP e do SINESP-VDE, com denominadores do IBGE e do SENATRAN.</p>
-        <ul class="tags"><li>dados</li><li>segurança pública</li><li>painel</li></ul>
-        <div class="acoes">
-          <a href="./atlas-seguranca-brasil/">Abrir o painel →</a>
-          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/atlas-seguranca-brasil">Código</a>
+    <section id="solucoes">
+      <div class="wrap">
+        <span class="tag escura">Soluções públicas</span>
+        <p class="apoio">Funcionam no celular e no computador.</p>
+        <h2>Escolha uma e <span class="rx">abra</span>.</h2>
+        <p class="intro">Todas são gratuitas. Use a busca ou os temas para encontrar a que combina com você.</p>
+
+        <div class="filtros">
+          <div class="busca"><input id="busca" type="search" placeholder="Buscar solução…" aria-label="Buscar solução" /></div>
+          <div class="chips" id="chips" role="group" aria-label="Filtrar por tema">
+            <button class="chip" type="button" data-tag="" aria-pressed="true">Todas</button>
+          </div>
         </div>
-      </article>
+        <p class="contagem" id="contagem" aria-live="polite"></p>
 
-      <article class="card" data-tags="educação,política,teste">
-        <div class="topo"><div class="icone" aria-hidden="true">🧭</div><span class="selo">Público</span></div>
-        <h2>Bússola Política</h2>
-        <p>Teste educativo de posicionamento em três eixos (economia, costumes e instituições), com 19 correntes explicadas e card para os Stories. Sem IA, sem cadastro e sem coleta de dados.</p>
-        <ul class="tags"><li>educação</li><li>política</li><li>teste</li></ul>
-        <div class="acoes">
-          <a href="./bussola-politica/">Fazer o teste →</a>
-          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/blob/main/bussola-politica/METODOLOGIA.md">Metodologia</a>
-          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/bussola-politica">Código</a>
+        <!-- Para adicionar uma solução, copie um <article class="card"> e ajuste data-tags (separadas por vírgula, minúsculas) -->
+        <div class="grade" id="grade">
+          <article class="card" data-tags="dados,segurança pública,painel">
+            <div class="thumb preto">
+              <svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <g fill="#9A83FF">
+                  <circle cx="64" cy="62" r="5" opacity=".95"/><rect x="82" y="57" width="190" height="10" rx="5" opacity=".95"/>
+                  <circle cx="64" cy="86" r="5" opacity=".78"/><rect x="82" y="81" width="154" height="10" rx="5" opacity=".78"/>
+                  <circle cx="64" cy="110" r="5" opacity=".6"/><rect x="82" y="105" width="118" height="10" rx="5" opacity=".6"/>
+                  <circle cx="64" cy="134" r="5" opacity=".42"/><rect x="82" y="129" width="82" height="10" rx="5" opacity=".42"/>
+                </g>
+              </svg>
+              <span class="tag">Dados · Painel</span>
+              <span class="selo">Público</span>
+            </div>
+            <div class="card-corpo">
+              <p class="apoio">Os números do Brasil, num só lugar.</p>
+              <h3>Atlas da Segurança Pública — Brasil</h3>
+              <p>Painel interativo com mapa, ranking, regiões, histórico, comparação entre UFs e simulações. Dados do Anuário FBSP e do SINESP-VDE, com denominadores do IBGE e do SENATRAN.</p>
+              <ul class="tags"><li>dados</li><li>segurança pública</li><li>painel</li></ul>
+              <div class="acoes">
+                <a class="btn" href="./atlas-seguranca-brasil/">Abrir o painel →</a>
+                <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/atlas-seguranca-brasil">Ver o código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="educação,política,teste">
+            <div class="thumb roxo">
+              <svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <g>
+                  <rect x="52" y="62" width="216" height="8" rx="4" fill="#ffffff44"/><circle cx="148" cy="66" r="11" fill="#F4F1EA"/>
+                  <rect x="52" y="96" width="216" height="8" rx="4" fill="#ffffff44"/><circle cx="196" cy="100" r="11" fill="#141414"/>
+                  <rect x="52" y="130" width="216" height="8" rx="4" fill="#ffffff44"/><circle cx="110" cy="134" r="11" fill="#F4F1EA"/>
+                </g>
+              </svg>
+              <span class="tag clara">Educação · Teste</span>
+              <span class="selo">Público</span>
+            </div>
+            <div class="card-corpo">
+              <p class="apoio">Seu lugar no mapa, sem rótulo.</p>
+              <h3>Bússola Política</h3>
+              <p>Teste educativo de posicionamento em três eixos (economia, costumes e instituições), com 19 correntes explicadas e card para os Stories. Sem IA, sem cadastro e sem coleta de dados.</p>
+              <ul class="tags"><li>educação</li><li>política</li><li>teste</li></ul>
+              <div class="acoes">
+                <a class="btn" href="./bussola-politica/">Fazer o teste →</a>
+                <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/blob/main/bussola-politica/METODOLOGIA.md">Metodologia</a>
+                <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/bussola-politica">Ver o código</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-    <p class="vazio" id="vazio" hidden>Nenhuma solução encontrada para esse filtro.</p>
-
-    <section class="secao-assinantes" id="area-de-assinantes" aria-labelledby="titulo-assinantes">
-      <h2 id="titulo-assinantes">Área de assinantes</h2>
-      <p>Soluções exclusivas para quem acompanha meu conteúdo como assinante. O acesso é liberado por e-mail.</p>
-      <div class="em-breve">Em breve, as primeiras soluções da área de assinantes aparecerão aqui.</div>
-
-      <!-- Modelo para quando existir a primeira solução de assinantes. Mostre só título e descrição (nunca o conteúdo), e troque o href pelo endereço da área protegida:
-      <div class="grade" style="margin-top:16px">
-        <article class="card" data-tags="assinantes,tema">
-          <div class="topo"><div class="icone" aria-hidden="true">🔒</div><span class="selo assinantes">Assinantes</span></div>
-          <h2>Nome da solução</h2>
-          <p>Descrição curta.</p>
-          <ul class="tags"><li>assinantes</li><li>tema</li></ul>
-          <div class="acoes"><a href="ENDERECO_DA_AREA_PROTEGIDA">Entrar com meu e-mail →</a></div>
-        </article>
+        <p class="vazio" id="vazio" hidden>Nenhuma solução encontrada para esse filtro.</p>
       </div>
-      -->
     </section>
 
-    <footer>
-      Código-fonte e arquivos para baixar: <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">repositório no GitHub</a>.
-    </footer>
+    <section class="como" id="como-navegar">
+      <div class="wrap">
+        <span class="tag escura">Como navegar</span>
+        <p class="apoio">Este site é só a vitrine.</p>
+        <h2>É simples <span class="rx">assim</span>.</h2>
+        <p class="intro">Cada solução vive na própria página e funciona de forma independente das outras.</p>
+        <ol class="passos">
+          <li><span class="num">01</span><h3>Escolha uma solução</h3><p>Veja os cartões acima. Cada um diz o que a solução faz e a que tema pertence.</p></li>
+          <li><span class="num">02</span><h3>Use direto no navegador</h3><p>Clique no botão do cartão. Não precisa de conta nem de instalação, e funciona no celular.</p></li>
+          <li><span class="num">03</span><h3>Quer o código? Ele também é seu</h3><p>O link "Ver o código" abre o GitHub. Dá para baixar tudo em <b>Code → Download ZIP</b> e rodar no seu computador.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="assinantes-faixa" id="area-de-assinantes" aria-labelledby="titulo-assinantes">
+      <div class="wrap">
+        <div>
+          <span class="em-breve">Em breve</span><br />
+          <span class="tag">Área de assinantes</span>
+          <p class="apoio">Um espaço à parte.</p>
+          <h2 id="titulo-assinantes">Soluções exclusivas pra quem <span class="rx">acompanha de perto</span>.</h2>
+          <p class="intro">As primeiras soluções da área de assinantes aparecerão aqui. O acesso é liberado por e-mail.</p>
+        </div>
+        <ul class="beneficios">
+          <li><span class="ico">01</span><div><b>Acesso por e-mail</b><small>Só entra quem eu autorizar.</small></div></li>
+          <li><span class="ico">02</span><div><b>Conteúdo protegido</b><small>Aqui fica só a vitrine. O conteúdo não é público.</small></div></li>
+          <li><span class="ico">03</span><div><b>Mesmo jeito de usar</b><small>Direto no navegador, como as soluções públicas.</small></div></li>
+        </ul>
+
+        <div class="voce">
+          <div>
+            <span class="tag">E você?</span>
+            <p>Que solução você gostaria de ver aqui?</p>
+          </div>
+          <a class="btn claro" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">Me conta no Instagram →</a>
+        </div>
+
+        <!-- Modelo para quando existir a primeira solução de assinantes. Mostre só título e descrição (nunca o conteúdo), e troque o href pelo endereço da área protegida:
+        <div class="grade">
+          <article class="card" data-tags="assinantes,tema">
+            <div class="thumb preto"><svg viewBox="0 0 320 160" aria-hidden="true"></svg><span class="tag">Assinantes · Tema</span><span class="selo assinantes">Assinantes</span></div>
+            <div class="card-corpo">
+              <p class="apoio">Linha de apoio.</p>
+              <h3>Nome da solução</h3>
+              <p>Descrição curta.</p>
+              <ul class="tags"><li>assinantes</li><li>tema</li></ul>
+              <div class="acoes"><a class="btn" href="ENDERECO_DA_AREA_PROTEGIDA">Entrar com meu e-mail →</a></div>
+            </div>
+          </article>
+        </div>
+        -->
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <div class="wrap">
+      <span class="quem"><img src="./assets/dan.webp" alt="" width="34" height="34" /><span>Criado por <a href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">@danielmelo_eu</a>. Esta página não usa cookies nem rastreadores.</span></span>
+      <span class="links">
+        <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">Repositório no GitHub</a>
+        <a href="#topo">Voltar ao topo ↑</a>
+      </span>
+    </div>
+  </footer>
+
   <script>
-    const cartoes = Array.from(document.querySelectorAll('.card'))
+    const cartoes = Array.from(document.querySelectorAll('#grade .card'))
     const campoBusca = document.getElementById('busca')
     const areaChips = document.getElementById('chips')
     const contagem = document.getElementById('contagem')

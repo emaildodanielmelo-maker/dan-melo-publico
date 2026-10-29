@@ -22,6 +22,10 @@ O portfólio com busca e filtro por tema está em https://emaildodanielmelo-make
 2. Use caminhos relativos (`./arquivo.js`), nunca absolutos (`/arquivo.js`), para o site funcionar numa subpasta.
 3. Adicione um cartão (`<article class="card" data-tags="...">`) na `index.html` da raiz e uma linha na tabela acima. Os filtros por tema do portfólio são montados a partir das `data-tags`.
 
+## Arquivos compartilhados
+
+`assets/` guarda a foto (`dan.webp`) e as fontes do portfólio (`assets/fonts/`, todas sob SIL OFL, licenças em `LICENSES.txt`). As fontes ficam no repositório de propósito: a página não faz pedidos a servidores externos.
+
 ## Área de assinantes
 
 O conteúdo de assinantes **não** fica neste repositório. Ele vive em outro repositório, privado, e este portfólio só mostra a vitrine (título e descrição) na seção "Área de assinantes" da `index.html`. O modelo do cartão está em comentário nessa seção.
