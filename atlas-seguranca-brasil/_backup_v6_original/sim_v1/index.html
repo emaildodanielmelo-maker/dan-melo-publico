@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#112a32" />
+  <meta name="description" content="Explore dados de segurança pública por UF e região, com abas e séries históricas independentes do SINESP-VDE e do Anuário Brasileiro de Segurança Pública." />
+  <title>Atlas da Segurança Pública | Brasil, 2015–2026</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./history.css" />
+  <link rel="stylesheet" href="./tabs.css" />
+  <link rel="stylesheet" href="./sim.css" />
+  <script defer src="./denominators.js"></script>
+  <script defer src="./app.js"></script>
+  <script defer src="./history.js"></script>
+  <script defer src="./sim.js"></script>
+  <script defer src="./tabs.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Atlas da Segurança Pública — início">
+        <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.6 20 6v5.4c0 5.1-3.2 8.5-8 10-4.8-1.5-8-4.9-8-10V6L12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <span><strong>ATLAS</strong><small>SEGURANÇA PÚBLICA</small></span>
+      </a>
+      <nav class="header-nav" aria-label="Abas do Atlas" role="tablist">
+        <a href="#panorama" data-atlas-tab="panorama" role="tab" aria-selected="true">Panorama</a>
+        <a href="#explorador" data-atlas-tab="explorador" role="tab" aria-selected="false">Mapa e ranking</a>
+        <a href="#regioes" data-atlas-tab="regioes" role="tab" aria-selected="false">Regiões</a>
+        <a href="#historico" data-atlas-tab="historico" role="tab" aria-selected="false">Histórico</a>
+        <a href="#comparar" data-atlas-tab="comparar" role="tab" aria-selected="false">Comparar UFs</a>
+        <a href="#simulacoes" data-atlas-tab="simulacoes" role="tab" aria-selected="false">Simulações</a>
+        <a href="#metodologia" data-atlas-tab="metodologia" role="tab" aria-selected="false">Fontes e método</a>
+      </nav>
+      <a class="header-action" href="#explorador">Ir para os dados <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <div class="atlas-tab-context"><div class="container atlas-tab-context-inner"><span class="atlas-tab-pill">ATLAS INTERATIVO</span><span id="atlas-current-view">Panorama do Brasil</span><span class="atlas-tab-hint">Uma aba por análise · selecione acima</span><label class="atlas-source-label" for="atlas-source">Fonte dos dados</label><select id="atlas-source" aria-label="Escolher fonte de dados do Atlas"><option value="fbsp">FBSP · Anuário</option><option value="sinesp">SINESP-VDE · Governo</option></select><label class="atlas-source-label" for="atlas-year">Ano do painel</label><select id="atlas-year" aria-label="Ano do panorama, mapas e comparações"><option value="2026" data-sinesp-only>2026 · parcial</option><option value="2025">2025</option><option value="2024">2024</option></select></div></div>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow" id="hero-period-eyebrow"><span class="eyebrow-dot"></span> DADOS 2025 · EDIÇÃO 2026</div>
+          <h1>Um Brasil.<br /><em>Muitas realidades</em><br />de segurança.</h1>
+          <p>Explore onde a violência e os crimes se concentram, o que mudou em um ano e como o cenário varia entre estados e tipos de ocorrência.</p>
+          <div class="hero-actions"><a class="btn btn-accent" href="#explorador">Explorar mapa interativo <span>→</span></a><a class="btn btn-quiet" href="#metodologia">Entenda os dados</a></div>
+          <div class="hero-source" id="hero-source">Base: 20º Anuário Brasileiro de Segurança Pública · 27 UFs · 31 indicadores</div>
+        </div>
+        <div class="hero-visual" aria-hidden="true"><div class="hero-orb"></div><svg viewBox="0 0 380 420" id="hero-outline"></svg><div class="hero-visual-caption"><span>BRASIL</span><strong>2025</strong></div></div>
+      </div>
+    </section>
+
+    <section id="panorama" class="section container">
+      <div class="section-heading"><div><span class="section-kicker" id="panorama-source-label">01 / PANORAMA · FONTE FBSP</span><h2>Os números do país</h2><p id="panorama-source-subtitle">Uma leitura por dimensões do Anuário de Segurança Pública — cada crime mantém sua definição e medida.</p></div><span class="section-aside" id="panorama-period-label">Brasil inteiro · 2025</span></div>
+      <div class="kpi-grid" id="headline-kpis" aria-live="polite"></div>
+      <div class="insight-band"><div class="insight-icon">↘ ↗</div><div><strong>Dois movimentos acontecendo ao mesmo tempo</strong><p id="national-insight">Carregando os indicadores nacionais...</p></div><a href="#explorador">Investigar <span>→</span></a></div>
+      <div class="overview-grid">
+        <section class="panel matrix-panel">
+          <div class="panel-heading"><div><span class="panel-eyebrow">VISÃO MULTIDIMENSIONAL</span><h3>Onde cada estado se distancia da média nacional?</h3><p>A cor representa a relação entre a taxa estadual e a taxa brasileira em cada categoria — não é um índice geral de criminalidade.</p></div></div>
+          <div class="matrix-controls"><label for="matrix-region">Região</label><select id="matrix-region" aria-label="Filtrar matriz por região"><option value="all">Todas as regiões</option><option>Norte</option><option>Nordeste</option><option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option></select><span>Selecione uma célula para investigar</span></div>
+          <div id="heatmap" class="heatmap-wrap" aria-live="polite"></div>
+          <div class="matrix-legend"><span>Menor taxa relativa</span><i class="swatch sw1"></i><i class="swatch sw2"></i><i class="swatch sw3"></i><i class="swatch sw4"></i><span>Maior taxa relativa</span></div>
+        </section>
+        <aside class="panel read-panel"><span class="panel-eyebrow">COMO INTERPRETAR</span><h3>Mais registros não significam sempre maior risco.</h3><p>São Paulo tende a figurar no topo dos totais absolutos, mas sua população é muito maior. Para comparar exposição proporcional, observe a taxa adequada de cada indicador.</p><div class="rule"></div><div class="read-item"><span class="read-number">01</span><div><strong>Taxa</strong><p>Comparação proporcional entre estados.</p></div></div><div class="read-item"><span class="read-number">02</span><div><strong>Volume</strong><p>Dimensão absoluta do problema e demanda por políticas públicas.</p></div></div><div class="read-item"><span class="read-number">03</span><div><strong>Evolução</strong><p>O que cresceu ou diminuiu de 2024 para 2025.</p></div></div><p class="callout">Dados registrados também refletem propensão à denúncia, cobertura e classificação policial.</p></aside>
+      </div>
+    </section>
+
+    <section id="explorador" class="explore-bg"><div class="container section">
+      <div class="section-heading"><div><span class="section-kicker" id="explorer-source-label">02 / EXPLORADOR · FONTE FBSP</span><h2>Escolha o recorte. Veja o Brasil mudar.</h2><p id="explorer-source-subtitle">31 indicadores do Anuário, com mapa, ranking, tabela detalhada e exportação.</p></div><span class="section-aside">Interativo</span></div>
+      <div class="explore-controls panel">
+        <div class="field wide"><label for="filter-indicator">Indicador criminal</label><select id="filter-indicator"></select></div>
+        <div class="field"><label for="filter-region">Região</label><select id="filter-region"><option value="all">Brasil inteiro</option><option>Norte</option><option>Nordeste</option><option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option></select></div>
+        <div class="field compact"><label for="filter-year">Ano</label><select id="filter-year"><option value="2026" data-sinesp-only>2026 parcial · set</option><option value="2025">2025</option><option value="2024">2024</option></select></div>
+        <div class="field compact"><label for="filter-measure">Ordenar por</label><select id="filter-measure"><option value="rate">Taxa</option><option value="count">Número absoluto</option></select></div>
+        <div class="field compact"><label for="filter-search">Buscar UF</label><input id="filter-search" type="search" placeholder="Estado ou sigla" autocomplete="off" /></div>
+      </div>
+      <div class="selected-indicator"><div><span class="panel-eyebrow" id="selected-theme">LETALIDADE</span><h3 id="selected-title">Mortes violentas intencionais</h3><p id="selected-explainer">—</p></div><div class="metric-headline"><strong id="selected-br-rate">—</strong><span id="selected-br-unit">taxa Brasil</span></div></div>
+      <div class="visual-grid">
+        <div class="panel map-panel"><div class="panel-top"><div><h3>Mapa por unidade da federação</h3><p id="map-subtitle">Quanto mais intensa a cor, maior a taxa.</p></div><span class="muted-tag" id="map-year-label">2025</span></div><div class="map-view"><svg id="brazil-map" viewBox="0 0 720 610" role="img" aria-label="Mapa interativo dos estados do Brasil"></svg><div class="map-tooltip" id="map-tooltip" hidden></div></div><div class="map-legend" id="map-legend"></div><div class="map-footnote">Clique em um estado no mapa para ver o detalhe. Unidades sem dados aparecem em cinza.</div></div>
+        <div class="panel ranking-panel"><div class="panel-top"><div><h3>Ranking de estados</h3><p id="rank-caption">Maiores taxas por 100 mil</p></div><span class="muted-tag">TOP 10</span></div><div id="ranking-bars" class="rank-list"></div></div>
+      </div>
+      <div class="state-detail panel" id="state-detail"><div class="state-detail-empty">Selecione um estado para ver sua comparação com o Brasil.</div></div>
+      <section class="panel table-panel"><div class="panel-top"><div><h3>Tabela completa</h3><p id="table-subtitle">Estados classificados pelo recorte escolhido.</p></div><button class="btn btn-outline" id="download-csv" type="button"><span aria-hidden="true">↓</span> Exportar CSV</button></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Pos.</th><th>Estado</th><th class="right">Taxa</th><th class="right">Total</th><th class="right">∆ taxa 24–25</th><th class="right">Vs. Brasil</th></tr></thead><tbody id="ranking-table"></tbody></table></div><div class="table-note" id="table-note"></div></section>
+    </div></section>
+
+    <section id="regioes" class="section container regional-section">
+      <div class="section-heading"><div><span class="section-kicker" id="regional-source-label">03 / VISÃO REGIONAL · FONTE FBSP</span><h2>O que muda quando olhamos as regiões?</h2><p id="regional-source-subtitle">Os indicadores do Anuário consolidados nas cinco regiões — com taxas ponderadas pela população de referência.</p></div><span class="section-aside">5 regiões · 27 UFs</span></div>
+
+      <div class="panel regional-controls">
+        <div class="field wide"><label for="regional-indicator">Indicador criminal</label><select id="regional-indicator"></select></div>
+        <div class="field"><label for="regional-year">Ano</label><select id="regional-year"><option value="2026" data-sinesp-only>2026 parcial · set</option><option value="2025">2025</option><option value="2024">2024</option></select></div>
+        <div class="field"><label for="regional-measure">Ordenar regiões por</label><select id="regional-measure"><option value="rate">Taxa proporcional</option><option value="count">Total de registros</option></select></div>
+        <button class="btn btn-outline regional-export" id="regional-download" type="button"><span aria-hidden="true">↓</span> CSV regional</button>
+      </div>
+
+      <div class="regional-overview">
+        <div class="panel regional-map-panel">
+          <div class="panel-top"><div><h3>Mapa das cinco regiões</h3><p id="regional-map-caption">Estados da mesma região recebem a mesma cor conforme a taxa regional.</p></div><span class="muted-tag" id="regional-map-year">2025</span></div>
+          <div class="regional-map-layout"><svg id="regional-map" viewBox="0 0 720 610" role="img" aria-label="Mapa interativo com as taxas agregadas por região"></svg></div>
+          <div class="map-legend" id="regional-map-legend"><span>Taxa menor vs. Brasil</span><div class="gradient-bar"></div><span>Taxa maior vs. Brasil</span></div>
+          <div class="regional-selection" id="regional-selected" aria-live="polite"></div>
+        </div>
+        <div class="panel regional-ranking-panel"><div class="panel-top"><div><h3>Ranking regional</h3><p id="regional-rank-caption">Taxa por 100 mil habitantes</p></div><span class="muted-tag">5 REGIÕES</span></div><div id="regional-bars" class="region-bars"></div><p class="regional-ranking-hint">Selecione uma região no mapa ou no ranking para destacá-la. O Norte aparece nesta visão nacional.</p></div>
+      </div>
+
+      <div class="panel regional-table-panel"><div class="panel-top"><div><h3>Comparação das cinco regiões</h3><p>Taxas, totais, evolução e cobertura dos estados que informaram o indicador.</p></div></div><div class="table-scroll"><table class="data-table regional-table"><thead><tr><th>Região</th><th class="right">Taxa 2025</th><th class="right">Taxa 2024</th><th class="right">Total no ano</th><th class="right">∆ taxa 24–25</th><th class="right">Vs. Brasil</th><th class="right">Cobertura</th></tr></thead><tbody id="regional-table-body"></tbody></table></div><p class="table-note" id="regional-table-note"></p></div>
+
+      <div class="northeast-compare">
+        <div class="regional-feature-head"><div><span class="section-kicker">RECORTE ESPECIAL</span><h3>Nordeste × Sul + Sudeste + Centro-Oeste</h3><p>Uma comparação construída para examinar percepções sobre violência entre regiões — sem incluir o Norte em nenhum dos dois grupos.</p></div><span class="no-north-tag">Norte excluído do comparativo</span></div>
+        <div class="duel-grid" id="regional-duel" aria-live="polite"></div>
+        <div class="regional-interpretation" id="regional-insight" aria-live="polite"></div>
+      </div>
+
+      <div class="panel multi-region-panel"><div class="panel-top"><div><h3>O contraste depende do tipo de crime</h3><p>Nordeste vs. as três regiões reunidas, em diferentes dimensões. Clique em um indicador para detalhar.</p></div><span class="muted-tag" id="regional-matrix-year">2025</span></div><div class="table-scroll"><table class="data-table regional-matrix-table"><thead><tr><th>Dimensão</th><th class="right">Nordeste</th><th class="right">Sul + Sudeste + Centro-Oeste</th><th class="right">Diferença da taxa do NE</th></tr></thead><tbody id="regional-matrix-body"></tbody></table></div><p class="table-note">Cada linha possui sua própria unidade (por 100 mil habitantes, mulheres ou veículos). As categorias não devem ser somadas em um “índice geral”.</p></div>
+
+      <p class="regional-method-note" id="regional-method-note"><strong>Como calculamos:</strong> somamos as ocorrências dos estados de cada grupo e dividimos pela soma das populações de referência correspondentes, multiplicando por 100 mil. As bases de habitantes, mulheres e frota são reconstituídas das taxas e totais estaduais publicados no mesmo Anuário; pequenas diferenças por arredondamento são possíveis. Em indicadores com cobertura parcial, taxas e comparações exigem cautela.</p>
+    </section>
+
+    <section id="historico" class="history-bg"><div class="container section">
+      <div class="section-heading history-heading"><div><span class="section-kicker">04 / HISTÓRICO &amp; TENDÊNCIAS</span><h2>A violência muda. Acompanhe a trajetória.</h2><p>Selecione uma fonte e compare apenas registros produzidos por sua própria metodologia, no Brasil, nas regiões ou nas 27 UFs.</p></div><span class="section-aside">SINESP 2015–2026 · FBSP até 2025</span></div>
+
+      <div class="history-intro"><div><strong id="history-intro-metrics">30</strong><span>indicadores<br />da fonte</span></div><div><strong id="history-intro-years">2015–2026</strong><span>intervalo<br />publicado</span></div><div><strong>27</strong><span>unidades da<br />federação</span></div><p id="history-intro-caption">Série governamental nativa SINESP, sem misturar as classificações do Anuário.</p></div>
+
+      <div class="panel source-select-panel"><div><span class="panel-eyebrow">01 · ESCOLHA A BASE</span><h3>Qual fonte você quer analisar?</h3><p>As séries são independentes: nunca interpolamos nem unimos registros de fontes distintas.</p></div><div class="field source-select-field"><label for="history-source">Fonte dos indicadores</label><select id="history-source"><option value="sinesp">SINESP-VDE · Governo Federal</option><option value="fbsp">FBSP · Anuário Brasileiro</option></select></div></div>
+      <div id="history-source-note-inline" class="source-method-inline" aria-live="polite"></div>
+
+      <div class="panel history-mode-panel"><div class="history-mode-head"><span class="panel-eyebrow">02 · PERÍODO</span><strong>Qual janela comparar?</strong></div><div class="history-mode-options" role="group" aria-label="Modo de comparação temporal"><button type="button" class="history-mode-btn active" data-history-mode="annual" aria-pressed="true">Anos completos</button><button type="button" class="history-mode-btn" data-history-mode="ytd" id="history-mode-ytd" aria-pressed="false">YTD · mesmo período</button></div><div class="field history-cutoff-field"><label for="history-cutoff">Corte da série 2026</label><select id="history-cutoff" disabled><option value="9">Setembro</option></select></div></div>
+      <div id="history-mode-note" class="history-mode-note" aria-live="polite"></div>
+
+      <div class="panel history-controls">
+        <div class="field wide"><label for="history-metric">Indicador selecionado</label><select id="history-metric"></select></div>
+        <div class="field"><label for="history-level">Nível da análise</label><select id="history-level"><option value="BR">Brasil</option><option value="REG">Região</option><option value="UF">Unidade da federação</option></select></div>
+        <div class="field"><label for="history-geo">Localidade</label><select id="history-geo" disabled><option value="BR">Brasil inteiro</option></select></div>
+        <div class="field"><label for="history-period">Período</label><select id="history-period"><option value="5">Últimos 5 anos</option><option value="all">Todo o histórico</option><option value="3">Últimos 3 anos</option></select></div>
+      </div>
+      <div class="panel history-toolbar"><div class="history-pills" role="group" aria-label="Tipo de valor no gráfico"><button type="button" class="history-pill active" data-history-measure="rate" aria-pressed="true">Taxa proporcional</button><button type="button" class="history-pill" data-history-measure="count" aria-pressed="false">Total de registros</button></div><div class="field history-compare-field"><label for="history-overlay">Comparar linha com</label><select id="history-overlay"><option value="none">Sem comparação</option><option value="BR">Brasil</option><option value="REG:Nordeste">Nordeste</option><option value="GROUP:3REG">Sul + Sudeste + Centro-Oeste</option></select></div><button type="button" class="btn btn-outline" id="history-export"><span aria-hidden="true">↓</span> Exportar histórico CSV</button></div>
+
+      <div class="history-title-band"><div><span class="panel-eyebrow" id="history-theme">LETALIDADE</span><h3 id="history-title">Mortes violentas intencionais</h3><p id="history-subtitle">Brasil · taxa por 100 mil habitantes</p></div><span class="muted-tag" id="history-period-label">2021–2025</span></div>
+      <div class="history-kpi-grid" id="history-kpis" aria-live="polite"></div>
+      <div id="history-partial" class="history-partial" hidden></div>
+
+      <div class="panel history-chart-panel"><div class="panel-top"><div><h3>Evolução ano a ano</h3><p id="history-chart-caption">Taxa por 100 mil habitantes</p></div><div class="history-chart-legend" id="history-chart-legend"></div></div><div class="history-chart-scroll"><svg id="history-chart" viewBox="0 0 980 390" role="img" aria-label="Gráfico interativo de evolução anual do indicador selecionado"></svg></div><div class="history-chart-foot" id="history-chart-foot"></div></div>
+
+      <div class="history-below-grid"><div class="panel history-reading-panel"><span class="panel-eyebrow">COMO LER A TENDÊNCIA</span><h3 id="history-diagnosis-title">Analisando os dados...</h3><p id="history-diagnosis-text"></p><div class="history-rule"></div><p id="history-trend-method"><strong>Critério:</strong> regressão linear sobre as taxas anuais do período exibido. Exigimos ao menos quatro anos consecutivos e cobertura territorial completa; variações inferiores a 3% ao ano são classificadas como estabilidade. Em séries muito irregulares, o resultado é “oscilante”. É uma leitura descritiva, não uma previsão.</p></div><div class="panel history-table-panel"><div class="panel-top"><div><h3>Série histórica detalhada</h3><p id="history-table-caption">Taxa, registros e cobertura por ano</p></div></div><div class="table-scroll"><table class="data-table history-data-table"><thead><tr><th>Ano</th><th class="right">Taxa</th><th class="right">Total</th><th class="right" id="history-data-delta">∆ taxa</th><th class="right">Cobertura</th></tr></thead><tbody id="history-table"></tbody></table></div></div></div>
+
+      <div class="panel history-matrix-panel"><div class="panel-top"><div><span class="panel-eyebrow">RADAR DE TENDÊNCIAS</span><h3>Todos os indicadores, em uma única leitura</h3><p>As tendências abaixo acompanham a localidade selecionada. Clique em qualquer linha para abrir seu gráfico.</p></div><div class="field history-theme-field"><label for="history-theme-filter">Filtrar dimensão</label><select id="history-theme-filter"><option value="all">Todas as dimensões</option></select></div></div><div class="table-scroll"><table class="data-table history-matrix-table"><thead><tr id="history-matrix-head"><th>Indicador</th><th class="right">Taxa 2025</th><th class="right">Variação comparável</th><th>Tendência recente</th><th>Cobertura dos dados</th></tr></thead><tbody id="history-matrix"></tbody></table></div></div>
+
+      <div class="history-source-note"><strong>Fontes e interpretação.</strong> Base governamental: <a href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados" target="_blank" rel="noreferrer">SINESP-VDE / Ministério da Justiça ↗</a>, arquivos mensais 2015–2026, extração de outubro de 2026. Taxas: <a href="https://ftp.ibge.gov.br/Projecao_da_Populacao/Projecao_da_Populacao_2024/" target="_blank" rel="noreferrer">IBGE, revisão 2024 ↗</a> para habitantes e mulheres; <a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran" target="_blank" rel="noreferrer">SENATRAN/RENAVAM ↗</a> para veículos, com dados integrados de 2024 a setembro de 2026. Base independente: <a href="https://forumseguranca.org.br/publicacoes/anuario-brasileiro-de-seguranca-publica/" target="_blank" rel="noreferrer">FBSP ↗</a>. <strong>Selecionar uma fonte substitui os conceitos e registros da outra.</strong> Indicadores de atividade (apreensões, mandados e atendimentos) não medem diretamente criminalidade. Faltam ao Atlas denominadores de efetivo profissional, exposição do transporte de carga e número de estabelecimentos bancários; para essas categorias exibimos volumes, sem taxas de risco. O histórico por frota anterior a 2024 não está disponível nesta versão. Registros podem ser revisados e sofrer subnotificação.</div>
+    </div></section>
+
+    <section id="comparar" class="section container"><div class="section-heading"><div><span class="section-kicker" id="compare-source-label">05 / COMPARAR · FONTE FBSP</span><h2>Dois estados, várias lentes</h2><p id="compare-source-subtitle">Veja o perfil de cada UF em relação à referência nacional de cada crime, segundo o Anuário.</p></div></div>
+      <div class="panel compare-panel"><div class="compare-controls"><div class="field"><label for="compare-a">Estado A</label><select id="compare-a"></select></div><div class="compare-versus">×</div><div class="field"><label for="compare-b">Estado B</label><select id="compare-b"></select></div><div class="field"><label for="compare-year">Ano</label><select id="compare-year"><option value="2026" data-sinesp-only>2026 parcial · set</option><option value="2025">2025</option><option value="2024">2024</option></select></div></div><div id="compare-body" class="compare-body"></div><div class="compare-note" id="compare-method-note">As barras mostram múltiplos da taxa nacional de cada indicador, e não uma soma dos crimes. Categorias podem ter denominadores distintos.</div></div>
+    </section>
+
+    <section id="simulacoes" class="sim-bg"><div class="container section">
+      <div class="section-heading"><div><span class="section-kicker">06 / SIMULAÇÕES E ALERTAS · CAMADA DERIVADA</span><h2>E se o registro fosse diferente?</h2><p>Cenários de sensibilidade e alertas de qualidade dos dados. Esta aba lê apenas <code>simulacao.json</code>; as bases oficiais das outras abas não são alteradas.</p></div><span class="section-aside">Exploratório</span></div>
+      <div class="sim-banner"><span class="sim-pill">Não é dado oficial</span><div><strong>Como ler:</strong> cada cenário aplica uma hipótese explícita, com fonte, sobre os registros oficiais. Nenhum cenário é a “verdade”; o objetivo é ver se uma conclusão resiste quando a hipótese muda. Gerado em <span id="sim-generated">—</span>.</div></div>
+      <p id="sim-error" class="sim-banner" hidden></p>
+      <div class="sim-grid">
+        <div class="panel sim-panel"><span class="panel-eyebrow">01 · DE ONDE VEIO A QUEDA DE 2026</span><h3>Homicídios no Nordeste, jan–set 2025 → 2026, por estado</h3><p id="sim-wf-lead"></p><div id="sim-wf"></div><p class="sim-note">Verde: queda. Vermelho: alta. O percentual abaixo de cada estado é o seu peso na variação total da região.</p></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">02 · A QUEDA RESISTE A OUTRAS DEFINIÇÕES?</span><h3>Variação jan–set 2026 × 2025 em cinco definições de letalidade</h3><p>Da esquerda para a direita, cada coluna inclui mais mortes. As duas últimas somam “mortes a esclarecer” (SINESP), categoria que cresceu muito em alguns estados em 2026: 41% segue a parcela que o Ipea identifica como homicídios ocultos nos dados de saúde; 100% é o teto.</p><div class="table-scroll"><table class="data-table sim-table"><thead><tr id="sim-let-head"></tr></thead><tbody id="sim-let-body"></tbody></table></div><p class="sim-note">Em cada célula: variação da taxa e, abaixo, taxa por 100 mil habitantes jan–set 2025 → 2026.</p></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">03 · ALERTAS DE QUEBRA DE SÉRIE</span><h3>Estados em que “mortes a esclarecer” mais que dobrou</h3><p>Quando essa categoria salta no mesmo período em que os homicídios caem, a queda precisa ser confirmada com a secretaria estadual antes de ser divulgada.</p><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>Ano</th><th>Estado</th><th class="right">Mortes a esclarecer (jan–set)</th><th class="right">Homicídios (jan–set)</th></tr></thead><tbody id="sim-breaks"></tbody></table></div></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">04 · QUEDA LONGA, COMPARADA AO BRASIL</span><h3>Homicídio doloso por 100 mil habitantes, 2017 → 2025</h3><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>Recorte</th><th class="right">2017</th><th class="right">2025</th><th class="right">Variação</th></tr></thead><tbody id="sim-long"></tbody></table></div><p class="sim-note" id="sim-ratio"></p></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">05 · MULHERES: TIPIFICAÇÃO MUDA O RANKING</span><h3>Homicídios de mulheres × feminicídios, 2025 (FBSP)</h3><p>Feminicídio depende de a polícia reconhecer a motivação de gênero. A última coluna aplica a todas as regiões a proporção nacional de classificação (44,39%), o que equivale a comparar homicídios de mulheres.</p><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>Região</th><th class="right">Homicídio de mulheres</th><th class="right">Feminicídio registrado</th><th class="right">% classificado</th><th class="right">Feminicídio padronizado</th></tr></thead><tbody id="sim-women"></tbody></table></div><p class="sim-note">Taxas por 100 mil mulheres. Estados do Nordeste, do menor ao maior percentual classificado:</p><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>UF</th><th class="right">Homicídio de mulheres</th><th class="right">Feminicídio</th><th class="right">% classificado</th><th class="right">Padronizado</th></tr></thead><tbody id="sim-women-uf"></tbody></table></div>
+          <p class="sim-note"><strong>Feminicídio jan–set (SINESP):</strong> variações sobre bases pequenas.</p><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>Região</th><th class="right">Vítimas 2025 → 2026</th><th class="right">Diferença</th><th class="right">Variação da taxa</th><th>Leitura</th></tr></thead><tbody id="sim-fem-ytd"></tbody></table></div></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">06 · VIOLÊNCIA DOMÉSTICA: REGISTRO ATÍPICO</span><h3>Lesão corporal em violência doméstica, por 100 mil mulheres, 2025 (FBSP)</h3><p id="sim-vd-atip"></p><div class="table-scroll"><table class="data-table sim-table"><thead><tr><th>Recorte</th><th class="right">Registros</th><th class="right">Taxa registrada</th><th class="right">Taxa com imputação</th></tr></thead><tbody id="sim-vd"></tbody></table></div><p class="sim-note">Imputação: o estado com registro atípico recebe a mediana dos demais estados da sua região. Isso mostra quanto um único estado puxa a média; não estima a violência real. Mesmo imputado, o Nordeste segue bem abaixo do Sul — essa diferença não pode ser atribuída só a um estado, e não há pesquisa de vitimização regional publicada para separá-la entre ocorrência e registro.</p></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">07 · QUANTO NÃO CHEGA À POLÍCIA (BRASIL)</span><h3>Ordens de grandeza nacionais da subnotificação</h3><p>Os órgãos estimam a subnotificação comparando registros policiais com pesquisas em que a própria população relata o que sofreu. Só há estimativa nacional; aplicá-la por região criaria precisão falsa.</p><div class="sim-cards" id="sim-sub"></div></div>
+        <div class="panel sim-panel"><span class="panel-eyebrow">FONTES DOS PARÂMETROS</span><div class="sim-sources">
+          <p>Ipea/FBSP — <a href="https://www.ipea.gov.br/portal/categorias/45-todas-as-noticias/noticias/16394-atlas-da-violencia-brasil-registrou-42-590-homicidios-em-2024-menor-resultado-da-serie-historica-mas-subnotificacao-preocupa" target="_blank" rel="noreferrer">Atlas da Violência 2026</a>: 7.083 de 17.207 mortes de causa indeterminada classificadas como homicídios ocultos em 2024 (41%).</p>
+          <p>Ipea — <a href="https://repositorio.ipea.gov.br/bitstream/11058/11814/4/TD_2880_web.pdf" target="_blank" rel="noreferrer">Texto para Discussão 2880</a>: 8,5% dos estupros chegam à polícia (PNS 2019 + Sinan).</p>
+          <p>FBSP/Datafolha — <a href="https://forumseguranca.org.br/wp-content/uploads/2025/03/sumario-executivo-visivel-e-invisivel-5ed-2025.pdf" target="_blank" rel="noreferrer">Visível e Invisível, 5ª edição (2025)</a>: 16,9% das mulheres de 16+ relataram agressão física; 25,7% das vítimas procuraram órgão oficial.</p>
+          <p>FBSP — <a href="https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.xlsx" target="_blank" rel="noreferrer">20º Anuário, Tabelas 21, 24 e 28</a>; cópia local em <code>fontes/</code>.</p>
+          <p><strong>Integridade:</strong> hashes SHA-256 das bases brutas no momento da geração:</p><p class="sim-hash" id="sim-hashes"></p></div></div>
+      </div>
+    </div></section>
+    <section id="metodologia" class="method-bg"><div class="container section"><div class="section-heading"><div><span class="section-kicker">07 / FONTES E MÉTODO</span><h2>O que estes dados medem — e o que não medem.</h2></div></div><div class="method-grid"><div class="method-card"><span>01</span><h3>Fontes independentes</h3><p>Panorama, mapa, ranking, regiões, histórico e comparação de UFs usam exclusivamente a fonte selecionada: FBSP (31 indicadores, até 2025) ou SINESP-VDE (30 indicadores, 2015–2026). As duas bases nunca são somadas.</p><a href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados" target="_blank" rel="noreferrer">Dados oficiais SINESP ↗</a></div><div class="method-card"><span>02</span><h3>Populações de referência</h3><p>Homicídios e crimes contra pessoas: taxa por 100 mil habitantes. Feminicídios e tentativas: por 100 mil mulheres. Roubos/furtos de veículos: por 100 mil veículos da frota. FBSP conserva suas taxas publicadas; SINESP utiliza IBGE e SENATRAN.</p><a href="https://www.gov.br/mj/pt-br/acesso-a-informacao/acoes-e-programas/pnsp-2021-2030/indicadores" target="_blank" rel="noreferrer">Fórmulas do Plano Nacional ↗</a></div><div class="method-card"><span>03</span><h3>Atividade não é criminalidade</h3><p>Armas/drogas apreendidas, mandados cumpridos, pessoas localizadas, atendimentos, resgates e vistorias são volumes de atuação ou registro. Alta não significa automaticamente piora da segurança; queda também não garante melhora. Rankings nesses casos mostram apenas quantidades.</p><a href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica" target="_blank" rel="noreferrer">Definições do MJSP ↗</a></div><div class="method-card"><span>04</span><h3>2026 parcial e YTD</h3><p>O SINESP dispõe de janeiro a setembro de 2026. Na visão anual, 2026 é exibido como parcial; sua variação compara janeiro–setembro contra janeiro–setembro de 2025. O histórico permite alternar entre anos fechados e YTD, sempre na mesma fonte.</p><a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran" target="_blank" rel="noreferrer">Frota oficial RENAVAM ↗</a></div><div class="method-card"><span>05</span><h3>Limites ainda existentes</h3><p>Taxas por frota históricas do SINESP só estão integradas para 2024–2026; falta frota de 2015–2023 nesta edição. Não temos efetivo de segurança por UF/ano para vitimização de agentes; nem viagens de transporte, estabelecimentos ou exposição padronizada para roubos de carga/bancos. Mostramos somente totais nesses casos.</p></div><div class="method-card"><span>06</span><h3>O que não devemos concluir</h3><p>Diferenças entre estados podem refletir cobertura, subnotificação, atuação policial, definições e estruturas demográficas. Uma taxa por habitantes não corrige tudo; não criamos um índice único de “segurança” somando categorias heterogêneas. A fonte selecionada permanece visível em todas as comparações.</p></div></div><div class="method-footer"><p>Mapa: limites geográficos simplificados das UFs a partir do conjunto público <a href="https://github.com/codeforgermany/click_that_hood/blob/main/public/data/brazil-states.geojson" target="_blank" rel="noreferrer">click_that_hood / Brazil states</a>.</p><p>Atlas independente desenvolvido com dados públicos. Não é publicação oficial do FBSP nem do Governo Federal. A base de armas apreendidas não informa origem, roubo/furto de armas, nem rastreabilidade; tais análises exigem bases específicas como o SINARM.</p></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>ATLAS <strong>SEGURANÇA PÚBLICA</strong></span><span>Brasil · Referência 2025 · Acompanhamento parcial 2026</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

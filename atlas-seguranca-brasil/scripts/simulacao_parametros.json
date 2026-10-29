@@ -1,0 +1,40 @@
+{
+  "_aviso": "Parâmetros externos usados SOMENTE na camada de simulação (dist/simulacao.json). Nenhum valor aqui altera as bases brutas.",
+  "ipea_parcela_mvci_homicidio": {
+    "valor": 0.4116,
+    "descricao": "Parcela das mortes violentas por causa indeterminada (SIM/MS) que o Ipea classifica como homicídios ocultos: 7.083 de 17.207 em 2024.",
+    "fonte": "Ipea/FBSP — Atlas da Violência 2026",
+    "url": "https://www.ipea.gov.br/portal/categorias/45-todas-as-noticias/noticias/16394-atlas-da-violencia-brasil-registrou-42-590-homicidios-em-2024-menor-resultado-da-serie-historica-mas-subnotificacao-preocupa",
+    "ressalva": "Calculada sobre o SIM (saúde), não sobre a categoria SINESP 'mortes a esclarecer (sem indício de crime)'. Usada apenas como cenário intermediário de sensibilidade."
+  },
+  "fbsp_proporcao_feminicidio_brasil_2025": {
+    "valor": 0.4439,
+    "descricao": "Proporção nacional de homicídios de mulheres classificados como feminicídio em 2025.",
+    "fonte": "FBSP — 20º Anuário, Tabela 21/28",
+    "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.xlsx"
+  },
+  "ipea_estupro_taxa_registro_policial": {
+    "valor": 0.085,
+    "descricao": "Parcela estimada dos estupros que chega ao conhecimento da polícia (822 mil casos/ano estimados a partir da PNS 2019 e do Sinan).",
+    "fonte": "Ipea — Texto para Discussão 2880 (Ferreira, Coelho, Cerqueira, Alves e Semente, 2023)",
+    "url": "https://repositorio.ipea.gov.br/bitstream/11058/11814/4/TD_2880_web.pdf",
+    "ressalva": "Estimativa nacional com base de 2019; não existe taxa publicada por região. Usar só como ordem de grandeza nacional."
+  },
+  "vv_agressao_fisica_mulheres_2025": {
+    "valor": 8979053,
+    "percentual": 0.169,
+    "descricao": "Mulheres de 16+ anos que relataram batida, empurrão ou chute nos 12 meses anteriores (piso da margem de erro).",
+    "fonte": "FBSP/Datafolha — Visível e Invisível, 5ª edição (2025)",
+    "url": "https://forumseguranca.org.br/wp-content/uploads/2025/03/sumario-executivo-visivel-e-invisivel-5ed-2025.pdf",
+    "ressalva": "Amostra nacional de 793 mulheres no módulo de autopreenchimento; margem de 3 pontos; sem leitura regional publicada."
+  },
+  "vv_procurou_orgao_oficial": {
+    "valor": 0.257,
+    "descricao": "Mulheres vitimadas no último ano que procuraram algum órgão oficial após a agressão mais grave.",
+    "fonte": "FBSP/Datafolha — Visível e Invisível, 5ª edição (2025)",
+    "url": "https://forumseguranca.org.br/wp-content/uploads/2025/03/sumario-executivo-visivel-e-invisivel-5ed-2025.pdf"
+  },
+  "limiar_quebra_serie": {"multiplicador": 2.0, "minimo_absoluto": 100, "descricao": "Alerta quando 'mortes a esclarecer' jan–set mais que dobra e cresce ao menos 100 vítimas em relação ao ano anterior."},
+  "limiar_base_pequena": {"valor": 200, "descricao": "Abaixo de 200 vítimas, variações percentuais recebem alerta de base pequena."},
+  "limiar_registro_atipico": {"valor": 0.25, "descricao": "UF com taxa registrada abaixo de 25% da taxa nacional recebe alerta de registro atípico."}
+}

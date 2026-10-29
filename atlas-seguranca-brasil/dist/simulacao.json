@@ -1,0 +1,2965 @@
+{
+ "geradoEm": "2026-10-28",
+ "aviso": "Camada de simulação derivada. Não substitui nem altera as bases brutas. Cenários são exploratórios e trazem a fonte de cada parâmetro.",
+ "basesBrutasSha256": {
+  "sinesp-oficial.json": "182abd1fa9ea4d75bffe31303e02a090d1eb7bf6c5166d6868cf653870156097",
+  "pop-ibge.json": "53bd3007b583a45a2e5274e0f99561bb37eb3f1b24769cdaa2804e008418c7c4",
+  "dados.json": "463555b06f455c86d896da709905cb2e8340a792f31bccd34154034526d8aa26",
+  "historico.json": "cd48de8a1db439c687f1a31473ace34a03cc2bc597d8f72e5ac01e89e0b11f11"
+ },
+ "parametros": {
+  "_aviso": "Parâmetros externos usados SOMENTE na camada de simulação (dist/simulacao.json). Nenhum valor aqui altera as bases brutas.",
+  "ipea_parcela_mvci_homicidio": {
+   "valor": 0.4116,
+   "descricao": "Parcela das mortes violentas por causa indeterminada (SIM/MS) que o Ipea classifica como homicídios ocultos: 7.083 de 17.207 em 2024.",
+   "fonte": "Ipea/FBSP — Atlas da Violência 2026",
+   "url": "https://www.ipea.gov.br/portal/categorias/45-todas-as-noticias/noticias/16394-atlas-da-violencia-brasil-registrou-42-590-homicidios-em-2024-menor-resultado-da-serie-historica-mas-subnotificacao-preocupa",
+   "ressalva": "Calculada sobre o SIM (saúde), não sobre a categoria SINESP 'mortes a esclarecer (sem indício de crime)'. Usada apenas como cenário intermediário de sensibilidade."
+  },
+  "fbsp_proporcao_feminicidio_brasil_2025": {
+   "valor": 0.4439,
+   "descricao": "Proporção nacional de homicídios de mulheres classificados como feminicídio em 2025.",
+   "fonte": "FBSP — 20º Anuário, Tabela 21/28",
+   "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.xlsx"
+  },
+  "ipea_estupro_taxa_registro_policial": {
+   "valor": 0.085,
+   "descricao": "Parcela estimada dos estupros que chega ao conhecimento da polícia (822 mil casos/ano estimados a partir da PNS 2019 e do Sinan).",
+   "fonte": "Ipea — Texto para Discussão 2880 (Ferreira, Coelho, Cerqueira, Alves e Semente, 2023)",
+   "url": "https://repositorio.ipea.gov.br/bitstream/11058/11814/4/TD_2880_web.pdf",
+   "ressalva": "Estimativa nacional com base de 2019; não existe taxa publicada por região. Usar só como ordem de grandeza nacional."
+  },
+  "vv_agressao_fisica_mulheres_2025": {
+   "valor": 8979053,
+   "percentual": 0.169,
+   "descricao": "Mulheres de 16+ anos que relataram batida, empurrão ou chute nos 12 meses anteriores (piso da margem de erro).",
+   "fonte": "FBSP/Datafolha — Visível e Invisível, 5ª edição (2025)",
+   "url": "https://forumseguranca.org.br/wp-content/uploads/2025/03/sumario-executivo-visivel-e-invisivel-5ed-2025.pdf",
+   "ressalva": "Amostra nacional de 793 mulheres no módulo de autopreenchimento; margem de 3 pontos; sem leitura regional publicada."
+  },
+  "vv_procurou_orgao_oficial": {
+   "valor": 0.257,
+   "descricao": "Mulheres vitimadas no último ano que procuraram algum órgão oficial após a agressão mais grave.",
+   "fonte": "FBSP/Datafolha — Visível e Invisível, 5ª edição (2025)",
+   "url": "https://forumseguranca.org.br/wp-content/uploads/2025/03/sumario-executivo-visivel-e-invisivel-5ed-2025.pdf"
+  },
+  "limiar_quebra_serie": {
+   "multiplicador": 2.0,
+   "minimo_absoluto": 100,
+   "descricao": "Alerta quando 'mortes a esclarecer' jan–set mais que dobra e cresce ao menos 100 vítimas em relação ao ano anterior."
+  },
+  "limiar_base_pequena": {
+   "valor": 200,
+   "descricao": "Abaixo de 200 vítimas, variações percentuais recebem alerta de base pequena."
+  },
+  "limiar_registro_atipico": {
+   "valor": 0.25,
+   "descricao": "UF com taxa registrada abaixo de 25% da taxa nacional recebe alerta de registro atípico."
+  }
+ },
+ "mesCorte2026": 9,
+ "letalidade": [
+  {
+   "grupo": "Brasil",
+   "ufs": [
+    "AC",
+    "AL",
+    "AP",
+    "AM",
+    "BA",
+    "CE",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PB",
+    "PR",
+    "PE",
+    "PI",
+    "RJ",
+    "RN",
+    "RS",
+    "RO",
+    "RR",
+    "SC",
+    "SP",
+    "SE",
+    "TO"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 23808,
+      "taxa": 11.16
+     },
+     "ytd2026": {
+      "n": 20723,
+      "taxa": 9.67
+     },
+     "varYtd": -13.3,
+     "ano2024": {
+      "n": 35136,
+      "taxa": 16.53
+     },
+     "ano2025": {
+      "n": 31518,
+      "taxa": 14.77
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 26053,
+      "taxa": 12.21
+     },
+     "ytd2026": {
+      "n": 22662,
+      "taxa": 10.58
+     },
+     "varYtd": -13.3,
+     "ano2024": {
+      "n": 38374,
+      "taxa": 18.05
+     },
+     "ano2025": {
+      "n": 34544,
+      "taxa": 16.19
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 30838,
+      "taxa": 14.45
+     },
+     "ytd2026": {
+      "n": 27527,
+      "taxa": 12.85
+     },
+     "varYtd": -11.1,
+     "ano2024": {
+      "n": 44610,
+      "taxa": 20.98
+     },
+     "ano2025": {
+      "n": 41133,
+      "taxa": 19.27
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 34987,
+      "taxa": 16.39
+     },
+     "ytd2026": {
+      "n": 32493,
+      "taxa": 15.17
+     },
+     "varYtd": -7.5,
+     "ano2024": {
+      "n": 50367,
+      "taxa": 23.69
+     },
+     "ano2025": {
+      "n": 46705,
+      "taxa": 21.88
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 40919,
+      "taxa": 19.17
+     },
+     "ytd2026": {
+      "n": 39591,
+      "taxa": 18.48
+     },
+     "varYtd": -3.6,
+     "ano2024": {
+      "n": 58597,
+      "taxa": 27.56
+     },
+     "ano2025": {
+      "n": 54670,
+      "taxa": 25.62
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Norte",
+   "ufs": [
+    "AC",
+    "AP",
+    "AM",
+    "PA",
+    "RO",
+    "RR",
+    "TO"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 2659,
+      "taxa": 14.14
+     },
+     "ytd2026": {
+      "n": 2421,
+      "taxa": 12.79
+     },
+     "varYtd": -9.6,
+     "ano2024": {
+      "n": 4001,
+      "taxa": 21.43
+     },
+     "ano2025": {
+      "n": 3527,
+      "taxa": 18.76
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 2925,
+      "taxa": 15.56
+     },
+     "ytd2026": {
+      "n": 2660,
+      "taxa": 14.05
+     },
+     "varYtd": -9.7,
+     "ano2024": {
+      "n": 4325,
+      "taxa": 23.17
+     },
+     "ano2025": {
+      "n": 3882,
+      "taxa": 20.65
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 3603,
+      "taxa": 19.16
+     },
+     "ytd2026": {
+      "n": 3305,
+      "taxa": 17.46
+     },
+     "varYtd": -8.9,
+     "ano2024": {
+      "n": 5175,
+      "taxa": 27.72
+     },
+     "ano2025": {
+      "n": 4781,
+      "taxa": 25.43
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 4015,
+      "taxa": 21.35
+     },
+     "ytd2026": {
+      "n": 3736,
+      "taxa": 19.73
+     },
+     "varYtd": -7.6,
+     "ano2024": {
+      "n": 5609,
+      "taxa": 30.05
+     },
+     "ano2025": {
+      "n": 5330,
+      "taxa": 28.35
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 4603,
+      "taxa": 24.48
+     },
+     "ytd2026": {
+      "n": 4351,
+      "taxa": 22.99
+     },
+     "varYtd": -6.1,
+     "ano2024": {
+      "n": 6230,
+      "taxa": 33.37
+     },
+     "ano2025": {
+      "n": 6115,
+      "taxa": 32.52
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Nordeste",
+   "ufs": [
+    "AL",
+    "BA",
+    "CE",
+    "MA",
+    "PB",
+    "PE",
+    "PI",
+    "RN",
+    "SE"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 11114,
+      "taxa": 19.41
+     },
+     "ytd2026": {
+      "n": 9101,
+      "taxa": 15.86
+     },
+     "varYtd": -18.3,
+     "ano2024": {
+      "n": 16065,
+      "taxa": 28.13
+     },
+     "ano2025": {
+      "n": 14687,
+      "taxa": 25.66
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 11763,
+      "taxa": 20.55
+     },
+     "ytd2026": {
+      "n": 9631,
+      "taxa": 16.79
+     },
+     "varYtd": -18.3,
+     "ano2024": {
+      "n": 17049,
+      "taxa": 29.85
+     },
+     "ano2025": {
+      "n": 15566,
+      "taxa": 27.19
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 13682,
+      "taxa": 23.9
+     },
+     "ytd2026": {
+      "n": 11525,
+      "taxa": 20.09
+     },
+     "varYtd": -15.9,
+     "ano2024": {
+      "n": 19331,
+      "taxa": 33.85
+     },
+     "ano2025": {
+      "n": 18088,
+      "taxa": 31.6
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 14702,
+      "taxa": 25.68
+     },
+     "ytd2026": {
+      "n": 13229,
+      "taxa": 23.06
+     },
+     "varYtd": -10.2,
+     "ano2024": {
+      "n": 20736,
+      "taxa": 36.31
+     },
+     "ano2025": {
+      "n": 19487,
+      "taxa": 34.04
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 16160,
+      "taxa": 28.23
+     },
+     "ytd2026": {
+      "n": 15664,
+      "taxa": 27.3
+     },
+     "varYtd": -3.3,
+     "ano2024": {
+      "n": 22745,
+      "taxa": 39.83
+     },
+     "ano2025": {
+      "n": 21487,
+      "taxa": 37.54
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Centro-Oeste",
+   "ufs": [
+    "DF",
+    "GO",
+    "MT",
+    "MS"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 1501,
+      "taxa": 8.71
+     },
+     "ytd2026": {
+      "n": 1509,
+      "taxa": 8.67
+     },
+     "varYtd": -0.4,
+     "ano2024": {
+      "n": 2390,
+      "taxa": 14.0
+     },
+     "ano2025": {
+      "n": 1962,
+      "taxa": 11.38
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 1705,
+      "taxa": 9.89
+     },
+     "ytd2026": {
+      "n": 1711,
+      "taxa": 9.83
+     },
+     "varYtd": -0.6,
+     "ano2024": {
+      "n": 2688,
+      "taxa": 15.75
+     },
+     "ano2025": {
+      "n": 2235,
+      "taxa": 12.96
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 2128,
+      "taxa": 12.34
+     },
+     "ytd2026": {
+      "n": 2259,
+      "taxa": 12.98
+     },
+     "varYtd": 5.2,
+     "ano2024": {
+      "n": 3375,
+      "taxa": 19.77
+     },
+     "ano2025": {
+      "n": 2814,
+      "taxa": 16.32
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 2547,
+      "taxa": 14.77
+     },
+     "ytd2026": {
+      "n": 2594,
+      "taxa": 14.91
+     },
+     "varYtd": 0.9,
+     "ano2024": {
+      "n": 4027,
+      "taxa": 23.59
+     },
+     "ano2025": {
+      "n": 3340,
+      "taxa": 19.38
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 3146,
+      "taxa": 18.25
+     },
+     "ytd2026": {
+      "n": 3074,
+      "taxa": 17.66
+     },
+     "varYtd": -3.2,
+     "ano2024": {
+      "n": 4959,
+      "taxa": 29.05
+     },
+     "ano2025": {
+      "n": 4093,
+      "taxa": 23.74
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Sudeste",
+   "ufs": [
+    "ES",
+    "MG",
+    "RJ",
+    "SP"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 6518,
+      "taxa": 7.34
+     },
+     "ytd2026": {
+      "n": 5885,
+      "taxa": 6.61
+     },
+     "varYtd": -9.9,
+     "ano2024": {
+      "n": 9196,
+      "taxa": 10.38
+     },
+     "ano2025": {
+      "n": 8678,
+      "taxa": 9.77
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 7326,
+      "taxa": 8.25
+     },
+     "ytd2026": {
+      "n": 6554,
+      "taxa": 7.36
+     },
+     "varYtd": -10.7,
+     "ano2024": {
+      "n": 10377,
+      "taxa": 11.71
+     },
+     "ano2025": {
+      "n": 9768,
+      "taxa": 11.0
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 8629,
+      "taxa": 9.71
+     },
+     "ytd2026": {
+      "n": 7773,
+      "taxa": 8.73
+     },
+     "varYtd": -10.1,
+     "ano2024": {
+      "n": 12170,
+      "taxa": 13.73
+     },
+     "ano2025": {
+      "n": 11687,
+      "taxa": 13.16
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 10612,
+      "taxa": 11.95
+     },
+     "ytd2026": {
+      "n": 9897,
+      "taxa": 11.12
+     },
+     "varYtd": -6.9,
+     "ano2024": {
+      "n": 15304,
+      "taxa": 17.27
+     },
+     "ano2025": {
+      "n": 14340,
+      "taxa": 16.14
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 13447,
+      "taxa": 15.14
+     },
+     "ytd2026": {
+      "n": 12933,
+      "taxa": 14.53
+     },
+     "varYtd": -4.0,
+     "ano2024": {
+      "n": 19784,
+      "taxa": 22.33
+     },
+     "ano2025": {
+      "n": 18133,
+      "taxa": 20.41
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Sul",
+   "ufs": [
+    "PR",
+    "RS",
+    "SC"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 2016,
+      "taxa": 6.44
+     },
+     "ytd2026": {
+      "n": 1807,
+      "taxa": 5.74
+     },
+     "varYtd": -10.9,
+     "ano2024": {
+      "n": 3484,
+      "taxa": 11.2
+     },
+     "ano2025": {
+      "n": 2664,
+      "taxa": 8.51
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 2334,
+      "taxa": 7.45
+     },
+     "ytd2026": {
+      "n": 2106,
+      "taxa": 6.69
+     },
+     "varYtd": -10.3,
+     "ano2024": {
+      "n": 3935,
+      "taxa": 12.65
+     },
+     "ano2025": {
+      "n": 3093,
+      "taxa": 9.88
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 2796,
+      "taxa": 8.93
+     },
+     "ytd2026": {
+      "n": 2665,
+      "taxa": 8.46
+     },
+     "varYtd": -5.3,
+     "ano2024": {
+      "n": 4559,
+      "taxa": 14.65
+     },
+     "ano2025": {
+      "n": 3763,
+      "taxa": 12.02
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 3112,
+      "taxa": 9.94
+     },
+     "ytd2026": {
+      "n": 3037,
+      "taxa": 9.64
+     },
+     "varYtd": -3.0,
+     "ano2024": {
+      "n": 4691,
+      "taxa": 15.08
+     },
+     "ano2025": {
+      "n": 4207,
+      "taxa": 13.44
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 3563,
+      "taxa": 11.38
+     },
+     "ytd2026": {
+      "n": 3569,
+      "taxa": 11.33
+     },
+     "varYtd": -0.4,
+     "ano2024": {
+      "n": 4879,
+      "taxa": 15.68
+     },
+     "ano2025": {
+      "n": 4842,
+      "taxa": 15.46
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Nordeste sem Ceará",
+   "ufs": [
+    "AL",
+    "BA",
+    "MA",
+    "PB",
+    "PE",
+    "PI",
+    "RN",
+    "SE"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 8946,
+      "taxa": 18.65
+     },
+     "ytd2026": {
+      "n": 7957,
+      "taxa": 16.55
+     },
+     "varYtd": -11.2,
+     "ano2024": {
+      "n": 12887,
+      "taxa": 26.92
+     },
+     "ano2025": {
+      "n": 11760,
+      "taxa": 24.51
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 9524,
+      "taxa": 19.85
+     },
+     "ytd2026": {
+      "n": 8438,
+      "taxa": 17.56
+     },
+     "varYtd": -11.6,
+     "ano2024": {
+      "n": 13777,
+      "taxa": 28.77
+     },
+     "ano2025": {
+      "n": 12545,
+      "taxa": 26.15
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 11317,
+      "taxa": 23.59
+     },
+     "ytd2026": {
+      "n": 10155,
+      "taxa": 21.13
+     },
+     "varYtd": -10.4,
+     "ano2024": {
+      "n": 15870,
+      "taxa": 33.15
+     },
+     "ano2025": {
+      "n": 14867,
+      "taxa": 30.99
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 12217,
+      "taxa": 25.47
+     },
+     "ytd2026": {
+      "n": 11752,
+      "taxa": 24.45
+     },
+     "varYtd": -4.0,
+     "ano2024": {
+      "n": 17089,
+      "taxa": 35.69
+     },
+     "ano2025": {
+      "n": 16108,
+      "taxa": 33.58
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 13504,
+      "taxa": 28.15
+     },
+     "ytd2026": {
+      "n": 14034,
+      "taxa": 29.2
+     },
+     "varYtd": 3.7,
+     "ano2024": {
+      "n": 18831,
+      "taxa": 39.33
+     },
+     "ano2025": {
+      "n": 17883,
+      "taxa": 37.28
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Brasil sem Ceará",
+   "ufs": [
+    "AC",
+    "AL",
+    "AP",
+    "AM",
+    "BA",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PB",
+    "PR",
+    "PE",
+    "PI",
+    "RJ",
+    "RN",
+    "RS",
+    "RO",
+    "RR",
+    "SC",
+    "SP",
+    "SE",
+    "TO"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 21640,
+      "taxa": 10.6
+     },
+     "ytd2026": {
+      "n": 19579,
+      "taxa": 9.55
+     },
+     "varYtd": -9.9,
+     "ano2024": {
+      "n": 31958,
+      "taxa": 15.72
+     },
+     "ano2025": {
+      "n": 28591,
+      "taxa": 14.0
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 23814,
+      "taxa": 11.66
+     },
+     "ytd2026": {
+      "n": 21469,
+      "taxa": 10.48
+     },
+     "varYtd": -10.2,
+     "ano2024": {
+      "n": 35102,
+      "taxa": 17.26
+     },
+     "ano2025": {
+      "n": 31523,
+      "taxa": 15.44
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 28473,
+      "taxa": 13.95
+     },
+     "ytd2026": {
+      "n": 26157,
+      "taxa": 12.77
+     },
+     "varYtd": -8.5,
+     "ano2024": {
+      "n": 41149,
+      "taxa": 20.24
+     },
+     "ano2025": {
+      "n": 37912,
+      "taxa": 18.57
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 32503,
+      "taxa": 15.92
+     },
+     "ytd2026": {
+      "n": 31016,
+      "taxa": 15.14
+     },
+     "varYtd": -4.9,
+     "ano2024": {
+      "n": 46720,
+      "taxa": 22.97
+     },
+     "ano2025": {
+      "n": 43326,
+      "taxa": 21.22
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 38263,
+      "taxa": 18.74
+     },
+     "ytd2026": {
+      "n": 37961,
+      "taxa": 18.53
+     },
+     "varYtd": -1.2,
+     "ano2024": {
+      "n": 54683,
+      "taxa": 26.89
+     },
+     "ano2025": {
+      "n": 51066,
+      "taxa": 25.01
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Brasil sem Nordeste",
+   "ufs": [
+    "AC",
+    "AP",
+    "AM",
+    "DF",
+    "ES",
+    "GO",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PR",
+    "RJ",
+    "RS",
+    "RO",
+    "RR",
+    "SC",
+    "SP",
+    "TO"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 12694,
+      "taxa": 8.13
+     },
+     "ytd2026": {
+      "n": 11622,
+      "taxa": 7.41
+     },
+     "varYtd": -8.8,
+     "ano2024": {
+      "n": 19071,
+      "taxa": 12.27
+     },
+     "ano2025": {
+      "n": 16831,
+      "taxa": 10.78
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 14290,
+      "taxa": 9.15
+     },
+     "ytd2026": {
+      "n": 13031,
+      "taxa": 8.31
+     },
+     "varYtd": -9.2,
+     "ano2024": {
+      "n": 21325,
+      "taxa": 13.72
+     },
+     "ano2025": {
+      "n": 18978,
+      "taxa": 12.15
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 17156,
+      "taxa": 10.99
+     },
+     "ytd2026": {
+      "n": 16002,
+      "taxa": 10.2
+     },
+     "varYtd": -7.1,
+     "ano2024": {
+      "n": 25279,
+      "taxa": 16.26
+     },
+     "ano2025": {
+      "n": 23045,
+      "taxa": 14.76
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 20285,
+      "taxa": 12.99
+     },
+     "ytd2026": {
+      "n": 19264,
+      "taxa": 12.28
+     },
+     "varYtd": -5.4,
+     "ano2024": {
+      "n": 29631,
+      "taxa": 19.06
+     },
+     "ano2025": {
+      "n": 27218,
+      "taxa": 17.43
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 24759,
+      "taxa": 15.85
+     },
+     "ytd2026": {
+      "n": 23927,
+      "taxa": 15.26
+     },
+     "varYtd": -3.8,
+     "ano2024": {
+      "n": 35852,
+      "taxa": 23.06
+     },
+     "ano2025": {
+      "n": 33183,
+      "taxa": 21.25
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Sul + Sudeste + Centro-Oeste",
+   "ufs": [
+    "DF",
+    "ES",
+    "GO",
+    "MT",
+    "MS",
+    "MG",
+    "PR",
+    "RJ",
+    "RS",
+    "SC",
+    "SP"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 10035,
+      "taxa": 7.3
+     },
+     "ytd2026": {
+      "n": 9201,
+      "taxa": 6.67
+     },
+     "varYtd": -8.7,
+     "ano2024": {
+      "n": 15070,
+      "taxa": 11.02
+     },
+     "ano2025": {
+      "n": 13304,
+      "taxa": 9.68
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 11365,
+      "taxa": 8.27
+     },
+     "ytd2026": {
+      "n": 10371,
+      "taxa": 7.52
+     },
+     "varYtd": -9.1,
+     "ano2024": {
+      "n": 17000,
+      "taxa": 12.43
+     },
+     "ano2025": {
+      "n": 15096,
+      "taxa": 10.99
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 13553,
+      "taxa": 9.87
+     },
+     "ytd2026": {
+      "n": 12697,
+      "taxa": 9.21
+     },
+     "varYtd": -6.7,
+     "ano2024": {
+      "n": 20104,
+      "taxa": 14.7
+     },
+     "ano2025": {
+      "n": 18264,
+      "taxa": 13.29
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 16271,
+      "taxa": 11.84
+     },
+     "ytd2026": {
+      "n": 15528,
+      "taxa": 11.26
+     },
+     "varYtd": -4.9,
+     "ano2024": {
+      "n": 24022,
+      "taxa": 17.56
+     },
+     "ano2025": {
+      "n": 21888,
+      "taxa": 15.93
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 20156,
+      "taxa": 14.67
+     },
+     "ytd2026": {
+      "n": 19576,
+      "taxa": 14.19
+     },
+     "varYtd": -3.3,
+     "ano2024": {
+      "n": 29622,
+      "taxa": 21.65
+     },
+     "ano2025": {
+      "n": 27068,
+      "taxa": 19.7
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Alagoas (AL)",
+   "ufs": [
+    "AL"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 700,
+      "taxa": 21.73
+     },
+     "ytd2026": {
+      "n": 638,
+      "taxa": 19.81
+     },
+     "varYtd": -8.9,
+     "ano2024": {
+      "n": 1029,
+      "taxa": 31.96
+     },
+     "ano2025": {
+      "n": 903,
+      "taxa": 28.04
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 731,
+      "taxa": 22.7
+     },
+     "ytd2026": {
+      "n": 665,
+      "taxa": 20.64
+     },
+     "varYtd": -9.0,
+     "ano2024": {
+      "n": 1060,
+      "taxa": 32.92
+     },
+     "ano2025": {
+      "n": 946,
+      "taxa": 29.37
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 814,
+      "taxa": 25.27
+     },
+     "ytd2026": {
+      "n": 763,
+      "taxa": 23.69
+     },
+     "varYtd": -6.3,
+     "ano2024": {
+      "n": 1136,
+      "taxa": 35.28
+     },
+     "ano2025": {
+      "n": 1055,
+      "taxa": 32.76
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 1038,
+      "taxa": 32.22
+     },
+     "ytd2026": {
+      "n": 1035,
+      "taxa": 32.13
+     },
+     "varYtd": -0.3,
+     "ano2024": {
+      "n": 1404,
+      "taxa": 43.61
+     },
+     "ano2025": {
+      "n": 1360,
+      "taxa": 42.22
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 1358,
+      "taxa": 42.16
+     },
+     "ytd2026": {
+      "n": 1424,
+      "taxa": 44.21
+     },
+     "varYtd": 4.9,
+     "ano2024": {
+      "n": 1788,
+      "taxa": 55.53
+     },
+     "ano2025": {
+      "n": 1796,
+      "taxa": 55.76
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Bahia (BA)",
+   "ufs": [
+    "BA"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 2843,
+      "taxa": 19.12
+     },
+     "ytd2026": {
+      "n": 2246,
+      "taxa": 15.08
+     },
+     "varYtd": -21.1,
+     "ano2024": {
+      "n": 4207,
+      "taxa": 28.33
+     },
+     "ano2025": {
+      "n": 3663,
+      "taxa": 24.63
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 3014,
+      "taxa": 20.27
+     },
+     "ytd2026": {
+      "n": 2427,
+      "taxa": 16.3
+     },
+     "varYtd": -19.6,
+     "ano2024": {
+      "n": 4491,
+      "taxa": 30.24
+     },
+     "ano2025": {
+      "n": 3903,
+      "taxa": 26.25
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 4267,
+      "taxa": 28.69
+     },
+     "ytd2026": {
+      "n": 3458,
+      "taxa": 23.22
+     },
+     "varYtd": -19.1,
+     "ano2024": {
+      "n": 6047,
+      "taxa": 40.72
+     },
+     "ano2025": {
+      "n": 5473,
+      "taxa": 36.8
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 4531,
+      "taxa": 30.47
+     },
+     "ytd2026": {
+      "n": 3772,
+      "taxa": 25.33
+     },
+     "varYtd": -16.9,
+     "ano2024": {
+      "n": 6330,
+      "taxa": 42.63
+     },
+     "ano2025": {
+      "n": 5832,
+      "taxa": 39.22
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 4908,
+      "taxa": 33.0
+     },
+     "ytd2026": {
+      "n": 4220,
+      "taxa": 28.34
+     },
+     "varYtd": -14.1,
+     "ano2024": {
+      "n": 6735,
+      "taxa": 45.35
+     },
+     "ano2025": {
+      "n": 6346,
+      "taxa": 42.67
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Ceará (CE)",
+   "ufs": [
+    "CE"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 2168,
+      "taxa": 23.39
+     },
+     "ytd2026": {
+      "n": 1144,
+      "taxa": 12.3
+     },
+     "varYtd": -47.4,
+     "ano2024": {
+      "n": 3178,
+      "taxa": 34.42
+     },
+     "ano2025": {
+      "n": 2927,
+      "taxa": 31.58
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 2239,
+      "taxa": 24.16
+     },
+     "ytd2026": {
+      "n": 1193,
+      "taxa": 12.82
+     },
+     "varYtd": -46.9,
+     "ano2024": {
+      "n": 3272,
+      "taxa": 35.44
+     },
+     "ano2025": {
+      "n": 3021,
+      "taxa": 32.59
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 2365,
+      "taxa": 25.52
+     },
+     "ytd2026": {
+      "n": 1370,
+      "taxa": 14.73
+     },
+     "varYtd": -42.3,
+     "ano2024": {
+      "n": 3461,
+      "taxa": 37.48
+     },
+     "ano2025": {
+      "n": 3221,
+      "taxa": 34.75
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 2485,
+      "taxa": 26.81
+     },
+     "ytd2026": {
+      "n": 1477,
+      "taxa": 15.88
+     },
+     "varYtd": -40.8,
+     "ano2024": {
+      "n": 3647,
+      "taxa": 39.5
+     },
+     "ano2025": {
+      "n": 3379,
+      "taxa": 36.45
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 2656,
+      "taxa": 28.66
+     },
+     "ytd2026": {
+      "n": 1630,
+      "taxa": 17.52
+     },
+     "varYtd": -38.8,
+     "ano2024": {
+      "n": 3914,
+      "taxa": 42.39
+     },
+     "ano2025": {
+      "n": 3604,
+      "taxa": 38.88
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Maranhão (MA)",
+   "ufs": [
+    "MA"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 1334,
+      "taxa": 19.01
+     },
+     "ytd2026": {
+      "n": 1285,
+      "taxa": 18.29
+     },
+     "varYtd": -3.8,
+     "ano2024": {
+      "n": 1912,
+      "taxa": 27.27
+     },
+     "ano2025": {
+      "n": 1815,
+      "taxa": 25.86
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 1432,
+      "taxa": 20.4
+     },
+     "ytd2026": {
+      "n": 1343,
+      "taxa": 19.12
+     },
+     "varYtd": -6.3,
+     "ano2024": {
+      "n": 2051,
+      "taxa": 29.25
+     },
+     "ano2025": {
+      "n": 1941,
+      "taxa": 27.66
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 1535,
+      "taxa": 21.87
+     },
+     "ytd2026": {
+      "n": 1465,
+      "taxa": 20.86
+     },
+     "varYtd": -4.6,
+     "ano2024": {
+      "n": 2127,
+      "taxa": 30.34
+     },
+     "ano2025": {
+      "n": 2083,
+      "taxa": 29.68
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 1573,
+      "taxa": 22.41
+     },
+     "ytd2026": {
+      "n": 1499,
+      "taxa": 21.34
+     },
+     "varYtd": -4.8,
+     "ano2024": {
+      "n": 2206,
+      "taxa": 31.46
+     },
+     "ano2025": {
+      "n": 2134,
+      "taxa": 30.4
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 1627,
+      "taxa": 23.18
+     },
+     "ytd2026": {
+      "n": 1547,
+      "taxa": 22.02
+     },
+     "varYtd": -5.0,
+     "ano2024": {
+      "n": 2318,
+      "taxa": 33.06
+     },
+     "ano2025": {
+      "n": 2206,
+      "taxa": 31.43
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Paraíba (PB)",
+   "ufs": [
+    "PB"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 683,
+      "taxa": 16.4
+     },
+     "ytd2026": {
+      "n": 655,
+      "taxa": 15.66
+     },
+     "varYtd": -4.5,
+     "ano2024": {
+      "n": 955,
+      "taxa": 23.04
+     },
+     "ano2025": {
+      "n": 899,
+      "taxa": 21.59
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 728,
+      "taxa": 17.48
+     },
+     "ytd2026": {
+      "n": 694,
+      "taxa": 16.59
+     },
+     "varYtd": -5.1,
+     "ano2024": {
+      "n": 1005,
+      "taxa": 24.25
+     },
+     "ano2025": {
+      "n": 965,
+      "taxa": 23.17
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 773,
+      "taxa": 18.56
+     },
+     "ytd2026": {
+      "n": 750,
+      "taxa": 17.93
+     },
+     "varYtd": -3.4,
+     "ano2024": {
+      "n": 1061,
+      "taxa": 25.6
+     },
+     "ano2025": {
+      "n": 1026,
+      "taxa": 24.64
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 787,
+      "taxa": 18.9
+     },
+     "ytd2026": {
+      "n": 780,
+      "taxa": 18.65
+     },
+     "varYtd": -1.3,
+     "ano2024": {
+      "n": 1097,
+      "taxa": 26.47
+     },
+     "ano2025": {
+      "n": 1052,
+      "taxa": 25.26
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 807,
+      "taxa": 19.38
+     },
+     "ytd2026": {
+      "n": 823,
+      "taxa": 19.68
+     },
+     "varYtd": 1.5,
+     "ano2024": {
+      "n": 1149,
+      "taxa": 27.72
+     },
+     "ano2025": {
+      "n": 1089,
+      "taxa": 26.15
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Pernambuco (PE)",
+   "ufs": [
+    "PE"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 2178,
+      "taxa": 22.78
+     },
+     "ytd2026": {
+      "n": 1923,
+      "taxa": 20.07
+     },
+     "varYtd": -11.9,
+     "ano2024": {
+      "n": 3209,
+      "taxa": 33.64
+     },
+     "ano2025": {
+      "n": 2883,
+      "taxa": 30.15
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 2307,
+      "taxa": 24.13
+     },
+     "ytd2026": {
+      "n": 2028,
+      "taxa": 21.16
+     },
+     "varYtd": -12.3,
+     "ano2024": {
+      "n": 3391,
+      "taxa": 35.55
+     },
+     "ano2025": {
+      "n": 3057,
+      "taxa": 31.97
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 2366,
+      "taxa": 24.74
+     },
+     "ytd2026": {
+      "n": 2102,
+      "taxa": 21.93
+     },
+     "varYtd": -11.4,
+     "ano2024": {
+      "n": 3459,
+      "taxa": 36.26
+     },
+     "ano2025": {
+      "n": 3147,
+      "taxa": 32.91
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 2429,
+      "taxa": 25.4
+     },
+     "ytd2026": {
+      "n": 2658,
+      "taxa": 27.74
+     },
+     "varYtd": 9.2,
+     "ano2024": {
+      "n": 3609,
+      "taxa": 37.84
+     },
+     "ano2025": {
+      "n": 3245,
+      "taxa": 33.94
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 2519,
+      "taxa": 26.34
+     },
+     "ytd2026": {
+      "n": 3454,
+      "taxa": 36.04
+     },
+     "varYtd": 36.8,
+     "ano2024": {
+      "n": 3824,
+      "taxa": 40.09
+     },
+     "ano2025": {
+      "n": 3386,
+      "taxa": 35.41
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Piauí (PI)",
+   "ufs": [
+    "PI"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 377,
+      "taxa": 11.14
+     },
+     "ytd2026": {
+      "n": 328,
+      "taxa": 9.67
+     },
+     "varYtd": -13.2,
+     "ano2024": {
+      "n": 584,
+      "taxa": 17.3
+     },
+     "ano2025": {
+      "n": 489,
+      "taxa": 14.45
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 427,
+      "taxa": 12.62
+     },
+     "ytd2026": {
+      "n": 354,
+      "taxa": 10.43
+     },
+     "varYtd": -17.3,
+     "ano2024": {
+      "n": 653,
+      "taxa": 19.34
+     },
+     "ano2025": {
+      "n": 550,
+      "taxa": 16.25
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 441,
+      "taxa": 13.03
+     },
+     "ytd2026": {
+      "n": 385,
+      "taxa": 11.35
+     },
+     "varYtd": -12.9,
+     "ano2024": {
+      "n": 678,
+      "taxa": 20.09
+     },
+     "ano2025": {
+      "n": 570,
+      "taxa": 16.84
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 441,
+      "taxa": 13.04
+     },
+     "ytd2026": {
+      "n": 448,
+      "taxa": 13.22
+     },
+     "varYtd": 1.3,
+     "ano2024": {
+      "n": 678,
+      "taxa": 20.09
+     },
+     "ano2025": {
+      "n": 571,
+      "taxa": 16.88
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 442,
+      "taxa": 13.06
+     },
+     "ytd2026": {
+      "n": 539,
+      "taxa": 15.89
+     },
+     "varYtd": 21.7,
+     "ano2024": {
+      "n": 678,
+      "taxa": 20.09
+     },
+     "ano2025": {
+      "n": 573,
+      "taxa": 16.93
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Rio Grande do Norte (RN)",
+   "ufs": [
+    "RN"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 627,
+      "taxa": 18.15
+     },
+     "ytd2026": {
+      "n": 690,
+      "taxa": 19.92
+     },
+     "varYtd": 9.8,
+     "ano2024": {
+      "n": 636,
+      "taxa": 18.46
+     },
+     "ano2025": {
+      "n": 824,
+      "taxa": 23.85
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 666,
+      "taxa": 19.28
+     },
+     "ytd2026": {
+      "n": 714,
+      "taxa": 20.61
+     },
+     "varYtd": 6.9,
+     "ano2024": {
+      "n": 749,
+      "taxa": 21.73
+     },
+     "ano2025": {
+      "n": 870,
+      "taxa": 25.18
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 771,
+      "taxa": 22.31
+     },
+     "ytd2026": {
+      "n": 863,
+      "taxa": 24.92
+     },
+     "varYtd": 11.7,
+     "ano2024": {
+      "n": 840,
+      "taxa": 24.38
+     },
+     "ano2025": {
+      "n": 1007,
+      "taxa": 29.14
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 953,
+      "taxa": 27.58
+     },
+     "ytd2026": {
+      "n": 1068,
+      "taxa": 30.82
+     },
+     "varYtd": 11.8,
+     "ano2024": {
+      "n": 1058,
+      "taxa": 30.69
+     },
+     "ano2025": {
+      "n": 1257,
+      "taxa": 36.37
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 1213,
+      "taxa": 35.11
+     },
+     "ytd2026": {
+      "n": 1360,
+      "taxa": 39.26
+     },
+     "varYtd": 11.8,
+     "ano2024": {
+      "n": 1369,
+      "taxa": 39.73
+     },
+     "ano2025": {
+      "n": 1614,
+      "taxa": 46.71
+     }
+    }
+   ]
+  },
+  {
+   "grupo": "Sergipe (SE)",
+   "ufs": [
+    "SE"
+   ],
+   "cenarios": [
+    {
+     "id": "oficial",
+     "nome": "Homicídio doloso (oficial SINESP)",
+     "ytd2025": {
+      "n": 204,
+      "taxa": 8.87
+     },
+     "ytd2026": {
+      "n": 192,
+      "taxa": 8.32
+     },
+     "varYtd": -6.2,
+     "ano2024": {
+      "n": 355,
+      "taxa": 15.49
+     },
+     "ano2025": {
+      "n": 284,
+      "taxa": 12.35
+     }
+    },
+    {
+     "id": "cvli",
+     "nome": "CVLI: homicídio + feminicídio + latrocínio + lesão seguida de morte",
+     "ytd2025": {
+      "n": 219,
+      "taxa": 9.52
+     },
+     "ytd2026": {
+      "n": 213,
+      "taxa": 9.23
+     },
+     "varYtd": -3.1,
+     "ano2024": {
+      "n": 377,
+      "taxa": 16.46
+     },
+     "ano2025": {
+      "n": 313,
+      "taxa": 13.61
+     }
+    },
+    {
+     "id": "cvli_interv",
+     "nome": "CVLI + mortes por intervenção policial",
+     "ytd2025": {
+      "n": 350,
+      "taxa": 15.22
+     },
+     "ytd2026": {
+      "n": 369,
+      "taxa": 15.99
+     },
+     "varYtd": 5.1,
+     "ano2024": {
+      "n": 522,
+      "taxa": 22.78
+     },
+     "ano2025": {
+      "n": 506,
+      "taxa": 22.01
+     }
+    },
+    {
+     "id": "ipea41",
+     "nome": "Cenário Ipea: + 41.2% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 465,
+      "taxa": 20.23
+     },
+     "ytd2026": {
+      "n": 492,
+      "taxa": 21.31
+     },
+     "varYtd": 5.3,
+     "ano2024": {
+      "n": 706,
+      "taxa": 30.83
+     },
+     "ano2025": {
+      "n": 657,
+      "taxa": 28.57
+     }
+    },
+    {
+     "id": "teto",
+     "nome": "Teto: + 100% das mortes a esclarecer",
+     "ytd2025": {
+      "n": 630,
+      "taxa": 27.4
+     },
+     "ytd2026": {
+      "n": 667,
+      "taxa": 28.91
+     },
+     "varYtd": 5.5,
+     "ano2024": {
+      "n": 970,
+      "taxa": 42.34
+     },
+     "ano2025": {
+      "n": 873,
+      "taxa": 37.97
+     }
+    }
+   ]
+  }
+ ],
+ "decomposicaoNordeste": {
+  "indicador": "Homicídio doloso (SINESP)",
+  "periodo": "jan–09",
+  "total2025": 11114.0,
+  "total2026": 9101.0,
+  "delta": -2013.0,
+  "ufs": [
+   {
+    "uf": "CE",
+    "nome": "Ceará",
+    "n2025": 2168.0,
+    "n2026": 1144.0,
+    "delta": -1024.0,
+    "pesoNaVariacao": 50.9,
+    "varPct": -47.2
+   },
+   {
+    "uf": "BA",
+    "nome": "Bahia",
+    "n2025": 2843.0,
+    "n2026": 2246.0,
+    "delta": -597.0,
+    "pesoNaVariacao": 29.7,
+    "varPct": -21.0
+   },
+   {
+    "uf": "PE",
+    "nome": "Pernambuco",
+    "n2025": 2178.0,
+    "n2026": 1923.0,
+    "delta": -255.0,
+    "pesoNaVariacao": 12.7,
+    "varPct": -11.7
+   },
+   {
+    "uf": "AL",
+    "nome": "Alagoas",
+    "n2025": 700.0,
+    "n2026": 638.0,
+    "delta": -62.0,
+    "pesoNaVariacao": 3.1,
+    "varPct": -8.9
+   },
+   {
+    "uf": "MA",
+    "nome": "Maranhão",
+    "n2025": 1334.0,
+    "n2026": 1285.0,
+    "delta": -49.0,
+    "pesoNaVariacao": 2.4,
+    "varPct": -3.7
+   },
+   {
+    "uf": "PI",
+    "nome": "Piauí",
+    "n2025": 377.0,
+    "n2026": 328.0,
+    "delta": -49.0,
+    "pesoNaVariacao": 2.4,
+    "varPct": -13.0
+   },
+   {
+    "uf": "PB",
+    "nome": "Paraíba",
+    "n2025": 683.0,
+    "n2026": 655.0,
+    "delta": -28.0,
+    "pesoNaVariacao": 1.4,
+    "varPct": -4.1
+   },
+   {
+    "uf": "SE",
+    "nome": "Sergipe",
+    "n2025": 204.0,
+    "n2026": 192.0,
+    "delta": -12.0,
+    "pesoNaVariacao": 0.6,
+    "varPct": -5.9
+   },
+   {
+    "uf": "RN",
+    "nome": "Rio Grande do Norte",
+    "n2025": 627.0,
+    "n2026": 690.0,
+    "delta": 63.0,
+    "pesoNaVariacao": -3.1,
+    "varPct": 10.0
+   }
+  ]
+ },
+ "alertasQuebraSerie": [
+  {
+   "uf": "PE",
+   "nome": "Pernambuco",
+   "ano": 2026,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 153.0,
+   "esclarecerAtual": 1352.0,
+   "homicidioAnterior": 2178.0,
+   "homicidioAtual": 1923.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "PI",
+   "nome": "Piauí",
+   "ano": 2026,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 1.0,
+   "esclarecerAtual": 154.0,
+   "homicidioAnterior": 377.0,
+   "homicidioAtual": 328.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "RS",
+   "nome": "Rio Grande do Sul",
+   "ano": 2025,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 184.0,
+   "esclarecerAtual": 758.0,
+   "homicidioAnterior": 1076.0,
+   "homicidioAtual": 823.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "PE",
+   "nome": "Pernambuco",
+   "ano": 2024,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 64.0,
+   "esclarecerAtual": 207.0,
+   "homicidioAnterior": 2489.0,
+   "homicidioAtual": 2472.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "RS",
+   "nome": "Rio Grande do Sul",
+   "ano": 2024,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 50.0,
+   "esclarecerAtual": 184.0,
+   "homicidioAnterior": 1256.0,
+   "homicidioAtual": 1076.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "SP",
+   "nome": "São Paulo",
+   "ano": 2023,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 1139.0,
+   "esclarecerAtual": 3409.0,
+   "homicidioAnterior": 2106.0,
+   "homicidioAtual": 1856.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "MA",
+   "nome": "Maranhão",
+   "ano": 2023,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 134.0,
+   "esclarecerAtual": 345.0,
+   "homicidioAnterior": 1239.0,
+   "homicidioAtual": 1224.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "RO",
+   "nome": "Rondônia",
+   "ano": 2023,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 0.0,
+   "esclarecerAtual": 202.0,
+   "homicidioAnterior": 366.0,
+   "homicidioAtual": 303.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "RN",
+   "nome": "Rio Grande do Norte",
+   "ano": 2020,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 98.0,
+   "esclarecerAtual": 211.0,
+   "homicidioAnterior": 805.0,
+   "homicidioAtual": 895.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "AL",
+   "nome": "Alagoas",
+   "ano": 2019,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 9.0,
+   "esclarecerAtual": 332.0,
+   "homicidioAnterior": 1023.0,
+   "homicidioAtual": 751.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "GO",
+   "nome": "Goiás",
+   "ano": 2018,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 54.0,
+   "esclarecerAtual": 280.0,
+   "homicidioAnterior": 1712.0,
+   "homicidioAtual": 1582.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  },
+  {
+   "uf": "GO",
+   "nome": "Goiás",
+   "ano": 2016,
+   "periodo": "jan–09",
+   "esclarecerAnterior": 0.0,
+   "esclarecerAtual": 520.0,
+   "homicidioAnterior": 0.0,
+   "homicidioAtual": 1303.0,
+   "leitura": "Crescimento atípico de mortes a esclarecer; quedas de homicídio no mesmo ano exigem checagem com a secretaria estadual."
+  }
+ ],
+ "tendenciaLonga": {
+  "anos": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "series": {
+   "Brasil": [
+    null,
+    26.32,
+    27.23,
+    23.49,
+    18.87,
+    19.89,
+    18.7,
+    18.29,
+    17.63,
+    16.53,
+    14.77
+   ],
+   "Norte": [
+    33.86,
+    36.19,
+    39.51,
+    37.55,
+    29.29,
+    25.41,
+    28.04,
+    27.38,
+    25.2,
+    21.43,
+    18.76
+   ],
+   "Nordeste": [
+    38.98,
+    40.37,
+    43.49,
+    36.85,
+    28.01,
+    34.0,
+    31.38,
+    29.77,
+    28.94,
+    28.13,
+    25.66
+   ],
+   "Centro-Oeste": [
+    15.41,
+    27.73,
+    27.42,
+    24.58,
+    20.19,
+    18.6,
+    16.16,
+    16.24,
+    15.27,
+    14.0,
+    11.38
+   ],
+   "Sudeste": [
+    null,
+    16.68,
+    16.44,
+    14.08,
+    12.29,
+    11.77,
+    10.94,
+    10.95,
+    10.92,
+    10.38,
+    9.77
+   ],
+   "Sul": [
+    20.29,
+    21.39,
+    20.76,
+    16.87,
+    13.95,
+    14.47,
+    13.3,
+    13.82,
+    12.75,
+    11.2,
+    8.51
+   ]
+  },
+  "var2017a2025": {
+   "Brasil": -45.8,
+   "Norte": -52.5,
+   "Nordeste": -41.0,
+   "Centro-Oeste": -58.5,
+   "Sudeste": -40.6,
+   "Sul": -59.0
+  },
+  "razaoNordesteSul": [
+   1.92,
+   1.89,
+   2.09,
+   2.18,
+   2.01,
+   2.35,
+   2.36,
+   2.15,
+   2.27,
+   2.51,
+   3.02
+  ],
+  "nota": "Sudeste e Brasil 2015 ficam vazios: o Espírito Santo não informou 2015 ao SINESP."
+ },
+ "mulheres": {
+  "fonte": "FBSP — 20º Anuário, Tabela 21 (ano-base 2025)",
+  "proporcaoNacional": 0.4439,
+  "linhas": [
+   {
+    "grupo": "Brasil",
+    "homicidiosMulheres": 3539,
+    "taxaHomicidioMulheres": 3.24,
+    "feminicidios": 1571,
+    "taxaFeminicidio": 1.44,
+    "proporcaoClassificada": 44.4,
+    "feminicidioPadronizado": 1571,
+    "taxaFeminicidioPadronizada": 1.44
+   },
+   {
+    "grupo": "Norte",
+    "homicidiosMulheres": 375,
+    "taxaHomicidioMulheres": 4.01,
+    "feminicidios": 159,
+    "taxaFeminicidio": 1.7,
+    "proporcaoClassificada": 42.4,
+    "feminicidioPadronizado": 166,
+    "taxaFeminicidioPadronizada": 1.78
+   },
+   {
+    "grupo": "Nordeste",
+    "homicidiosMulheres": 1321,
+    "taxaHomicidioMulheres": 4.48,
+    "feminicidios": 425,
+    "taxaFeminicidio": 1.44,
+    "proporcaoClassificada": 32.2,
+    "feminicidioPadronizado": 586,
+    "taxaFeminicidioPadronizada": 1.99
+   },
+   {
+    "grupo": "Centro-Oeste",
+    "homicidiosMulheres": 310,
+    "taxaHomicidioMulheres": 3.55,
+    "feminicidios": 180,
+    "taxaFeminicidio": 2.06,
+    "proporcaoClassificada": 58.1,
+    "feminicidioPadronizado": 138,
+    "taxaFeminicidioPadronizada": 1.58
+   },
+   {
+    "grupo": "Sudeste",
+    "homicidiosMulheres": 1094,
+    "taxaHomicidioMulheres": 2.39,
+    "feminicidios": 587,
+    "taxaFeminicidio": 1.28,
+    "proporcaoClassificada": 53.7,
+    "feminicidioPadronizado": 486,
+    "taxaFeminicidioPadronizada": 1.06
+   },
+   {
+    "grupo": "Sul",
+    "homicidiosMulheres": 439,
+    "taxaHomicidioMulheres": 2.74,
+    "feminicidios": 220,
+    "taxaFeminicidio": 1.37,
+    "proporcaoClassificada": 50.1,
+    "feminicidioPadronizado": 195,
+    "taxaFeminicidioPadronizada": 1.22
+   },
+   {
+    "grupo": "Nordeste sem Ceará",
+    "homicidiosMulheres": 1024,
+    "taxaHomicidioMulheres": 4.15,
+    "feminicidios": 378,
+    "taxaFeminicidio": 1.53,
+    "proporcaoClassificada": 36.9,
+    "feminicidioPadronizado": 455,
+    "taxaFeminicidioPadronizada": 1.84
+   },
+   {
+    "grupo": "Alagoas (AL)",
+    "homicidiosMulheres": 94,
+    "taxaHomicidioMulheres": 5.63,
+    "feminicidios": 30,
+    "taxaFeminicidio": 1.8,
+    "proporcaoClassificada": 31.9,
+    "feminicidioPadronizado": 42,
+    "taxaFeminicidioPadronizada": 2.5
+   },
+   {
+    "grupo": "Bahia (BA)",
+    "homicidiosMulheres": 352,
+    "taxaHomicidioMulheres": 4.6,
+    "feminicidios": 102,
+    "taxaFeminicidio": 1.33,
+    "proporcaoClassificada": 29.0,
+    "feminicidioPadronizado": 156,
+    "taxaFeminicidioPadronizada": 2.04
+   },
+   {
+    "grupo": "Ceará (CE)",
+    "homicidiosMulheres": 297,
+    "taxaHomicidioMulheres": 6.23,
+    "feminicidios": 47,
+    "taxaFeminicidio": 0.99,
+    "proporcaoClassificada": 15.8,
+    "feminicidioPadronizado": 132,
+    "taxaFeminicidioPadronizada": 2.77
+   },
+   {
+    "grupo": "Maranhão (MA)",
+    "homicidiosMulheres": 132,
+    "taxaHomicidioMulheres": 3.71,
+    "feminicidios": 51,
+    "taxaFeminicidio": 1.43,
+    "proporcaoClassificada": 38.6,
+    "feminicidioPadronizado": 59,
+    "taxaFeminicidioPadronizada": 1.65
+   },
+   {
+    "grupo": "Paraíba (PB)",
+    "homicidiosMulheres": 76,
+    "taxaHomicidioMulheres": 3.54,
+    "feminicidios": 36,
+    "taxaFeminicidio": 1.68,
+    "proporcaoClassificada": 47.4,
+    "feminicidioPadronizado": 34,
+    "taxaFeminicidioPadronizada": 1.57
+   },
+   {
+    "grupo": "Pernambuco (PE)",
+    "homicidiosMulheres": 213,
+    "taxaHomicidioMulheres": 4.29,
+    "feminicidios": 88,
+    "taxaFeminicidio": 1.77,
+    "proporcaoClassificada": 41.3,
+    "feminicidioPadronizado": 95,
+    "taxaFeminicidioPadronizada": 1.9
+   },
+   {
+    "grupo": "Piauí (PI)",
+    "homicidiosMulheres": 62,
+    "taxaHomicidioMulheres": 3.59,
+    "feminicidios": 37,
+    "taxaFeminicidio": 2.14,
+    "proporcaoClassificada": 59.7,
+    "feminicidioPadronizado": 28,
+    "taxaFeminicidioPadronizada": 1.59
+   },
+   {
+    "grupo": "Rio Grande do Norte (RN)",
+    "homicidiosMulheres": 73,
+    "taxaHomicidioMulheres": 4.12,
+    "feminicidios": 19,
+    "taxaFeminicidio": 1.07,
+    "proporcaoClassificada": 26.0,
+    "feminicidioPadronizado": 32,
+    "taxaFeminicidioPadronizada": 1.83
+   },
+   {
+    "grupo": "Sergipe (SE)",
+    "homicidiosMulheres": 22,
+    "taxaHomicidioMulheres": 1.84,
+    "feminicidios": 15,
+    "taxaFeminicidio": 1.26,
+    "proporcaoClassificada": 68.2,
+    "feminicidioPadronizado": 10,
+    "taxaFeminicidioPadronizada": 0.82
+   }
+  ],
+  "leitura": "O cenário padronizado aplica a todas as regiões a proporção nacional de classificação (44,39%). Ele equivale a comparar homicídios de mulheres, que não dependem da tipificação."
+ },
+ "feminicidioYtd": [
+  {
+   "grupo": "Brasil",
+   "n2025": 1133.0,
+   "n2026": 1082.0,
+   "diferenca": -51.0,
+   "taxa2025": 1.04,
+   "taxa2026": 0.99,
+   "var": -4.9,
+   "basePequena": false
+  },
+  {
+   "grupo": "Norte",
+   "n2025": 127.0,
+   "n2026": 114.0,
+   "diferenca": -13.0,
+   "taxa2025": 1.36,
+   "taxa2026": 1.21,
+   "var": -10.9,
+   "basePequena": true
+  },
+  {
+   "grupo": "Nordeste",
+   "n2025": 317.0,
+   "n2026": 275.0,
+   "diferenca": -42.0,
+   "taxa2025": 1.08,
+   "taxa2026": 0.93,
+   "var": -13.5,
+   "basePequena": false
+  },
+  {
+   "grupo": "Centro-Oeste",
+   "n2025": 126.0,
+   "n2026": 139.0,
+   "diferenca": 13.0,
+   "taxa2025": 1.44,
+   "taxa2026": 1.58,
+   "var": 9.2,
+   "basePequena": true
+  },
+  {
+   "grupo": "Sudeste",
+   "n2025": 404.0,
+   "n2026": 386.0,
+   "diferenca": -18.0,
+   "taxa2025": 0.88,
+   "taxa2026": 0.84,
+   "var": -4.7,
+   "basePequena": false
+  },
+  {
+   "grupo": "Sul",
+   "n2025": 159.0,
+   "n2026": 168.0,
+   "diferenca": 9.0,
+   "taxa2025": 0.99,
+   "taxa2026": 1.04,
+   "var": 5.0,
+   "basePequena": true
+  }
+ ],
+ "violenciaDomestica": {
+  "fonte": "FBSP — 20º Anuário, Tabela 24 (ano-base 2025), por 100 mil mulheres",
+  "taxaBrasil": 261.7,
+  "ufsRegistroAtipico": [
+   {
+    "uf": "CE",
+    "nome": "Ceará",
+    "taxa": 11.0
+   },
+   {
+    "uf": "MA",
+    "nome": "Maranhão",
+    "taxa": 62.5
+   }
+  ],
+  "linhas": [
+   {
+    "grupo": "Brasil",
+    "registros": 286270,
+    "taxa": 261.73,
+    "taxaImputada": 276.11,
+    "imputacao": "UF com registro atípico recebe a mediana das demais UFs da mesma região."
+   },
+   {
+    "grupo": "Norte",
+    "registros": 22536,
+    "taxa": 240.9
+   },
+   {
+    "grupo": "Nordeste",
+    "registros": 36403,
+    "taxa": 123.59,
+    "taxaImputada": 141.98,
+    "imputacao": "UF com registro atípico recebe a mediana das demais UFs da mesma região."
+   },
+   {
+    "grupo": "Centro-Oeste",
+    "registros": 20723,
+    "taxa": 237.2
+   },
+   {
+    "grupo": "Sudeste",
+    "registros": 138090,
+    "taxa": 301.33
+   },
+   {
+    "grupo": "Sul",
+    "registros": 68518,
+    "taxa": 428.2
+   },
+   {
+    "grupo": "Nordeste sem Ceará",
+    "registros": 35879,
+    "taxa": 145.34,
+    "taxaImputada": 150.46,
+    "imputacao": "UF com registro atípico recebe a mediana das demais UFs da mesma região."
+   }
+  ],
+  "leitura": "A imputação NÃO estima a violência real; apenas mostra quanto o registro atípico de uma UF puxa a média regional."
+ },
+ "subnotificacaoNacional": [
+  {
+   "tema": "Estupro",
+   "registrado2025": 84388,
+   "parametro": 0.085,
+   "estimativaOrdemGrandeza": 993000.0,
+   "metodo": "Registros policiais ÷ taxa de registro estimada pelo Ipea (PNS 2019 + Sinan).",
+   "ressalva": "Estimativa nacional com base de 2019; não existe taxa publicada por região. Usar só como ordem de grandeza nacional."
+  },
+  {
+   "tema": "Agressão física contra mulheres",
+   "registrado2025": 286270,
+   "vitimasPesquisa": 8979053,
+   "razaoRegistroPorVitima": 3.2,
+   "metodo": "Registros de lesão em violência doméstica (FBSP) ÷ mulheres que relataram agressão física na pesquisa Visível e Invisível 2025.",
+   "ressalva": "Conceitos diferentes (registros × pessoas; violência doméstica × qualquer autor). Serve só para dimensionar a distância entre ocorrência e registro."
+  }
+ ]
+}

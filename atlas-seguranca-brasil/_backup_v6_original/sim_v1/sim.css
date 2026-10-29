@@ -1,0 +1,25 @@
+/* Aba Simulações: camada derivada, visualmente separada dos dados oficiais */
+.sim-bg{background:#fbf6f1;border-top:1px solid #f0e2d6;border-bottom:1px solid #f0e2d6}
+.sim-banner{display:flex;gap:14px;align-items:flex-start;background:#fff4ea;border:1px solid #f1cfb4;border-radius:14px;padding:16px 18px;margin-bottom:18px;font-size:12.5px;line-height:1.7;color:#5b4637}
+.sim-banner strong{color:#9a5a2c}
+.sim-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:17px}
+.sim-panel{padding:24px;min-width:0}
+.sim-panel h3{font-size:19px;letter-spacing:-.03em;font-weight:800;margin:6px 0 6px}
+.sim-panel>p,.sim-note{font-size:12px;color:#6f8088;line-height:1.7;max-width:820px}
+.sim-note{margin-top:10px}
+.sim-pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:#fde7d6;color:#9a5a2c}
+.sim-pill.ok{background:#e1f1ea;color:#175b62}
+.sim-pill.warn{background:#fbe0dc;color:#a8402f}
+.sim-table td,.sim-table th{white-space:nowrap}
+.sim-table td.right small{display:block;color:#8a9aa1;font-size:10.5px}
+.sim-table tr.sim-highlight td{background:#fff8f1;font-weight:700}
+.sim-wf{width:100%;height:auto;display:block;margin-top:8px}
+.sim-wf text{font-family:inherit}
+.sim-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:10px}
+.sim-card{border:1px solid var(--line);border-radius:13px;padding:18px;background:#fff}
+.sim-card .big{font-size:28px;font-weight:800;letter-spacing:-.04em;color:var(--ink)}
+.sim-card p{font-size:11.5px;color:#6f8088;line-height:1.7;margin:6px 0 0}
+.sim-sources{font-size:11px;line-height:1.8;color:#6f8088}
+.sim-sources a{color:#175b62;text-decoration:underline}
+.sim-hash{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;color:#8a9aa1;word-break:break-all}
+@media (max-width:700px){.sim-panel{padding:16px}.sim-banner{flex-direction:column}}

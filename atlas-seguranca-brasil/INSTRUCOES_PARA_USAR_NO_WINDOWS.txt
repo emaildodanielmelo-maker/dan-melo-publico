@@ -1,0 +1,53 @@
+ATLAS DA SEGURANCA PUBLICA - BRASIL
+===================================
+
+VERSAO DO PAINEL
+- Copia da versao 6, a mais recente publicada em 28/10/2026.
+- Codigo-fonte correspondente ao commit 5c8776b9d991463af68c89bac2834175b3d203fa.
+- Inclui as visoes Panorama, Mapa, Regioes, Ranking, UF, Historico e comparacoes.
+- Inclui os dados publicos FBSP, SINESP, IBGE e SENATRAN integrados na ultima versao.
+
+COMO ABRIR NO WINDOWS
+1. Extraia todo o conteudo do ZIP para uma pasta no computador.
+2. Entre na pasta "Atlas_Seguranca_Brasil_v6".
+3. Clique duas vezes em "ABRIR_ATLAS_WINDOWS.bat".
+4. O navegador devera abrir em: http://127.0.0.1:8765/
+5. Se nao abrir automaticamente, copie esse endereco no seu navegador.
+6. Mantenha a janela de comando aberta enquanto usa o painel.
+7. Para encerrar o painel, pressione Ctrl+C na janela do servidor.
+
+REQUISITO
+- Python 3 instalado (o iniciador procura "py -3" ou "python").
+- Caso falte, instale gratuitamente em https://www.python.org/downloads/
+
+IMPORTANTE
+- NAO abra o arquivo "dist/index.html" diretamente com duplo clique.
+  O navegador pode bloquear a leitura dos arquivos JSON pelo protocolo file://.
+- O arquivo .bat nao instala programas e nao envia dados; ele apenas inicia
+  um servidor HTTP local na porta 8765, vinculado a 127.0.0.1.
+- Os dados do painel estao incluidos nos arquivos JSON em "dist". As consultas
+  ao Atlas em si funcionam sem internet; links externos para fontes oficiais
+  precisarao de internet se forem abertos.
+- Esta e uma COPIA ESTATICA. Ela NAO atualiza automaticamente os indicadores.
+  A base SINESP de 2026 desta versao vai de janeiro a setembro.
+- O conteudo de "scripts" e o codigo-fonte de extracao estao incluidos para
+  trabalho futuro. A atualizacao dos dados exige rodar rotinas especificas e
+  consultar novamente as fontes oficiais.
+
+ARQUIVOS PRINCIPAIS
+- dist/index.html          : pagina inicial do Atlas.
+- dist/*.js e dist/*.css   : codigo visual e de navegacao.
+- dist/*.json              : bases de dados integradas para os graficos.
+- scripts/                 : rotinas de extracao e processamento.
+- README.md                : documentacao tecnica do projeto.
+- *-smoke.cjs              : verificacoes automaticas que podem rodar via Node.js.
+
+FONTES DOS DADOS
+- Ministerio da Justica (SINESP):
+  https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica
+- Forum Brasileiro de Seguranca Publica (Anuario 2026, dados de 2025):
+  https://forumseguranca.org.br/publicacoes/anuario-brasileiro-de-seguranca-publica/
+- IBGE: https://www.ibge.gov.br/
+- SENATRAN: https://www.gov.br/transportes/
+
+ATLAS INDEPENDENTE. AS BASES NAO SAO MISTURADAS ENTRE SI.
