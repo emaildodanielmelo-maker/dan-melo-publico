@@ -24,7 +24,7 @@ O portfólio com busca e filtro por tema está em https://emaildodanielmelo-make
 
 ## Arquivos compartilhados
 
-`assets/` guarda a foto (`dan.webp`) e as fontes do portfólio (`assets/fonts/`, todas sob SIL OFL, licenças em `LICENSES.txt`). As fontes ficam no repositório de propósito: a página não faz pedidos a servidores externos.
+`assets/` guarda a foto (`dan.webp`), o ícone (`icone-32.png`, `icone-180.png`), a imagem de prévia de compartilhamento do portfólio (`og-portfolio.png`) e as fontes do portfólio (`assets/fonts/`, todas sob SIL OFL, licenças em `LICENSES.txt`). As fontes ficam no repositório de propósito: a página não faz pedidos a servidores externos.
 
 `assets/marca-dan.css` aplica a identidade (fontes e o bloco "Criado por Dan Melo") nas soluções. Para usar numa solução nova, inclua `<link rel="stylesheet" href="../assets/marca-dan.css">` e copie o `<aside class="dan-autor">` de uma solução existente.
 
@@ -32,4 +32,4 @@ O portfólio com busca e filtro por tema está em https://emaildodanielmelo-make
 
 O conteúdo de assinantes **não** fica neste repositório. Ele vive em outro repositório, privado, e este portfólio só mostra a vitrine (título e descrição) na seção "Área de assinantes" da `index.html`. O modelo do cartão está em comentário nessa seção.
 
-Tudo neste repositório é público, inclusive o histórico. Não coloque chaves, senhas ou dados pessoais.
+Tudo neste repositório é público, inclusive o histórico. Não coloque chaves, senhas ou dados pessoais. O único contato publicado de propósito é o e-mail profissional do portfólio.

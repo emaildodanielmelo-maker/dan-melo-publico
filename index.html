@@ -4,13 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#F4F1EA" />
-  <title>Dan Melo | Soluções públicas</title>
-  <meta name="description" content="Ferramentas e painéis que Daniel Melo constrói e deixa abertos. Funcionam direto no navegador, sem cadastro e sem instalar nada." />
-  <meta name="author" content="@danielmelo_eu" />
+  <title>Dan Melo | Dados, contexto e negócio</title>
+  <meta name="description" content="Daniel Melo, engenheiro de produção e especialista em People Analytics, compartilha ferramentas e painéis abertos. Funcionam direto no navegador, sem cadastro." />
+  <meta name="author" content="Daniel Melo" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icone-32.png" />
+  <link rel="apple-touch-icon" href="./assets/icone-180.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dan Melo | Soluções públicas" />
-  <meta property="og:description" content="Ferramentas e painéis abertos que funcionam direto no navegador, sem cadastro." />
+  <meta property="og:url" content="https://emaildodanielmelo-maker.github.io/dan-melo-publico/" />
+  <meta property="og:title" content="Dan Melo | Dados, contexto e negócio" />
+  <meta property="og:description" content="Ferramentas e painéis abertos de um engenheiro de produção e especialista em People Analytics. Sem cadastro." />
+  <meta property="og:image" content="https://emaildodanielmelo-maker.github.io/dan-melo-publico/assets/og-portfolio.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="pt_BR" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Daniel Melo","jobTitle":"Especialista em People Analytics","alumniOf":"Universidade Federal do Ceará","url":"https://emaildodanielmelo-maker.github.io/dan-melo-publico/","sameAs":["https://www.instagram.com/danielmelo_eu/","https://www.linkedin.com/in/daniel-melo-4409893a/"]}
+  </script>
   <style>
     /* Fontes hospedadas no repositório: a página não faz pedidos a servidores externos */
     @font-face { font-family:"Archivo"; font-weight:500; font-display:swap; src:url("./assets/fonts/archivo-latin-500-normal.woff2") format("woff2"); }
@@ -146,6 +156,33 @@
     .voce p { font-family:var(--titulo); font-weight:900; font-size:clamp(1.5rem,3vw,2.2rem); line-height:1.05; letter-spacing:-.03em; color:var(--papel); margin:12px 0 0; max-width:24ch; }
     .assinantes-faixa .grade { grid-column:1 / -1; }
 
+    /* Sobre */
+    .sobre .wrap { display:grid; grid-template-columns:.8fr 1.2fr; gap:64px; align-items:start; }
+    .sobre-lado { position:sticky; top:100px; }
+    .sobre-foto { width:min(260px,70%); height:auto; aspect-ratio:1; border-radius:50%; border:3px solid var(--preto); box-shadow:8px 8px 0 var(--roxo); background:var(--branco); display:block; margin-bottom:28px; }
+    .citacao { font-family:var(--mao); font-weight:700; font-size:1.9rem; line-height:1.1; color:var(--roxo); transform:rotate(-2deg); margin:0; max-width:16ch; }
+    .sobre-texto p { font-size:1.08rem; margin:0 0 18px; max-width:62ch; }
+    .sobre-texto p b { color:var(--preto); }
+    .numeros { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:30px 0; padding:0; list-style:none; }
+    .numeros li { background:var(--branco); border:2px solid var(--preto); border-radius:18px; padding:18px; }
+    .numeros strong { display:block; font-weight:900; font-size:2.3rem; line-height:1; letter-spacing:-.04em; color:var(--roxo); }
+    .numeros span { font-size:.88rem; line-height:1.3; display:block; margin-top:6px; }
+    .formacao { margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+    .formacao li { display:flex; gap:14px; align-items:baseline; padding:12px 0; border-bottom:2px dashed var(--bege); }
+    .formacao .onde { font-family:var(--mono); font-weight:500; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--suave); min-width:120px; }
+    .formacao b { color:var(--preto); }
+
+    /* Mentoria */
+    .mentoria { background:var(--lilas-claro); border-block:2px solid var(--preto); }
+    .mentoria .wrap { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+    .publicos { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 30px; padding:0; list-style:none; }
+    .publicos li { font-weight:700; font-size:.95rem; color:var(--preto); background:var(--papel); border:2px solid var(--preto); border-radius:999px; padding:8px 16px; }
+    .cartao-mentoria { background:var(--papel); border:2px solid var(--preto); border-radius:22px; padding:32px; box-shadow:8px 8px 0 var(--preto); }
+    .cartao-mentoria h3 { font-size:1.5rem; line-height:1.1; margin-bottom:16px; }
+    .cartao-mentoria ul { margin:0 0 26px; padding:0; list-style:none; display:grid; gap:12px; }
+    .cartao-mentoria li { display:flex; gap:12px; }
+    .cartao-mentoria li::before { content:"→"; color:var(--roxo); font-weight:900; }
+
     /* Rodapé */
     footer { background:var(--papel); border-top:2px solid var(--preto); padding:32px 0; font-size:.92rem; }
     footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px 28px; }
@@ -155,7 +192,10 @@
     footer .links { display:flex; flex-wrap:wrap; gap:8px 22px; font-family:var(--mono); font-size:.8rem; }
 
     @media (max-width:900px) {
-      .hero .wrap, .assinantes-faixa .wrap { grid-template-columns:1fr; gap:44px; }
+      .hero .wrap, .assinantes-faixa .wrap, .sobre .wrap, .mentoria .wrap { grid-template-columns:1fr; gap:44px; }
+      .sobre-lado { position:static; display:flex; align-items:center; gap:24px; }
+      .sobre-foto { width:140px; margin:0; flex:none; }
+      .citacao { font-size:1.6rem; }
       .hero .wrap { padding-top:44px; padding-bottom:64px; }
       .foto-area { padding-bottom:12px; }
       .polaroid { width:min(300px,78%); }
@@ -167,6 +207,12 @@
       .nav-links a:not(.ig) { display:none; }
       .grade { grid-template-columns:1fr; }
       .busca { max-width:none; }
+      .numeros { grid-template-columns:1fr; }
+      .numeros li { display:flex; align-items:center; gap:14px; }
+      .numeros span { margin:0; }
+      .sobre-foto { width:104px; }
+      .formacao li { flex-direction:column; gap:2px; }
+      .cartao-mentoria { padding:24px; }
       .carimbo { left:-8px; }
       .adesivo { right:-6px; width:80px; height:80px; font-size:.9rem; }
     }
@@ -185,8 +231,9 @@
       </a>
       <nav class="nav-links" aria-label="Seções da página">
         <a href="#solucoes">Soluções</a>
-        <a href="#como-navegar">Como navegar</a>
-        <a href="#area-de-assinantes">Área de assinantes</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#mentoria">Mentoria</a>
+        <a href="#area-de-assinantes">Assinantes</a>
         <a class="ig" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener" aria-label="Instagram de @danielmelo_eu"><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg>@danielmelo_eu</a>
       </nav>
     </div>
@@ -199,11 +246,11 @@
           <span class="tag">Soluções abertas · por Dan Melo</span>
           <p class="apoio">Tudo o que eu construo, deixo aberto.</p>
           <h1>Ferramentas e painéis pra <span class="rx">você usar</span>.</h1>
-          <p class="lead">Cada solução abre direto no navegador. Sem cadastro, sem instalar nada. Se quiser ver como foi feita, o código também está aberto.</p>
+          <p class="lead">Sou engenheiro de produção e especialista em People Analytics. Aqui eu compartilho o que construo unindo dados, contexto e negócio. Tudo abre direto no navegador, sem cadastro.</p>
           <div class="botoes">
             <a class="btn" href="#solucoes">Ver as soluções →</a>
             <span class="nota-mao" aria-hidden="true">← começa por aqui</span>
-            <a class="btn vazado" href="#como-navegar">Como navegar</a>
+            <a class="btn vazado" href="#sobre">Quem eu sou</a>
           </div>
           <p class="garantias">Grátis<span>·</span>Sem cadastro<span>·</span>Código aberto</p>
         </div>
@@ -305,27 +352,86 @@
       </div>
     </section>
 
+    <section class="sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="wrap">
+        <div class="sobre-lado">
+          <img class="sobre-foto" src="./assets/dan.webp" alt="Daniel Melo" width="260" height="260" loading="lazy" />
+          <p class="citacao">“Eu não sei tudo, mas conheço alguns caminhos.”</p>
+        </div>
+        <div class="sobre-texto">
+          <span class="tag escura">Sobre mim</span>
+          <p class="apoio">Amar dados não é suficiente.</p>
+          <h2 id="titulo-sobre">Dados, contexto e <span class="rx">negócio</span>.</h2>
+          <p style="margin-top:22px">Oi, eu sou o <b>Daniel Melo</b>. Sou apaixonado por dados, mas aprendi que só isso não gera informação relevante. Ela aparece quando a gente junta os números com o contexto e com o entendimento do negócio.</p>
+          <p>A análise sempre foi o centro do meu trabalho, desde quando eu era gerente de projetos na indústria naval. Depois vieram mais de 7 anos como especialista em gestão de resultados e estratégia. Hoje, sou <b>especialista em People Analytics</b>.</p>
+          <p>Com essa maturidade, quero ajudar quem está começando a encontrar um caminho para ser relevante nessa área. Por isso deixo aberto aqui o que eu construo.</p>
+          <ul class="numeros">
+            <li><strong>12+</strong><span>anos com análise no centro do trabalho</span></li>
+            <li><strong>7+</strong><span>anos em gestão de resultados e estratégia</span></li>
+            <li><strong>Hoje</strong><span>especialista em People Analytics</span></li>
+          </ul>
+          <ul class="formacao">
+            <li><span class="onde">Graduação · UFC</span><b>Engenharia de Produção</b></li>
+            <li><span class="onde">Pós-graduação</span><b>Gestão da Produção e Qualidade</b></li>
+            <li><span class="onde">Indicium Academy</span><b>Certificação em Analytics Engineering</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mentoria" id="mentoria" aria-labelledby="titulo-mentoria">
+      <div class="wrap">
+        <div>
+          <span class="tag">Mentoria · Em breve</span>
+          <p class="apoio">A gente sai muito cru da faculdade.</p>
+          <h2 id="titulo-mentoria">Quero encurtar o seu <span class="rx">caminho</span>.</h2>
+          <p class="intro">Estou estruturando uma mentoria para quem está começando a trabalhar com dados e com gente. Se você se vê em algum destes grupos, ela foi pensada para você:</p>
+          <ul class="publicos">
+            <li>BPs de RH</li>
+            <li>Iniciantes em People Analytics</li>
+            <li>Estudantes de Administração</li>
+            <li>Estudantes de Engenharia de Produção</li>
+          </ul>
+        </div>
+        <div class="cartao-mentoria">
+          <h3>Quer ser avisado quando abrir?</h3>
+          <ul>
+            <li>Me manda um e-mail contando em que momento você está.</li>
+            <li>Você entra na lista e fica sabendo primeiro.</li>
+            <li>Sem compromisso: é só para eu entender quem quer participar.</li>
+          </ul>
+          <div class="botoes" style="margin:0">
+            <a class="btn" href="mailto:danielmelo.eng@outlook.com?subject=Interesse%20na%20mentoria">Quero participar →</a>
+            <a class="btn vazado" href="https://www.linkedin.com/in/daniel-melo-4409893a/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="assinantes-faixa" id="area-de-assinantes" aria-labelledby="titulo-assinantes">
       <div class="wrap">
         <div>
           <span class="em-breve">Em breve</span><br />
           <span class="tag">Área de assinantes</span>
-          <p class="apoio">Um espaço à parte.</p>
-          <h2 id="titulo-assinantes">Soluções exclusivas pra quem <span class="rx">acompanha de perto</span>.</h2>
-          <p class="intro">As primeiras soluções da área de assinantes aparecerão aqui. O acesso é liberado por e-mail.</p>
+          <p class="apoio">Uma comunidade, um espaço à parte.</p>
+          <h2 id="titulo-assinantes">Materiais premium pra quem <span class="rx">acompanha de perto</span>.</h2>
+          <p class="intro">Estou montando uma comunidade para quem quer ir além do conteúdo aberto. Os primeiros materiais vão aparecer aqui, com acesso liberado por e-mail.</p>
         </div>
         <ul class="beneficios">
-          <li><span class="ico">01</span><div><b>Acesso por e-mail</b><small>Só entra quem eu autorizar.</small></div></li>
-          <li><span class="ico">02</span><div><b>Conteúdo protegido</b><small>Aqui fica só a vitrine. O conteúdo não é público.</small></div></li>
-          <li><span class="ico">03</span><div><b>Mesmo jeito de usar</b><small>Direto no navegador, como as soluções públicas.</small></div></li>
+          <li><span class="ico">01</span><div><b>Materiais premium</b><small>Conteúdos e soluções que não ficam no espaço público.</small></div></li>
+          <li><span class="ico">02</span><div><b>Comunidade</b><small>Um lugar para trocar com quem está no mesmo caminho.</small></div></li>
+          <li><span class="ico">03</span><div><b>Acesso por e-mail</b><small>Só entra quem é assinante. Aqui fica só a vitrine.</small></div></li>
         </ul>
 
         <div class="voce">
           <div>
             <span class="tag">E você?</span>
-            <p>Que solução você gostaria de ver aqui?</p>
+            <p>Quer entrar na comunidade quando abrir?</p>
           </div>
-          <a class="btn claro" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">Me conta no Instagram →</a>
+          <div class="botoes" style="margin:0">
+            <a class="btn claro" href="mailto:danielmelo.eng@outlook.com?subject=Quero%20entrar%20na%20%C3%A1rea%20de%20assinantes">Quero ser avisado →</a>
+            <a class="btn claro" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">Sugerir uma solução</a>
+          </div>
         </div>
 
         <!-- Modelo para quando existir a primeira solução de assinantes. Mostre só título e descrição (nunca o conteúdo), e troque o href pelo endereço da área protegida:
@@ -350,7 +456,9 @@
     <div class="wrap">
       <span class="quem"><img src="./assets/dan.webp" alt="" width="34" height="34" /><span>Criado por <a href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">@danielmelo_eu</a>. Esta página não usa cookies nem rastreadores.</span></span>
       <span class="links">
-        <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">Repositório no GitHub</a>
+        <a href="mailto:danielmelo.eng@outlook.com">danielmelo.eng@outlook.com</a>
+        <a href="https://www.linkedin.com/in/daniel-melo-4409893a/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">GitHub</a>
         <a href="#topo">Voltar ao topo ↑</a>
       </span>
     </div>
