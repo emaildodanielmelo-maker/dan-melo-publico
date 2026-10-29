@@ -1,0 +1,76 @@
+/* Identidade do Dan Melo aplicada sobre o Atlas.
+   Só a moldura muda (topo, hero, botões, destaques, fontes). As escalas dos gráficos
+   e mapas continuam as originais, porque as cores ali carregam significado. */
+
+/* As folhas antigas pedem Manrope e DM Sans pelo nome; apontamos esses nomes para a Archivo local */
+@font-face { font-family:"Manrope"; font-weight:400 600; font-display:swap; src:url("../../assets/fonts/archivo-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family:"Manrope"; font-weight:700 900; font-display:swap; src:url("../../assets/fonts/archivo-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family:"DM Sans"; font-weight:400 500; font-display:swap; src:url("../../assets/fonts/archivo-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family:"DM Sans"; font-weight:600 900; font-display:swap; src:url("../../assets/fonts/archivo-latin-700-normal.woff2") format("woff2"); }
+
+/* A Archivo é mais larga que a Manrope: o espaçamento negativo original colava as palavras */
+h1,h2,h3,.kpi-value,.metric-headline strong,.state-stat strong,.history-intro strong,.history-kpi>strong { letter-spacing:-.025em !important; }
+
+:root { --ink:#141414; --muted:#5B5750; --bg:#F4F1EA; --navy:#141414; --teal:#6A4CF0; --mint:#E4DDFB; }
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,[tabindex]:focus-visible { outline-color:#6A4CF0; }
+
+/* Topo */
+.site-header { background:#F4F1EAF0; border-bottom:2px solid #141414; }
+.brand-icon { background:#6A4CF0; color:#F4F1EA; }
+.brand small { color:#5B5750; }
+.header-nav { background:#E6E1D6; border-color:#D6D0C4; }
+.header-nav a:hover { color:#6A4CF0; background:#EFEAFD; }
+.header-nav a.is-active { color:#6A4CF0; border-color:#141414; box-shadow:3px 3px 0 #141414; }
+.header-action { color:#6A4CF0; }
+.atlas-tab-context { background:#F4F1EA; border-bottom-color:#E2DDD2; color:#3A3833; }
+.atlas-tab-pill { background:#6A4CF0; color:#F4F1EA; font-family:"JetBrains Mono",ui-monospace,monospace; font-weight:700; }
+#atlas-source,#atlas-year { color:#141414; border-color:#141414; }
+#atlas-source:focus,#atlas-year:focus { outline-color:#6A4CF0; }
+
+/* Hero */
+.hero { background:#141414; }
+.hero:before { background:radial-gradient(ellipse at 78% 45%,rgba(106,76,240,.30),transparent 50%),linear-gradient(130deg,#141414 30%,#1E1A2E); }
+.hero h1 em { color:#9A83FF; }
+.eyebrow { color:#9A83FF; font-family:"JetBrains Mono",ui-monospace,monospace; }
+.eyebrow-dot { background:#9A83FF; box-shadow:0 0 0 5px rgba(154,131,255,.15); }
+.hero p { color:#D8D3C8; }
+.btn-accent { background:#9A83FF; color:#141414; }
+.btn-accent:hover { background:#B3A1FF; }
+.btn-quiet { border-color:#5B5750; color:#F4F1EA; }
+.hero-source { color:#A8A296; }
+.hero-visual-caption { border-left-color:#9A83FF; }
+.hero-orb { border-color:rgba(154,131,255,.18); box-shadow:0 0 0 45px rgba(154,131,255,.04),0 0 0 93px rgba(154,131,255,.025); }
+.hero .dan-selo { margin-top:22px; }
+
+/* Destaques das seções */
+.section-kicker,.panel-eyebrow { color:#6A4CF0; font-family:"JetBrains Mono",ui-monospace,monospace; }
+.kpi:before { background:#6A4CF0; }
+.kpi-icon { background:#EFEAFD; color:#6A4CF0; }
+.insight-band { background:#EFEAFD; color:#141414; }
+.insight-icon { background:#E4DDFB; }
+.insight-band p { color:#5B5750; }
+.explore-bg { border-color:#E2DDD2; }
+.btn-outline { border-color:#141414; color:#141414; }
+
+/* Painéis escuros */
+.read-panel { background:#141414; border-color:#141414; }
+.read-panel .panel-eyebrow,.read-number { color:#9A83FF; }
+.read-panel>p,.read-item p { color:#A8A296; }
+.rule { background:#3A3833; }
+.read-panel .callout { background:#221B3D; color:#D8D3C8; }
+.method-bg { background:#141414; }
+.method-bg .section-kicker,.method-card>span { color:#9A83FF; }
+.method-card { background:#1E1E1E; border-color:#3A3833; }
+
+/* Seletor de fonte */
+.source-select-panel { border-color:#141414; background:linear-gradient(125deg,#fff,#F7F4EE); }
+.source-select-field select { color:#141414; border-color:#141414; }
+.source-method-inline { border-left-color:#9A83FF; background:#F1EDFD; color:#3A3833; }
+.source-method-inline strong { color:#4A33C9; }
+
+/* Rodapé */
+.footer { background:#141414; color:#A8A296; border-top-color:#3A3833; }
+.footer a { color:#9A83FF; }
+.footer .dan-autor { margin:0; padding:28px 0 8px; border-radius:0; }
+.footer .dan-autor-links a { color:#F4F1EA; }
+.footer .dan-autor-links a.ig { color:#141414; }

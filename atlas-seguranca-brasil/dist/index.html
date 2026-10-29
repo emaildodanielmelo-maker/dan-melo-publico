@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./history.css" />
   <link rel="stylesheet" href="./tabs.css" />
   <link rel="stylesheet" href="./sim.css" />
+  <link rel="stylesheet" href="../../assets/marca-dan.css" />
+  <link rel="stylesheet" href="./marca.css" />
   <script defer src="./denominators.js"></script>
   <script defer src="./app.js"></script>
   <script defer src="./corrections.js"></script>
@@ -48,6 +50,7 @@
           <p>Explore onde a violência e os crimes se concentram, o que mudou em um ano e como o cenário varia entre estados e tipos de ocorrência.</p>
           <div class="hero-actions"><a class="btn btn-accent" href="#explorador">Explorar mapa interativo <span>→</span></a><a class="btn btn-quiet" href="#metodologia">Entenda os dados</a></div>
           <div class="hero-source" id="hero-source">Base: 20º Anuário Brasileiro de Segurança Pública · 27 UFs · 31 indicadores</div>
+          <a class="dan-selo" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener" aria-label="Instagram de Dan Melo (@danielmelo_eu), criador do Atlas"><img src="../../assets/dan.webp" alt="" width="30" height="30" /><span><small>criado por</small><b>Dan Melo</b></span></a>
         </div>
         <div class="hero-visual" aria-hidden="true"><div class="hero-orb"></div><svg viewBox="0 0 380 420" id="hero-outline"></svg><div class="hero-visual-caption"><span>BRASIL</span><strong>2025</strong></div></div>
       </div>
@@ -191,7 +194,18 @@
     </div></section>
     <section id="metodologia" class="method-bg"><div class="container section"><div class="section-heading"><div><span class="section-kicker">07 / FONTES E MÉTODO</span><h2>O que estes dados medem — e o que não medem.</h2></div></div><div class="method-grid"><div class="method-card"><span>01</span><h3>Fontes independentes</h3><p>Panorama, mapa, ranking, regiões, histórico e comparação de UFs usam exclusivamente a fonte selecionada: FBSP (31 indicadores, até 2025) ou SINESP-VDE (30 indicadores, 2015–2026). As duas bases nunca são somadas.</p><a href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados" target="_blank" rel="noreferrer">Dados oficiais SINESP ↗</a></div><div class="method-card"><span>02</span><h3>Populações de referência</h3><p>Homicídios e crimes contra pessoas: taxa por 100 mil habitantes. Feminicídios e tentativas: por 100 mil mulheres. Roubos/furtos de veículos: por 100 mil veículos da frota. FBSP conserva suas taxas publicadas; SINESP utiliza IBGE e SENATRAN.</p><a href="https://www.gov.br/mj/pt-br/acesso-a-informacao/acoes-e-programas/pnsp-2021-2030/indicadores" target="_blank" rel="noreferrer">Fórmulas do Plano Nacional ↗</a></div><div class="method-card"><span>03</span><h3>Atividade não é criminalidade</h3><p>Armas/drogas apreendidas, mandados cumpridos, pessoas localizadas, atendimentos, resgates e vistorias são volumes de atuação ou registro. Alta não significa automaticamente piora da segurança; queda também não garante melhora. Rankings nesses casos mostram apenas quantidades.</p><a href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica" target="_blank" rel="noreferrer">Definições do MJSP ↗</a></div><div class="method-card"><span>04</span><h3>2026 parcial e YTD</h3><p>O SINESP dispõe de janeiro a setembro de 2026. Na visão anual, 2026 é exibido como parcial; sua variação compara janeiro–setembro contra janeiro–setembro de 2025. O histórico permite alternar entre anos fechados e YTD, sempre na mesma fonte.</p><a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran" target="_blank" rel="noreferrer">Frota oficial RENAVAM ↗</a></div><div class="method-card"><span>05</span><h3>Limites ainda existentes</h3><p>Taxas por frota históricas do SINESP só estão integradas para 2024–2026; falta frota de 2015–2023 nesta edição. Não temos efetivo de segurança por UF/ano para vitimização de agentes; nem viagens de transporte, estabelecimentos ou exposição padronizada para roubos de carga/bancos. Mostramos somente totais nesses casos.</p></div><div class="method-card"><span>06</span><h3>O que não devemos concluir</h3><p>Diferenças entre estados podem refletir cobertura, subnotificação, atuação policial, definições e estruturas demográficas. Uma taxa por habitantes não corrige tudo; não criamos um índice único de “segurança” somando categorias heterogêneas. A fonte selecionada permanece visível em todas as comparações.</p></div></div><div class="method-footer"><p>Mapa: limites geográficos simplificados das UFs a partir do conjunto público <a href="https://github.com/codeforgermany/click_that_hood/blob/main/public/data/brazil-states.geojson" target="_blank" rel="noreferrer">click_that_hood / Brazil states</a>.</p><p>Atlas independente desenvolvido com dados públicos. Não é publicação oficial do FBSP nem do Governo Federal. A base de armas apreendidas não informa origem, roubo/furto de armas, nem rastreabilidade; tais análises exigem bases específicas como o SINARM.</p></div></div></section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><span>ATLAS <strong>SEGURANÇA PÚBLICA</strong></span><span>Brasil · Referência 2025 · Acompanhamento parcial 2026</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+  <footer class="footer">
+    <div class="container">
+      <aside class="dan-autor" aria-label="Quem criou">
+        <img src="../../assets/dan.webp" alt="Foto de Dan Melo" width="72" height="72" />
+        <div class="dan-autor-texto"><span class="dan-autor-tag">Criado por</span><strong>Dan Melo</strong><p class="dan-autor-bio">Tecnologia aplicada, análise e curiosidade.</p></div>
+        <div class="dan-autor-links">
+          <a class="ig" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg>@danielmelo_eu</a>
+          <a href="../../">Outras soluções →</a>
+        </div>
+      </aside>
+    </div>
+    <div class="container footer-inner"><span>ATLAS <strong>SEGURANÇA PÚBLICA</strong></span><span>Brasil · Referência 2025 · Acompanhamento parcial 2026</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

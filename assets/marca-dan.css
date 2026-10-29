@@ -1,0 +1,30 @@
+/* Identidade do Dan Melo, compartilhada pelas soluções do repositório.
+   Os caminhos das fontes são relativos a este arquivo, então funcionam de qualquer pasta. */
+@font-face { font-family:"Archivo"; font-weight:500; font-display:swap; src:url("./fonts/archivo-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family:"Archivo"; font-weight:700; font-display:swap; src:url("./fonts/archivo-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family:"Archivo"; font-weight:900; font-display:swap; src:url("./fonts/archivo-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family:"Instrument Serif"; font-style:italic; font-weight:400; font-display:swap; src:url("./fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family:"JetBrains Mono"; font-weight:500; font-display:swap; src:url("./fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family:"JetBrains Mono"; font-weight:700; font-display:swap; src:url("./fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); }
+
+/* Bloco "Criado por Dan Melo" */
+.dan-autor { display:flex; align-items:center; gap:18px; flex-wrap:wrap; background:#141414; color:#D8D3C8; border-radius:22px; padding:22px 24px; margin:28px 0; font-family:"Archivo",system-ui,sans-serif; font-weight:500; text-align:left; }
+.dan-autor img { width:72px; height:72px; border-radius:50%; border:3px solid #9A83FF; background:#fff; flex:none; display:block; }
+.dan-autor-texto { flex:1 1 220px; min-width:0; }
+.dan-autor-tag { display:inline-block; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:#F4F1EA; background:#6A4CF0; padding:3px 8px; border-radius:4px; }
+.dan-autor strong { display:block; font-weight:900; font-size:1.45rem; letter-spacing:-.03em; line-height:1.1; color:#F4F1EA; margin:6px 0 2px; }
+.dan-autor-bio { font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-size:1.1rem; color:#A8A296; margin:0; }
+.dan-autor-links { display:flex; flex-wrap:wrap; gap:10px; }
+.dan-autor-links a { display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; font-size:.9rem; padding:10px 16px; border-radius:999px; border:2px solid #F4F1EA; color:#F4F1EA; }
+.dan-autor-links a.ig { background:#9A83FF; border-color:#9A83FF; color:#141414; }
+.dan-autor-links a:hover { transform:translateY(-1px); }
+.dan-autor-links svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.8; }
+.dan-autor-links svg .dot { fill:currentColor; stroke:none; }
+.dan-autor a:focus-visible { outline:3px solid #9A83FF; outline-offset:3px; }
+
+/* Selo pequeno de autoria para o topo das páginas */
+.dan-selo { display:inline-flex; align-items:center; gap:9px; text-decoration:none; color:#141414; background:#fff; border:2px solid #141414; border-radius:999px; padding:4px 14px 4px 4px; line-height:1.1; font-family:"Archivo",system-ui,sans-serif; white-space:nowrap; }
+.dan-selo img { width:30px; height:30px; border-radius:50%; display:block; background:#fff; }
+.dan-selo small { display:block; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:.6rem; letter-spacing:.06em; text-transform:uppercase; color:#5B5750; }
+.dan-selo b { font-weight:900; font-size:.9rem; letter-spacing:-.01em; }
+.dan-selo:hover { border-color:#6A4CF0; }
