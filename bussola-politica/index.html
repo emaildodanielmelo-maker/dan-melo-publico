@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f6f2">
+<title>Bússola Política | por @danielmelo_eu</title>
+<meta name="description" content="Descubra onde suas ideias sobre economia, costumes e instituições se encontram. Teste isonômico, transparente, sem IA e sem coleta de dados. Criado por @danielmelo_eu.">
+<meta name="author" content="@danielmelo_eu">
+<!-- Pré-visualização em WhatsApp/redes: exige endereço completo na og:image -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica/">
+<meta property="og:title" content="Bússola Política — onde suas ideias se encontram?">
+<meta property="og:description" content="24 perguntas, 3 eixos, 19 correntes políticas explicadas. Isonômico, transparente e sem coleta de dados. Por @danielmelo_eu.">
+<meta property="og:image" content="https://emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica/og-image.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#f5f6f2;--paper:#fff;--ink:#152a37;--muted:#586876;--line:#d9e2e0;--teal:#126c67;--teal2:#dcefeb;--sand:#f9ebde;--shadow:0 14px 42px #122f3610;
+/* Régua simétrica: as duas pontas têm a mesma cor */
+--pole:#3d5966;--pole-mid:#8399a3;--neutral:#cfd8db}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+button,input{font:inherit}button{cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #358c85;outline-offset:3px}
+a{color:var(--teal)}.tealtxt{color:var(--teal)}
+.wrap{width:min(1100px,calc(100% - 32px));margin:auto}
+.hide{display:none!important}.center{text-align:center}.small{font-size:.9rem}
+/* Topo */
+.topbar{border-bottom:1px solid var(--line);background:#ffffffe6;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}
+.topinner{min-height:64px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-size:1.1rem;font-weight:850;letter-spacing:-.03em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand-mark{width:34px;height:34px;background:var(--ink);color:#fff;border-radius:11px;display:grid;place-items:center;flex:0 0 34px}
+.topnav{display:flex;gap:18px;margin-left:auto}.navlink{color:var(--muted);font-size:.88rem;font-weight:700;text-decoration:none}.navlink:hover{color:var(--teal)}
+.ig-badge{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px 6px 8px;line-height:1.15}
+.ig-badge:hover{border-color:var(--teal)}
+.ig-ico{width:24px;height:24px;flex:0 0 24px;fill:none;stroke:var(--teal);stroke-width:2}.ig-ico .dot{fill:var(--teal);stroke:none}
+.ig-text{display:flex;flex-direction:column}.ig-text small{font-size:.66rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}.ig-text b{font-size:.9rem}
+/* Hero */
+.chip{display:inline-block;background:#e5efed;color:#17544d;border-radius:99px;font-size:.75rem;font-weight:750;padding:6px 11px}
+.hero{padding:64px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+.eyebrow{color:var(--teal);font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.7rem);line-height:1.06;letter-spacing:-.06em;margin:14px 0 18px}.hero h1 span{color:var(--teal)}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:600px;margin:0 0 24px}
+.actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.btn{border:1px solid transparent;background:var(--teal);color:#fff;font-weight:800;border-radius:13px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;min-height:46px;transition:background .15s,transform .15s}
+.btn:hover{background:#07554f;transform:translateY(-1px)}.btn.secondary{border-color:#cbd9d6;background:#fff;color:var(--ink)}.btn.secondary:hover{background:#eaf4f1}
+.btn.ghost{background:transparent;color:var(--ink);border-color:#cbd9d6}.btn.ghost:hover{background:#eaf4f1}.btn:disabled{cursor:not-allowed;opacity:.45;transform:none}
+.hero-visual{background:linear-gradient(140deg,#143847,#103c3c);border-radius:28px;min-height:360px;position:relative;overflow:hidden;box-shadow:var(--shadow);padding:30px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.hero-visual:before{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff24;border-radius:50%;right:-90px;top:-100px;box-shadow:0 0 0 54px #ffffff06,0 0 0 108px #ffffff07}
+.visual-kicker{position:relative;color:#abddd2;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem;font-weight:850}
+.hero-axes{position:relative;display:grid;gap:18px}.hx span{font-weight:800;font-size:.95rem}
+.hx-bar{height:10px;border-radius:6px;background:linear-gradient(90deg,#9fb7c0,#2c4a56 50%,#9fb7c0);position:relative;margin:8px 0 5px}
+.hx-bar:after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;border-left:1px dashed #ffffff80}
+.hx-bar i{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 0 4px #ffffff30}
+.hx-ends{display:flex;justify-content:space-between;font-size:.74rem;color:#cfe2e4}.hx-ends em{font-style:normal}
+.visual-note{font-size:.82rem;color:#d0e6e4;position:relative}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 22px}
+.feature{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:22px}.feature .num{color:var(--teal);font-weight:850;font-size:.78rem;letter-spacing:.04em}
+.feature h3{margin:10px 0 7px;font-size:1rem}.feature p{margin:0;font-size:.87rem;color:var(--muted)}
+.lupa-inline{font-size:.9em}
+.isonomy{margin-bottom:60px}.iso-list{margin:10px 0 0;padding-left:20px;color:var(--muted)}.iso-list li{margin:8px 0}.iso-list b{color:var(--ink)}
+.section-title{font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.045em;line-height:1.16;margin:8px 0 12px}
+.sub{color:var(--muted)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 4px 20px #102c3407}
+/* Quiz */
+.quiz-wrap{max-width:880px;margin:30px auto 70px}
+.step-top{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+.axis-chip{display:inline-flex;align-items:center;gap:6px;background:var(--teal2);color:#17544d;font-weight:800;font-size:.78rem;padding:6px 12px;border-radius:99px;letter-spacing:.03em}
+.axis-chip .lupa{font-size:.8rem;padding:0 2px}
+.progress{height:8px;border-radius:99px;background:#e4ebe9;overflow:hidden;margin:14px 0 20px}.progress b{display:block;background:linear-gradient(90deg,#75b0a7,#126c67);height:100%;width:0;transition:width .25s}
+.q-prompt{font-size:1.05rem;margin:0 0 14px;color:var(--muted);font-weight:700}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pos{border:1px solid var(--line);border-radius:16px;padding:16px 16px 16px 54px;position:relative;background:#fbfcfb;font-size:1rem;line-height:1.45;transition:border-color .15s,background .15s}
+.pos .letter{position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-weight:900;background:#e7eeec;color:var(--ink);font-size:.9rem}
+.pos.lean{border-color:var(--teal);background:#f0f8f6}.pos.lean .letter{background:var(--teal);color:#fff}
+.context{background:#f0f6f4;padding:11px 14px;border-left:3px solid #81b6ae;border-radius:5px 10px 10px 5px;color:#365350;font-size:.87rem;margin:14px 0 6px}
+.context strong{color:#144f4a}.context .terms{display:block;margin-top:6px}
+.termlink{background:none;border:0;padding:0 8px 0 0;color:var(--teal);font-weight:750;font-size:.84rem;text-decoration:underline;text-underline-offset:2px}
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:14px}
+.scale button{font-size:.8rem;line-height:1.25;border:1px solid #d4dfdd;border-radius:12px;min-height:62px;background:#fff;color:#334552;padding:9px 6px;font-weight:650}
+.scale button:hover{border-color:var(--teal)}.scale button[aria-pressed="true"]{background:var(--teal2);border:2px solid var(--teal);color:#164c49;font-weight:850}
+.scale button .tag{display:block;font-weight:900;font-size:.95rem;margin-bottom:2px}
+.dunno-row{display:flex;justify-content:center;margin-top:10px}
+.dunno{background:none;border:1px dashed #b9c8c5;border-radius:10px;padding:8px 14px;color:var(--muted);font-size:.84rem;font-weight:650}
+.dunno[aria-pressed="true"]{border-style:solid;border-color:var(--teal);color:#164c49;background:var(--teal2);font-weight:800}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px}
+.warn{background:var(--sand);color:#674824;padding:12px 14px;border-radius:10px;font-size:.88rem;margin-top:14px}
+.dilemma{padding:18px 0;border-bottom:1px solid var(--line)}.dilemma:last-child{border-bottom:0}.dilemma h3{margin:4px 0 6px}.dilemma p{margin:4px 0 12px;color:var(--muted);font-size:.92rem}
+.dilemma .opt{display:block;text-align:left;width:100%;padding:11px 13px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;margin:7px 0}
+.dilemma .opt:hover{border-color:var(--teal)}.dilemma .opt[aria-pressed="true"]{border:2px solid var(--teal);background:var(--teal2);font-weight:750}
+.secondary-caption{font-size:.8rem;color:var(--muted)}
+/* Resultado */
+.result-head{padding:38px 0 18px}.result-head h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;letter-spacing:-.055em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.result-head p{max-width:830px;color:var(--muted);font-size:1.03rem}.chips{display:flex;gap:8px;flex-wrap:wrap}
+.lupa{background:#eef5f3;border:1px solid #cfe0dc;border-radius:99px;font-size:.95rem;line-height:1;padding:6px 8px;vertical-align:middle}.lupa:hover{background:var(--teal2);border-color:var(--teal)}
+.result-head .lupa{font-size:1.1rem;padding:8px 10px}
+.section-title .lupa{font-size:.8rem;padding:5px 7px}
+.results-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:17px;margin:18px 0}
+.section-block{margin:18px 0}
+.compass-wrap svg{width:100%;height:auto;display:block}
+.compass-wrap .ideo{cursor:pointer}.compass-wrap .ideo:hover circle,.compass-wrap .ideo:hover rect{stroke:var(--teal);stroke-width:3}
+.axis{margin:16px 0 22px}.axis-top{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;font-weight:800;gap:12px}
+.axis-top .lupa{font-size:.72rem;padding:4px 6px;margin-left:6px}
+.axis-bar{height:16px;background:linear-gradient(90deg,var(--pole),var(--pole-mid) 25%,var(--neutral) 50%,var(--pole-mid) 75%,var(--pole));position:relative;border-radius:7px;margin:11px 0 6px}
+.axis-bar:after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;border-left:1px dashed #25414f80}
+.axis-pin{position:absolute;top:50%;width:20px;height:20px;transform:translate(-50%,-50%);background:#fff;border:4px solid var(--ink);border-radius:50%;box-shadow:0 1px 4px #0003;z-index:1}
+.axis-ends{display:flex;justify-content:space-between;gap:12px;font-size:.77rem;color:var(--muted)}
+.pattern{font-size:.8rem;color:#43625d;background:#eef5f2;border-radius:10px;padding:8px 10px;margin-top:8px}
+.overall{margin:16px 0 4px}
+.overall-track{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;position:relative;margin:25px 2px 6px}
+.overall-track span{height:24px;border-radius:7px;background:var(--pole)}.overall-track span:nth-child(2),.overall-track span:nth-child(4){background:var(--pole-mid)}.overall-track span:nth-child(3){background:var(--neutral)}
+.overall-pointer{position:absolute;top:-12px;transform:translateX(-50%);height:46px;width:3px;background:var(--ink);box-shadow:0 0 0 2px #fff;border-radius:2px;z-index:1}
+.overall-pointer:before{content:"";position:absolute;top:-4px;left:-6px;width:15px;height:15px;background:var(--ink);border:2px solid #fff;border-radius:50%}
+.overall-labels{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;color:var(--muted);font-size:.72rem;text-align:center}
+.overall-callout{font-size:1.5rem;letter-spacing:-.03em;font-weight:850;margin:18px 0 4px}
+.weight-control{display:grid;grid-template-columns:1fr auto;gap:5px 18px;align-items:center;margin:15px 0 5px;padding:16px;background:#eff5f3;border-radius:13px}
+.weight-control input{width:100%;accent-color:var(--teal);grid-column:1/-1}.weight-control label{font-size:.88rem;font-weight:750}.weight-control output{font-weight:850}
+.comparison{font-size:.84rem;color:var(--muted);line-height:1.5;margin-top:8px}
+.math{font-family:ui-monospace,Consolas,monospace;background:#eef1f1;padding:11px;border-radius:9px;font-size:.82rem;overflow-x:auto}
+.drivers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.drv{border:1px solid var(--line);border-radius:14px;padding:14px}.drv h3{margin:0 0 8px;font-size:1rem;display:flex;justify-content:space-between}
+.drv h4{margin:10px 0 4px;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.drv ul{margin:0;padding-left:18px;font-size:.86rem}.drv li{margin:4px 0}.drv .str{font-size:.7rem;font-weight:800;color:#17665d;background:#e4f1ed;border-radius:6px;padding:1px 6px;margin-left:4px;white-space:nowrap}
+.drv .none{color:var(--muted);font-size:.84rem;font-style:italic}
+.rank{padding:14px 0;border-bottom:1px solid var(--line)}.rank:last-child{border-bottom:none}
+.rank-head{display:flex;align-items:center;gap:10px}.rank-order{width:30px;color:var(--muted);font-size:.82rem}.rank-title{flex:1;font-weight:800}
+.rank-title .shape{color:var(--muted);font-size:.8rem;margin-left:4px}
+.rank-score{font-variant-numeric:tabular-nums;font-weight:850}
+.rank-track{height:8px;background:#e9efee;border-radius:7px;margin:8px 0 6px 40px;overflow:hidden}.rank-track b{display:block;height:100%;background:linear-gradient(90deg,#81b7ae,#1d817b);border-radius:7px}
+.rank p{font-size:.87rem;color:var(--muted);margin:6px 0 0 40px}
+.rank .why{margin:4px 0 0 40px;font-size:.8rem;color:#425762}
+.rank.extra{display:none}.show-all .rank.extra{display:block}
+.highlight{padding:14px 16px;border-radius:13px;background:#f1f6f4;margin:10px 0;font-size:.93rem}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.caveat{border-left:3px solid #a88c56;background:#fff8eb;padding:12px 15px;border-radius:4px 9px 9px 4px;font-size:.85rem;color:#6f532d}
+.sharebar{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0 10px}
+.linkbtn{font-size:.85rem;font-weight:800;background:none;border:0;color:var(--teal);padding:6px 0;text-decoration:underline}
+.feedback{font-size:.86rem;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:12px 14px}
+.muted-note{font-size:.8rem;color:var(--muted);margin:9px 0}
+details.method{border:1px solid var(--line);border-radius:14px;margin:11px 0;background:#fff;padding:15px}details.method summary{cursor:pointer;font-weight:850}
+.method p,.method li{color:var(--muted);font-size:.88rem}
+/* Biblioteca */
+.lib-wrap{margin:40px 0 20px}
+.lib-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.lib-card{text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--ink);display:flex;flex-direction:column;gap:6px;min-height:120px}
+.lib-card:hover{border-color:var(--teal);box-shadow:var(--shadow)}.lib-card b{font-size:.95rem}.lib-card span{font-size:.8rem;color:var(--muted)}
+.lib-card .coords{font-size:.72rem;color:#6c7f88;margin-top:auto}
+.lib-sub{margin:28px 0 10px;font-size:1.1rem}
+.concept-grid{display:flex;flex-wrap:wrap;gap:8px}.concept-grid button{background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-size:.85rem;font-weight:700;color:var(--ink)}.concept-grid button:hover{border-color:var(--teal);color:var(--teal)}
+/* Rodapé */
+.footer{margin:60px auto 30px;padding-top:20px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+.foot-brand{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.foot-ig{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:.88rem}.foot-ig .ig-ico{width:20px;height:20px;flex-basis:20px}
+/* Modal */
+.modal{border:0;border-radius:22px;padding:0;width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 40px);box-shadow:0 30px 80px #0005;color:var(--ink)}
+.modal::backdrop{background:#0d1b24a8;backdrop-filter:blur(3px)}
+.modal-inner{padding:26px 26px 22px;position:relative;overflow:auto;max-height:calc(100dvh - 40px)}
+.modal-close{position:sticky;float:right;top:0;margin:-8px -8px 0 8px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.4rem;line-height:1;z-index:2}
+.info-kicker{color:var(--teal);font-weight:850;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.info h2{margin:6px 0 6px;font-size:1.6rem;letter-spacing:-.03em;line-height:1.15}
+.info .lead{font-size:1rem;color:#33505b;margin:0 0 12px}
+.info h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin:18px 0 6px}
+.info p,.info li{font-size:.92rem;color:#3c525d}.info ul{padding-left:20px;margin:4px 0}
+.info .proscons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.info .box{background:#f3f7f6;border-radius:12px;padding:10px 14px}.info .box h3{margin-top:4px}
+.info .coord{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.info .coord span{font-size:.75rem;background:#eef1f1;border-radius:8px;padding:4px 8px;font-weight:700}
+.info .confusion{border-left:3px solid #a88c56;background:#fff8eb;padding:10px 13px;border-radius:4px 9px 9px 4px;font-size:.88rem;color:#6f532d}
+.info .note{font-size:.76rem;color:var(--muted);margin-top:16px}
+.card-inner{text-align:center}.card-inner img{width:min(100%,340px);border-radius:16px;box-shadow:0 10px 30px #0003;margin:8px auto 16px;display:block}.card-inner .actions{justify-content:center}
+@media(max-width:860px){.lib-grid{grid-template-columns:repeat(2,1fr)}.drivers{grid-template-columns:1fr}}
+@media(max-width:790px){.hero,.results-grid,.twocol{grid-template-columns:1fr}.hero{padding-top:30px;gap:22px}.hero-visual{min-height:250px}
+ .features{grid-template-columns:1fr}.feature{padding:18px}.panel{padding:18px}.topnav{display:none}.ig-badge{margin-left:auto;padding:5px 12px 5px 7px}.ig-text small{display:none}
+ .pair{grid-template-columns:1fr}.pos{font-size:.95rem}.scale{grid-template-columns:1fr;gap:6px}.scale button{min-height:44px;text-align:left;padding:8px 12px;display:flex;gap:10px;align-items:center}.scale button .tag{display:inline-grid;place-items:center;width:30px;margin:0}
+ .overall-labels{font-size:.62rem}.info .proscons{grid-template-columns:1fr}.modal-inner{padding:20px 18px}}
+@media(max-width:420px){.brand>span:last-child{font-size:1rem}.ig-text b{font-size:.82rem}.lib-grid{grid-template-columns:1fr}}
+@media print{body{background:#fff}header,.quiz-wrap,.hero,.features,.isonomy,.sharebar,.weight-control,.footer,.feedback,#library,.lupa,#toggle-rank,.modal{display:none!important}.panel{box-shadow:none;border:1px solid #bbb;break-inside:avoid}.results-grid{grid-template-columns:1fr 1fr}.rank{break-inside:avoid}.rank.extra{display:block}#results{display:block!important}.result-head{padding-top:0}}
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topinner wrap">
+ <a class="brand" href="#" id="home-link" aria-label="Bússola Política — início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor" stroke="none"/></svg></span><span>Bússola <span class="tealtxt">Política</span></span></a>
+ <nav class="topnav" aria-label="Navegação"><a href="#method" class="navlink">Como funciona</a><a href="#library" class="navlink">Glossário</a></nav>
+ <a class="ig-badge" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener" aria-label="Instagram de @danielmelo_eu, criador da Bússola Política"><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg><span class="ig-text"><small>criado por</small><b>@danielmelo_eu</b></span></a>
+</div></header>
+
+<main class="wrap">
+<!-- ===================== INÍCIO ===================== -->
+<section id="welcome">
+ <div class="hero">
+  <div>
+   <span class="eyebrow">Um convite a pensar</span>
+   <h1>Suas ideias cabem em <span>mais de um lado.</span></h1>
+   <p>Em vez de te encaixar em “esquerda” ou “direita”, esta bússola mede três coisas diferentes: <b>economia</b>, <b>costumes</b> e <b>instituições</b>. No fim, você vê de quais tradições políticas está mais perto e pode entender a história de cada uma.</p>
+   <div class="actions"><button class="btn" id="start">Começar →</button><button class="btn secondary" id="see-method">Como funciona</button></div>
+   <p class="secondary-caption" style="margin-top:14px">24 perguntas · cerca de 6 a 8 minutos · 3 dilemas opcionais · suas respostas não saem do seu aparelho</p>
+   <p class="secondary-caption" id="resume-hint" hidden><button class="linkbtn" id="resume">Continuar de onde parei</button></p>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+   <div class="visual-kicker">Três eixos, não um rótulo</div>
+   <div class="hero-axes">
+    <div class="hx"><span>Economia</span><div class="hx-bar"><i style="left:38%"></i></div><div class="hx-ends"><em>Estado</em><em>Mercado</em></div></div>
+    <div class="hx"><span>Costumes</span><div class="hx-bar"><i style="left:61%"></i></div><div class="hx-ends"><em>Progressista</em><em>Conservador</em></div></div>
+    <div class="hx"><span>Instituições</span><div class="hx-bar"><i style="left:27%"></i></div><div class="hx-ends"><em>Garantias</em><em>Autoridade</em></div></div>
+   </div>
+   <div class="visual-note">Marcadores ilustrativos. O seu é calculado a partir das suas respostas, e a conta é pública.</div>
+  </div>
+ </div>
+ <div class="features">
+  <div class="feature"><span class="num">01 — DUAS POSIÇÕES</span><h3>Você escolhe entre A e B</h3><p>Cada pergunta apresenta duas posições reais, cada uma escrita na sua melhor versão. Você indica de qual está mais perto.</p></div>
+  <div class="feature"><span class="num">02 — TRANSPARÊNCIA</span><h3>Resultado calculado, não adivinhado</h3><p>Fórmulas e pesos são públicos. Você pode mudar os pesos e ver quando o resultado muda.</p></div>
+  <div class="feature"><span class="num">03 — APRENDIZADO</span><h3>A lupa explica tudo</h3><p>Toque em <span class="lupa-inline">🔍</span> para ver a origem histórica, as ideias, os defensores e as críticas de cada corrente e conceito.</p></div>
+ </div>
+ <section class="panel isonomy" aria-labelledby="iso-title">
+  <span class="eyebrow">Compromisso de isonomia</span>
+  <h2 class="section-title" id="iso-title">Ninguém está tentando te guiar.</h2>
+  <ul class="iso-list">
+   <li><b>Os dois lados com a mesma força.</b> Cada posição foi escrita com o melhor argumento de quem a defende e, quando há um custo, ele aparece dos dois lados.</li>
+   <li><b>Ordem alternada.</b> A posição “de mercado”, “conservadora” ou “de autoridade” aparece como A em metade das perguntas e como B na outra metade.</li>
+   <li><b>Cores neutras.</b> As duas pontas da régua têm a mesma cor: nenhum lado é “quente” ou “frio”.</li>
+   <li><b>Mapa completo.</b> São 19 correntes de referência, cobrindo todas as regiões do mapa, com versões democráticas e autoritárias tanto à esquerda quanto à direita.</li>
+   <li><b>Explicações geradas pelas suas respostas.</b> Os mesmos textos e regras valem para qualquer lado.</li>
+  </ul>
+ </section>
+</section>
+
+<!-- ===================== QUESTIONÁRIO ===================== -->
+<section id="quiz" class="quiz-wrap hide" aria-label="Questionário">
+ <div class="panel">
+  <div class="step-top"><span class="axis-chip" id="q-axis"></span><span class="secondary-caption" id="q-count"></span></div>
+  <div class="progress" aria-hidden="true"><b id="progress-fill"></b></div>
+  <h2 class="q-prompt" id="q-prompt">Qual destas posições está mais perto do que você pensa?</h2>
+  <div class="pair" id="q-pair"></div>
+  <div class="context" id="q-context"></div>
+  <div class="scale" id="q-scale" role="group" aria-label="Sua resposta"></div>
+  <div class="dunno-row"><button class="dunno" id="q-dunno" type="button">Não sei / prefiro não opinar</button></div>
+  <div class="quiz-nav"><button class="btn ghost" id="q-prev" type="button">← Voltar</button><button class="btn" id="q-next" type="button">Próxima →</button></div>
+ </div>
+ <p class="secondary-caption center">Dica: não existe resposta certa. Se as duas posições fizerem sentido para você, use “No meio”. Se não tiver opinião formada, use “Não sei”: essa resposta não entra no cálculo.</p>
+</section>
+
+<!-- ===================== DILEMAS ===================== -->
+<section id="refinement" class="quiz-wrap hide" aria-label="Dilemas complementares">
+ <span class="eyebrow">Opcional · uma camada de profundidade</span>
+ <h2 class="section-title">Três situações concretas</h2>
+ <p class="sub">Seu resultado já pode ser calculado. Estes dilemas, um por eixo, ajudam a diferenciar posições parecidas. Em todos eles, as opções vão de um polo ao outro na mesma ordem e com a mesma distância.</p>
+ <div class="panel"><div id="dilemma-list"></div>
+  <div id="dilemma-warn" class="warn hide" role="status">Responda aos três dilemas ou escolha “Ver resultado sem os dilemas”.</div>
+  <div class="quiz-nav"><button class="btn secondary" id="skip-dilemmas">Ver resultado sem os dilemas</button><button class="btn" id="submit-dilemmas">Incluir dilemas e ver resultado →</button></div>
+ </div>
+</section>
+
+<!-- ===================== RESULTADO ===================== -->
+<section id="results" class="hide" aria-label="Resultado">
+ <div class="result-head">
+  <span class="eyebrow">Na régua geral, suas respostas ficam em</span>
+  <h1><span id="result-band"></span> <button class="lupa" data-info="c:esquerda-direita" aria-label="O que significam esquerda, centro e direita?">🔍</button></h1>
+  <p id="result-intro"></p>
+  <div class="chips"><span class="chip" id="refined-chip"></span><span class="chip" id="dunno-chip" hidden></span></div>
+ </div>
+
+ <div class="results-grid">
+  <section class="panel">
+   <span class="eyebrow">Sua bússola</span>
+   <h2 class="section-title">Economia × costumes <button class="lupa" data-info="c:eixo-costumes" aria-label="Sobre os eixos">🔍</button></h2>
+   <div id="compass" class="compass-wrap"></div>
+   <p class="muted-note">Pontos: correntes de referência. Círculos ●: correntes que priorizam garantias e limites ao poder. Losangos ◆: correntes que aceitam mais autoridade. Toque em uma corrente para abrir a ficha dela. A orientação do mapa (o que fica em cima ou à direita) é apenas uma convenção.</p>
+  </section>
+  <aside class="panel">
+   <span class="eyebrow">Três dimensões</span>
+   <h2 class="section-title">Seus eixos</h2>
+   <p class="sub small">De −100 a +100. Os números não são porcentagens nem notas de certo e errado.</p>
+   <div id="axes"></div>
+  </aside>
+ </div>
+
+ <section class="panel section-block">
+  <span class="eyebrow">A régua geral</span>
+  <h2 class="section-title">Onde você está no espectro esquerda–direita?</h2>
+  <p class="sub small">Uma projeção simplificada que combina economia e costumes. O eixo de instituições não entra aqui porque defender ou limitar autoridade não é exclusividade de nenhum lado.</p>
+  <div class="overall"><div class="overall-track"><span></span><span></span><span></span><span></span><span></span><i class="overall-pointer" id="overall-pointer"></i></div><div class="overall-labels"><span>Esquerda</span><span>Centro-esquerda</span><span>Centro</span><span>Centro-direita</span><span>Direita</span></div><div class="overall-callout" id="overall-name"></div><p class="muted-note" id="overall-description"></p></div>
+  <div class="weight-control"><label for="weight-economic">Peso da economia na régua</label><output id="weight-label">50%</output><input id="weight-economic" type="range" min="20" max="80" value="50" step="5" aria-describedby="weight-help"><div id="weight-help" class="secondary-caption">Padrão: 50% economia e 50% costumes, sem privilegiar nenhuma dimensão. Mova para ver se sua faixa muda.</div></div>
+  <p class="comparison" id="sensitivity"></p><div class="math" id="formula-overall"></div>
+ </section>
+
+ <section class="panel section-block">
+  <span class="eyebrow">Leitura das escolhas</span>
+  <h2 class="section-title">Por que o resultado ficou assim?</h2>
+  <p class="sub small">Em cada eixo, as respostas que puxaram para um lado e para o outro. As frases repetem as posições que você escolheu; não há interpretação.</p>
+  <div id="drivers" class="drivers"></div>
+ </section>
+
+ <section class="panel section-block">
+  <span class="eyebrow">Afinidades comparadas</span>
+  <h2 class="section-title">Correntes políticas mais próximas</h2>
+  <p class="sub small">Notas de 0 a 10 que medem a distância entre o seu perfil e perfis de referência editoriais. Não são probabilidades de “pertencer” a uma corrente. Toque em 🔍 para conhecer a história e as ideias de cada uma.</p>
+  <div id="ranking"></div>
+  <button class="linkbtn" id="toggle-rank" type="button">Ver todas as 19 correntes</button>
+ </section>
+
+ <div class="twocol section-block">
+  <section class="panel"><span class="eyebrow">Não cabe tudo em um eixo</span><h2 class="section-title">Suas combinações</h2><div id="nuances"></div></section>
+  <section class="panel"><span class="eyebrow">Pensamento crítico</span><h2 class="section-title">O que o teste não determina</h2><p class="sub">Seu voto, seu partido, seus valores completos ou uma identidade política definitiva. Duas pessoas podem escolher a mesma posição por motivos diferentes.</p><p class="sub">É normal que várias correntes apareçam próximas: elas compartilham partes do seu padrão de respostas.</p><div class="caveat">Questionário autoral e exploratório, sem validação científica por pesquisa amostral. Perguntas, pesos e perfis de referência são escolhas editoriais documentadas na seção “Como funciona”.</div></section>
+ </div>
+
+ <div class="sharebar"><button class="btn" id="export-story">📲 Gerar card para os Stories</button><button class="btn secondary" id="copy-report">Copiar relatório</button><button class="btn secondary" id="download-report">Baixar relatório (.txt)</button><button class="btn secondary" id="print-report">Imprimir / PDF</button><button class="btn ghost" id="review-answers">Rever respostas</button><button class="btn ghost" id="reset">Refazer teste</button></div>
+ <p class="secondary-caption" id="share-status" role="status"></p>
+ <p class="feedback">Percebeu algum viés, erro ou pergunta mal formulada? <a href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">Me conte no Instagram @danielmelo_eu</a>. A ferramenta é revisada com base nesses retornos.</p>
+</section>
+
+<!-- ===================== METODOLOGIA ===================== -->
+<section id="method" class="quiz-wrap">
+ <span class="eyebrow">Metodologia aberta</span>
+ <h2 class="section-title">A conta é pública.</h2>
+ <p class="sub">É um modelo editorial explicável: não usa IA, não consulta servidores e não interpreta texto livre.</p>
+ <details class="method"><summary>1. Como cada resposta vira um número?</summary><p>Cada pergunta tem duas posições, A e B, e cada uma aponta para um lado de um eixo. As respostas valem: muito mais perto de A (2), um pouco mais perto de A (1), no meio (0), um pouco mais perto de B (1 para o outro lado) e muito mais perto de B (2 para o outro lado). “Não sei” fica fora da conta.</p><div class="math">eixo = 50 × média(respostas orientadas)  →  de −100 a +100</div><p>Cada eixo tem 8 perguntas: 4 em que A aponta para um polo e 4 em que A aponta para o outro. Os dilemas opcionais entram com o mesmo peso de uma pergunta.</p></details>
+ <details class="method"><summary>2. Como é calculada a régua esquerda–direita?</summary><p>Por padrão, <strong>50% economia + 50% costumes</strong>, sem privilegiar nenhuma dimensão. Você pode mudar esse peso no resultado. As instituições ficam fora da régua.</p><div class="math">geral = peso × economia + (1 − peso) × costumes</div><p>Faixas: esquerda (abaixo de −55), centro-esquerda (−55 a −15), centro (−15 a +15), centro-direita (+15 a +55) e direita (acima de +55). Os limites são simétricos e são convenções, não fronteiras científicas.</p></details>
+ <details class="method"><summary>3. Como são calculadas as notas das correntes?</summary><p>Cada corrente tem coordenadas de referência nos três eixos, publicadas no código e no mapa. Calculamos a distância entre o seu perfil e cada referência.</p><div class="math">distância² = 0,4 × Δeconomia² + 0,4 × Δcostumes² + 0,2 × Δinstituições²<br>nota = 10 × exp(−0,5 × distância² / 45²)</div><p>Economia e costumes têm o mesmo peso. As 19 correntes foram escolhidas para cobrir todas as regiões do mapa, com referências democráticas e autoritárias dos dois lados.</p></details>
+ <details class="method"><summary>4. O que fizemos para garantir isonomia?</summary><ul class="iso-list small"><li>Formato de duas posições (A × B), que evita a tendência de concordar com qualquer frase.</li><li>Cada posição escrita com o melhor argumento de quem a defende, incluindo o custo quando ele existe.</li><li>Polos alternados entre A e B, em proporção exata de 4 para 4 por eixo.</li><li>No eixo de instituições, há posições de autoridade associadas tanto à esquerda (regular a mídia, remover conteúdos) quanto à direita (mais poder à polícia).</li><li>Exemplos com fatos verificáveis, apresentando o debate sem tomar partido.</li><li>Dilemas com quatro opções simétricas (−2, −1, +1, +2).</li><li>Explicações geradas pelas respostas, com as mesmas regras para todos os lados.</li><li>Cores iguais nas duas pontas da régua.</li></ul></details>
+ <details class="method"><summary>5. Privacidade e limites</summary><p>As respostas ficam apenas no armazenamento local do seu navegador, para você continuar depois. Nada é enviado a servidores, não há análise de tráfego nem fontes externas. “Refazer teste” apaga tudo.</p><p>O teste não é uma avaliação psicométrica validada, não é pesquisa eleitoral e não recomenda voto nem partido. Faltam temas como política externa e federalismo. As correntes reais são diversas internamente.</p></details>
+</section>
+
+<!-- ===================== BIBLIOTECA ===================== -->
+<section id="library" class="lib-wrap">
+ <span class="eyebrow">Glossário · biblioteca política</span>
+ <h2 class="section-title">Entenda cada corrente e cada conceito</h2>
+ <p class="sub">Todas as fichas seguem o mesmo formato: ideias centrais, origem histórica, no Brasil, o que defensores argumentam, o que críticos apontam, confusões comuns e leituras.</p>
+ <div class="lib-grid" id="lib-ideologies"></div>
+ <h3 class="lib-sub">Conceitos</h3>
+ <div class="concept-grid" id="lib-concepts"></div>
+</section>
+</main>
+
+<footer class="wrap footer">
+ <div class="foot-brand"><span><b>Bússola Política</b> · ferramenta educativa independente · sem IA · sem coleta de respostas</span>
+ <a class="foot-ig" href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener"><svg class="ig-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg>Criado por <b>@danielmelo_eu</b></a></div>
+</footer>
+
+<!-- LUPA -->
+<dialog id="info" class="modal" aria-labelledby="info-title"><div class="modal-inner"><button class="modal-close" data-close aria-label="Fechar">×</button><div id="info-body"></div></div></dialog>
+<!-- CARD -->
+<dialog id="card-modal" class="modal" aria-labelledby="card-title"><div class="modal-inner card-inner"><button class="modal-close" data-close aria-label="Fechar">×</button><h2 id="card-title" class="section-title">Seu card para os Stories</h2><p class="sub small" id="card-hint">No celular, toque em “Compartilhar” e escolha o Instagram. Se preferir, toque e segure a imagem para salvá-la.</p><img id="card-img" alt="Card com o seu resultado na Bússola Política"><div class="actions"><button class="btn" id="card-share" hidden>Compartilhar</button><a class="btn secondary" id="card-download" download="minha-bussola-politica.png">Baixar PNG</a></div></div></dialog>
+
+<script>
+'use strict';
+// ============================================================
+// QUESTIONÁRIO — 24 pares de posições (8 por eixo)
+// Cada pergunta apresenta duas posições (A e B), cada uma na sua
+// melhor formulação. "aPole" indica para qual lado do eixo a
+// posição A aponta (-1 ou +1). A posição do lado "+" aparece como A
+// em metade das perguntas e como B na outra metade.
+// Eixos: eco (-Estado / +Mercado), soc (-Progressista / +Conservador),
+//        inst (-Garantias / +Autoridade)
+// ============================================================
+const AXES={
+ eco:{name:'Economia',neg:'Estado',pos:'Mercado',negLong:'mais Estado e redistribuição',posLong:'mais mercado e iniciativa privada',term:'eixo-economia'},
+ soc:{name:'Costumes',neg:'Progressista',pos:'Conservador',negLong:'mais autonomia individual e revisão de normas sociais',posLong:'mais tradição e continuidade cultural',term:'eixo-costumes'},
+ inst:{name:'Instituições',neg:'Garantias',pos:'Autoridade',negLong:'mais limites ao poder e garantias individuais',posLong:'mais poder às autoridades em nome da ordem e da eficácia',term:'eixo-instituicoes'}
+};
+const QUESTIONS_BY_AXIS={
+eco:[
+ {id:'E1',aPole:-1,a:'Quem ganha mais deve pagar proporcionalmente mais impostos, para financiar políticas que reduzam a desigualdade.',b:'Os impostos devem ser mais baixos e simples para todos, deixando mais renda com quem a produziu e estimulando o investimento.',ex:'No Brasil, boa parte da arrecadação vem de impostos sobre o consumo, que pesam proporcionalmente mais para quem ganha menos. Ao mesmo tempo, a carga tributária total, de cerca de um terço do PIB, é considerada alta para um país de renda média.',aS:'impostos progressivos para reduzir desigualdades',bS:'impostos mais baixos e simples',terms:['progressividade']},
+ {id:'E2',aPole:1,a:'Serviços como saneamento, energia e correios funcionam melhor quando concedidos ou privatizados para empresas, com regulação e metas.',b:'Esses serviços são estratégicos e devem permanecer com empresas públicas, para priorizar o interesse coletivo em vez do lucro.',ex:'Depois do Marco Legal do Saneamento (2020), alguns estados concederam ou privatizaram o serviço; outros mantiveram suas companhias estaduais.',aS:'concessão ou privatização de serviços, com regulação',bS:'empresas públicas em serviços estratégicos',terms:['privatizacao']},
+ {id:'E3',aPole:-1,a:'Leis trabalhistas e sindicatos devem ser fortalecidos para proteger quem trabalha, mesmo que isso aumente os custos das empresas.',b:'As regras trabalhistas devem ser mais flexíveis, para facilitar contratações e a formalização, mesmo que reduzam algumas proteções.',ex:'Um entregador de aplicativo pode ser tratado como empregado, com direitos da CLT, ou como autônomo, com mais liberdade e menos proteção.',aS:'mais proteção trabalhista',bS:'regras trabalhistas mais flexíveis',terms:['direitos-trabalhistas']},
+ {id:'E4',aPole:1,a:'O governo deve financiar saúde e educação, mas deixar as pessoas escolherem entre prestadores públicos e privados (por exemplo, com vouchers).',b:'Saúde e educação devem ser oferecidas principalmente por uma rede pública, universal e gratuita, como o SUS e a escola pública.',ex:'O ProUni troca isenção de impostos por bolsas em faculdades privadas; já o SUS atende diretamente pela rede pública.',aS:'financiamento público com escolha entre prestadores',bS:'rede pública universal de saúde e educação',terms:['estado-bem-estar']},
+ {id:'E5',aPole:-1,a:'Em crises ou com baixo crescimento, o governo deve aumentar gastos e investimentos, mesmo que a dívida pública cresça.',b:'O governo deve controlar gastos e dívida, mesmo que isso limite investimentos e programas no curto prazo.',ex:'Regras como o teto de gastos (2016) e o arcabouço fiscal (2023) foram criadas, por governos diferentes, para limitar o crescimento das despesas públicas.',aS:'mais gasto público para estimular a economia',bS:'controle de gastos e da dívida',terms:['responsabilidade-fiscal']},
+ {id:'E6',aPole:1,a:'O Brasil deve abrir mais a economia ao comércio exterior, reduzindo tarifas e subsídios a setores específicos.',b:'O governo deve proteger e estimular a indústria nacional com tarifas, crédito público e compras governamentais.',ex:'Tarifas de importação mais altas protegem empregos em fábricas locais, mas podem encarecer produtos e insumos para consumidores e outras empresas.',aS:'abertura comercial',bS:'proteção e incentivo à indústria nacional',terms:['protecionismo']},
+ {id:'E7',aPole:-1,a:'As regras ambientais devem ser rigorosas, mesmo que encareçam ou atrasem obras, mineração e expansão agropecuária.',b:'O licenciamento ambiental deve ser mais simples e rápido, para não travar produção, empregos e infraestrutura.',ex:'Uma estrada ou usina pode esperar anos por licenças; por outro lado, licenças apressadas podem causar danos ambientais difíceis de reverter.',aS:'regras ambientais mais rigorosas',bS:'licenciamento mais simples e rápido',terms:['licenciamento']},
+ {id:'E8',aPole:1,a:'Preços, produção e salários devem ser definidos principalmente pela concorrência entre empresas, com pouca intervenção do governo.',b:'O governo deve regular ativamente preços e mercados importantes, como combustíveis e energia, para proteger consumidores.',ex:'Quando o petróleo sobe no mundo, o governo pode deixar o aumento chegar à bomba ou tentar segurar o preço com a Petrobras ou com impostos.',aS:'preços definidos pela concorrência',bS:'regulação ativa de preços e mercados',terms:['livre-mercado']}
+],
+soc:[
+ {id:'S1',aPole:-1,a:'O Estado deve reconhecer e proteger igualmente todas as formas de família, incluindo casais do mesmo sexo.',b:'Leis e políticas públicas devem valorizar prioritariamente a família formada por pai, mãe e filhos, vista como base da sociedade.',ex:'Desde 2011 o STF reconhece uniões entre pessoas do mesmo sexo; no Congresso há propostas tanto para ampliar quanto para restringir esse reconhecimento.',aS:'reconhecimento igual de todas as famílias',bS:'prioridade à família tradicional',terms:[]},
+ {id:'S2',aPole:1,a:'A vida deve ser protegida desde a concepção; o aborto deve continuar sendo crime, exceto nos casos já previstos em lei.',b:'A decisão de interromper uma gravidez nas primeiras semanas deve caber à mulher, sem punição criminal.',ex:'Hoje o aborto é permitido no Brasil em caso de estupro, de risco de vida para a gestante e de anencefalia do feto.',aS:'aborto continuar sendo crime',bS:'descriminalização do aborto nas primeiras semanas',terms:[]},
+ {id:'S3',aPole:-1,a:'O uso pessoal de drogas como a maconha deve deixar de ser crime e ser tratado como questão de saúde pública.',b:'O uso de drogas deve continuar sendo crime, para desestimular o consumo e enfrentar o tráfico.',ex:'Em 2024 o STF decidiu que portar pequena quantidade de maconha para consumo próprio não é crime, embora continue proibido; no Congresso avança uma proposta para criminalizar o porte de qualquer quantidade.',aS:'descriminalização do uso pessoal de drogas',bS:'manutenção do uso de drogas como crime',terms:[]},
+ {id:'S4',aPole:1,a:'Cidadãos que cumpram requisitos legais devem ter o direito de comprar e portar armas para se defender.',b:'O acesso a armas deve ser bem restrito, deixando o uso da força principalmente com as forças de segurança do Estado.',ex:'No referendo de 2005, a maioria votou contra proibir o comércio de armas; desde então, governos diferentes ampliaram ou restringiram as regras por decreto.',aS:'direito de comprar e portar armas',bS:'acesso restrito a armas',terms:[]},
+ {id:'S5',aPole:-1,a:'O Estado deve ser estritamente laico: crenças religiosas não devem orientar leis nem políticas públicas.',b:'Valores religiosos compartilhados por grande parte da população podem e devem inspirar leis e políticas públicas.',ex:'Feriados religiosos, símbolos em prédios públicos e a atuação de bancadas religiosas no Congresso fazem parte desse debate.',aS:'Estado estritamente laico',bS:'valores religiosos inspirando leis',terms:['laicidade']},
+ {id:'S6',aPole:1,a:'Sexualidade e identidade de gênero devem ser tratadas pela família; a escola só deve abordar esses temas com consentimento dos pais.',b:'As escolas devem abordar diversidade sexual e de gênero, para combater o preconceito e proteger estudantes.',ex:'Planos de educação que mencionam “gênero” e projetos como o Escola sem Partido geraram disputas em câmaras municipais, assembleias e no STF.',aS:'família como responsável por temas de sexualidade e gênero',bS:'escola abordando diversidade sexual e de gênero',terms:[]},
+ {id:'S7',aPole:-1,a:'Cotas e outras ações afirmativas, inclusive raciais, são necessárias para corrigir desigualdades históricas.',b:'Vagas e cargos devem ser distribuídos por critérios universais, como mérito ou renda, sem distinção por raça ou outros grupos.',ex:'A Lei de Cotas (2012) reserva vagas em universidades federais para estudantes de escola pública, com subcotas por renda e por raça.',aS:'cotas e ações afirmativas, inclusive raciais',bS:'critérios universais, sem distinção por grupo',terms:['acoes-afirmativas']},
+ {id:'S8',aPole:1,a:'Mudanças nos costumes devem ser lentas e cuidadosas, preservando tradições que dão estabilidade à sociedade.',b:'Normas sociais antigas devem ser revistas sempre que causam desigualdade ou sofrimento, mesmo que gerem desconforto.',ex:'Muitas regras sociais já mudaram ao longo do tempo; a pergunta é sobre o ritmo e o critério para mudar as próximas.',aS:'mudanças culturais lentas e cuidadosas',bS:'revisão de normas que causam desigualdade',terms:[]}
+],
+inst:[
+ {id:'I1',aPole:-1,a:'Mesmo em crises graves, o governo deve respeitar estritamente a Constituição e as decisões do Congresso e da Justiça, ainda que isso torne a resposta mais lenta.',b:'Em crises graves, o governo eleito deve poder agir com rapidez e mais autonomia, porque procedimentos lentos podem custar vidas e empregos.',ex:'Na pandemia houve disputas sobre quem podia decretar restrições: a União, os estados, os municípios ou o STF.',aS:'limites constitucionais mesmo em crises',bS:'mais autonomia ao governo em crises',terms:['separacao-poderes']},
+ {id:'I2',aPole:1,a:'Para enfrentar o crime organizado, a polícia deve ter mais poder de busca, abordagem e prisão, mesmo com menos controle judicial prévio.',b:'O combate ao crime deve respeitar rigorosamente garantias como o mandado judicial e o direito de defesa, mesmo que algumas investigações fiquem mais difíceis.',ex:'Facções controlam territórios em várias cidades; ao mesmo tempo, abordagens e buscas sem controle judicial podem atingir inocentes.',aS:'mais poderes para a polícia',bS:'garantias como mandado e direito de defesa',terms:['devido-processo']},
+ {id:'I3',aPole:-1,a:'Mesmo no combate à corrupção, as regras do processo e o direito de defesa devem ser seguidos à risca, ainda que isso deixe culpados impunes.',b:'No combate à corrupção, juízes e promotores devem ter margem para agir com rigor e rapidez, mesmo flexibilizando procedimentos.',ex:'Operações anticorrupção das últimas décadas foram elogiadas por punir poderosos e criticadas por excessos processuais, por pessoas de lados diferentes e em momentos diferentes.',aS:'regras processuais estritas mesmo contra a corrupção',bS:'mais margem a juízes e promotores contra a corrupção',terms:['devido-processo']},
+ {id:'I4',aPole:1,a:'Autoridades devem poder remover rapidamente conteúdos considerados desinformação ou discurso de ódio, para proteger as pessoas e a democracia.',b:'A liberdade de expressão deve proteger até opiniões ofensivas ou falsas; remover conteúdo deve ser exceção, decidida pela Justiça com direito de defesa.',ex:'Decisões judiciais de remoção de perfis e propostas de regulação das redes sociais dividem opiniões no Brasil.',aS:'remoção rápida de desinformação e discurso de ódio',bS:'liberdade de expressão ampla, com remoção só excepcional',terms:['liberdade-expressao']},
+ {id:'I5',aPole:-1,a:'Manifestações pacíficas devem ser garantidas mesmo quando bloqueiam ruas e causam transtornos.',b:'O Estado deve poder restringir ou dispersar protestos que paralisem a cidade ou ameacem a ordem pública.',ex:'Greves, ocupações e bloqueios de estradas já foram usados por movimentos de orientações políticas diferentes.',aS:'garantia de protestos mesmo com transtornos',bS:'restrição de protestos que paralisam a cidade',terms:[]},
+ {id:'I6',aPole:1,a:'O Estado deve ter mecanismos para regular a mídia e responsabilizar veículos que distorcem fatos ou concentram audiência demais.',b:'A imprensa deve ser livre para investigar e criticar governos, sem regulação estatal de conteúdo, mesmo cometendo erros e exageros.',ex:'Propostas de “regulação da mídia” são defendidas como forma de combater distorções e criticadas como risco de controle político da imprensa.',aS:'regulação estatal da mídia',bS:'imprensa livre de regulação de conteúdo',terms:['liberdade-expressao']},
+ {id:'I7',aPole:-1,a:'Um presidente deve aceitar derrotas no Congresso e no Judiciário, mesmo quando elas impedem promessas de campanha.',b:'Um presidente eleito tem legitimidade para pressionar e enfrentar o Congresso e os tribunais que bloqueiam o programa escolhido nas urnas.',ex:'Conflitos entre Executivo, Congresso e Judiciário acontecem em governos de diferentes orientações.',aS:'presidente aceitando derrotas institucionais',bS:'presidente enfrentando Congresso e tribunais',terms:['separacao-poderes']},
+ {id:'I8',aPole:1,a:'Monitoramento amplo, como câmeras com reconhecimento facial e acesso a dados de celulares, é aceitável para prevenir crimes.',b:'Governos não devem monitorar dados e comunicações das pessoas sem ordem judicial específica, mesmo por segurança.',ex:'Várias cidades brasileiras já usam câmeras com reconhecimento facial; especialistas debatem a eficácia, os erros de identificação e a privacidade.',aS:'monitoramento amplo para prevenir crimes',bS:'privacidade sem monitoramento sem ordem judicial',terms:[]}
+]};
+// Ordem de apresentação intercalada (economia, costumes, instituições...)
+const QUESTIONS=[];for(let k=0;k<8;k++){['eco','soc','inst'].forEach(d=>QUESTIONS.push({...QUESTIONS_BY_AXIS[d][k],d}));}
+const NQ=QUESTIONS.length;
+const SCALE=[{t:'Muito mais perto de A',s:'A A'},{t:'Um pouco mais perto de A',s:'A'},{t:'No meio / concordo em parte com as duas',s:'='},{t:'Um pouco mais perto de B',s:'B'},{t:'Muito mais perto de B',s:'B B'}];
+const DUNNO=5; // "Não sei / prefiro não opinar" — não entra no cálculo
+
+// ============================================================
+// DILEMAS COMPLEMENTARES — 2 por eixo, 4 opções simétricas cada
+// (valores −2, −1, +1, +2, sempre na mesma ordem: de um polo ao outro)
+// ============================================================
+const DILEMMAS={
+ sanitation:{d:'eco',title:'Saneamento que não funciona',scenario:'A companhia de saneamento da sua cidade presta um serviço ruim e não tem dinheiro para investir. O que deveria ser feito?',choices:[['Reestruturar a companhia pública com mais orçamento, mantendo o serviço 100% estatal',-2],['Manter a companhia pública, contratando empresas privadas para obras específicas',-1],['Conceder o serviço a uma empresa privada, com metas e tarifas reguladas pelo poder público',1],['Vender a companhia a um operador privado e deixar contrato e concorrência definirem o serviço',2]]},
+ growth:{d:'eco',title:'Crescer ou distribuir primeiro?',scenario:'O país precisa escolher a prioridade econômica dos próximos anos. Qual caminho faz mais sentido para você?',choices:[['Redistribuir renda agora, mesmo que o crescimento seja menor',-2],['Equilibrar, com um pouco mais de peso na redução da desigualdade',-1],['Equilibrar, com um pouco mais de peso no crescimento e na produtividade',1],['Crescer primeiro, apostando que a renda melhora para todos com o tempo',2]]},
+ school:{d:'soc',title:'Escola, família e sexualidade',scenario:'Uma rede de ensino discute como tratar temas de sexualidade e diversidade com adolescentes. Qual regra você apoiaria?',choices:[['Conteúdo obrigatório para todos, definido por especialistas em educação',-2],['Conteúdo no currículo, com pais informados e espaço para diálogo',-1],['Tema tratado apenas com autorização prévia de cada família',1],['Tema fora da escola: é responsabilidade exclusiva das famílias',2]]},
+ tradition:{d:'soc',title:'Uma regra antiga contestada',scenario:'Uma norma tradicional é contestada por gerar tratamento desigual, mas parte da população vê nela um valor importante. O que fazer?',choices:[['Mudar logo, por lei ou decisão judicial, para garantir igualdade',-2],['Mudar, mas com transição negociada para reduzir conflitos',-1],['Manter até que haja amplo consenso na sociedade para mudar',1],['Manter: a tradição deve prevalecer sobre essa demanda',2]]},
+ violence:{d:'inst',title:'Onda de violência',scenario:'Após semanas de ataques de facções criminosas, o governo propõe medidas excepcionais. O que você apoiaria?',choices:[['Rejeitar poderes excepcionais e reforçar a investigação dentro das regras atuais',-2],['Ampliar recursos da polícia, mantendo mandado judicial e controle externo',-1],['Permitir medidas excepcionais por tempo limitado, com supervisão do Congresso',1],['Dar ao Executivo poderes amplos (buscas sem mandado, toque de recolher) enquanto durar a crise',2]]},
+ elections:{d:'inst',title:'Desinformação na eleição',scenario:'Às vésperas de uma eleição, conteúdos falsos sobre candidatos se espalham rapidamente nas redes. Qual deve ser a regra?',choices:[['Nenhuma remoção sem decisão judicial definitiva; responde-se com mais informação',-2],['Remoção só por ordem judicial caso a caso, com direito rápido de defesa',-1],['A Justiça Eleitoral pode ordenar remoções rápidas, revistas depois',1],['Autoridades podem suspender perfis e plataformas preventivamente para proteger a eleição',2]]}
+};
+const DILEMMA_PAIRS={eco:['growth','sanitation'],soc:['tradition','school'],inst:['violence','elections']};
+
+// ============================================================
+// CORRENTES DE REFERÊNCIA — coordenadas editoriais (eco, soc, inst)
+// Critério de isonomia: todas as regiões do mapa têm referências,
+// e há correntes dos dois lados do eixo institucional
+// (garantias × autoridade) tanto à esquerda quanto à direita.
+// Todas as fichas seguem o mesmo formato: ideias, origem, no Brasil,
+// o que defensores argumentam, o que críticos apontam, confusões
+// comuns e leituras.
+// ============================================================
+const IDEOLOGIES=[
+{id:'soc-aut',name:'Socialismo autoritário',short:'Soc. autoritário',v:{eco:-90,soc:0,inst:85},
+ one:'Economia planificada pelo Estado e poder concentrado em um partido único, em nome da construção do socialismo.',
+ ideas:['Propriedade estatal ou coletiva dos meios de produção e planejamento central da economia.','Partido de vanguarda que conduz a revolução e governa sem competição eleitoral (a “ditadura do proletariado”).','Prioridade à igualdade material e à industrialização acelerada sobre liberdades políticas individuais.'],
+ origin:'Parte das ideias de Karl Marx e Friedrich Engels (Manifesto Comunista, 1848), reinterpretadas por Vladimir Lênin, que defendeu um partido de revolucionários profissionais (Que fazer?, 1902) e liderou a Revolução Russa de 1917. O modelo se consolidou na União Soviética, com Stálin, e foi adaptado na China (Mao Tsé-tung, 1949), em Cuba (1959), no Vietnã e na Coreia do Norte. É conhecido como marxismo-leninismo.',
+ brazil:'O Partido Comunista do Brasil (PCB) foi fundado em 1922. Em 1935 houve uma tentativa de levante comunista, conhecida como Intentona Comunista. Nas décadas de 1960 e 1970, durante o regime militar, alguns grupos da luta armada tinham como objetivo uma revolução socialista.',
+ pro:['Industrialização rápida de países agrários, como a URSS entre as décadas de 1920 e 1950.','Alfabetização em massa e acesso universal à saúde e à educação em vários desses países.','Forte redução da desigualdade de renda e garantia de emprego.'],
+ con:['Repressão política, partido único, censura e ausência de eleições livres.','Campos de trabalho forçado, como o Gulag, e perseguição a opositores.','Fomes associadas à coletivização forçada (URSS nos anos 1930; China no Grande Salto Adiante, 1958–1962) e economias pouco eficientes, com escassez.'],
+ confusion:'Não é o mesmo que “ser de esquerda”, nem que socialismo democrático ou social-democracia, que defendem eleições livres e pluralismo.',
+ read:['Lênin — O Estado e a Revolução (1917)','Hannah Arendt — Origens do Totalitarismo (1951)','Eric Hobsbawm — A Era dos Extremos (1994)']},
+
+{id:'anarq',name:'Anarquismo',short:'Anarquismo',v:{eco:-80,soc:-80,inst:-90},
+ one:'Rejeita o Estado e a hierarquia, defendendo cooperação voluntária e propriedade coletiva administrada pelas próprias comunidades.',
+ ideas:['Abolição do Estado, visto como instrumento de dominação.','Autogestão: trabalhadores e comunidades organizam a produção diretamente, por cooperativas e federações.','Liberdade individual radical aliada à igualdade econômica.'],
+ origin:'Pierre-Joseph Proudhon foi o primeiro a se declarar anarquista (O que é a propriedade?, 1840). Mikhail Bakunin rompeu com Marx na Primeira Internacional (1872) por discordar da tomada do Estado, e Piotr Kropotkin defendeu o “comunismo libertário” (A Conquista do Pão, 1892). Na Guerra Civil Espanhola (1936), anarquistas chegaram a coletivizar fábricas e terras na Catalunha.',
+ brazil:'O anarquismo foi forte no movimento operário brasileiro no início do século XX, sobretudo entre imigrantes italianos e espanhóis, e teve papel importante na Greve Geral de 1917 em São Paulo.',
+ pro:['Coerência na crítica a toda forma de poder concentrado, venha do Estado ou do capital.','Experiências de cooperativismo e autogestão que influenciaram sindicatos e movimentos sociais.','Valorização da liberdade individual sem abrir mão da solidariedade.'],
+ con:['Dúvidas sobre como manter segurança, justiça e serviços em larga escala sem Estado.','Experiências históricas curtas, frequentemente derrotadas por forças organizadas.','Dificuldade de coordenar economias complexas apenas por decisões locais.'],
+ confusion:'No uso popular, “anarquia” virou sinônimo de bagunça; como teoria política, o anarquismo propõe outra forma de organização, não ausência de regras.',
+ read:['Proudhon — O que é a propriedade? (1840)','Kropotkin — A Conquista do Pão (1892)','George Woodcock — História das ideias e movimentos anarquistas (1962)']},
+
+{id:'soc-dem',name:'Socialismo democrático',short:'Soc. democrático',v:{eco:-75,soc:-45,inst:-45},
+ one:'Busca superar ou transformar profundamente o capitalismo, ampliando a propriedade social, mas por meio de eleições e instituições democráticas.',
+ ideas:['Ampliar a propriedade pública ou cooperativa em setores-chave da economia.','Democracia política combinada com democracia econômica (participação dos trabalhadores nas decisões).','Rejeição tanto do capitalismo de mercado pouco regulado quanto do socialismo de partido único.'],
+ origin:'Surge de correntes socialistas do século XIX que apostaram na via eleitoral, como a Sociedade Fabiana (Reino Unido, 1884) e setores dos partidos socialistas europeus. Após 1917, diferenciou-se do modelo soviético por defender pluralismo, eleições e liberdades civis.',
+ brazil:'Correntes que se apresentam como socialistas democráticas existem em diferentes partidos e movimentos brasileiros desde a redemocratização, com graus variados de radicalidade.',
+ pro:['Procura unir igualdade econômica e liberdades democráticas.','Valoriza a participação dos trabalhadores nas decisões econômicas.','Recusa o autoritarismo associado a experiências socialistas do século XX.'],
+ con:['Críticos dizem que ampliar muito a propriedade estatal reduz eficiência e inovação.','Há dúvida se é possível estatizar amplamente a economia sem concentrar poder político.','Poucos exemplos duradouros de economias predominantemente socializadas e democráticas.'],
+ confusion:'Não é o mesmo que social-democracia: o socialismo democrático quer ir além de regular o capitalismo; a social-democracia aceita a economia de mercado e a regula.',
+ read:['George Orwell — Por que escrevo e outros ensaios','Michael Harrington — Socialism: Past and Future (1989)']},
+
+{id:'socdem',name:'Social-democracia',short:'Social-democracia',v:{eco:-45,soc:-30,inst:-50},
+ one:'Aceita a economia de mercado, mas com Estado de bem-estar forte, impostos progressivos, proteção ao trabalho e democracia.',
+ ideas:['Mercado regulado em vez de economia planificada.','Estado de bem-estar social: saúde, educação, previdência e seguro-desemprego universais.','Negociação entre sindicatos, empresas e governo.'],
+ origin:'Nasce dos partidos socialistas do século XIX que passaram a defender reformas graduais; Eduard Bernstein foi um dos primeiros a teorizar esse caminho (1899). O modelo nórdico se desenvolveu na Suécia a partir de 1932, e em 1959 o Partido Social-Democrata alemão abandonou formalmente o marxismo (Programa de Bad Godesberg). Teve seu auge na Europa do pós-guerra.',
+ brazil:'Partidos brasileiros usam o rótulo “social-democrata” de formas variadas, que nem sempre coincidem com a tradição europeia. Elementos do Estado de bem-estar, como o SUS e a seguridade social, foram incluídos na Constituição de 1988.',
+ pro:['Países com tradição social-democrata combinam alta renda, baixa desigualdade e democracias estáveis.','Proteção contra riscos da vida (doença, desemprego, velhice) sem abolir o mercado.','Busca de consenso entre capital e trabalho.'],
+ con:['Carga tributária alta e risco de desestimular investimento e trabalho.','Dificuldade de financiar o Estado de bem-estar com populações envelhecendo.','Críticos à esquerda dizem que ela apenas administra o capitalismo; críticos liberais dizem que o Estado cresce demais.'],
+ confusion:'Não é socialismo no sentido de abolir o mercado. Também não é sinônimo de qualquer partido que tenha “social-democracia” no nome.',
+ read:['Eduard Bernstein — O socialismo evolucionário (1899)','Tony Judt — O mal ronda a Terra (2010)']},
+
+{id:'trab',name:'Trabalhismo e nacional-desenvolvimentismo',short:'Trabalhismo',v:{eco:-60,soc:35,inst:-15},
+ one:'Estado como motor do desenvolvimento nacional e protetor dos trabalhadores, com valorização da indústria e da soberania econômica.',
+ ideas:['Leis trabalhistas e previdência como base da cidadania dos trabalhadores.','Estado investidor e planejador: estatais estratégicas, crédito público e proteção à indústria nacional.','Nacionalismo econômico e defesa de recursos naturais.'],
+ origin:'Combina o trabalhismo de Getúlio Vargas com as ideias da CEPAL (Raúl Prebisch, Celso Furtado) sobre substituição de importações nas décadas de 1940 e 1950. Tem paralelos no peronismo argentino. Culturalmente, essa tradição costumou ser mais moderada do que a esquerda progressista contemporânea.',
+ brazil:'Vargas criou a CLT (1943) e a Petrobras (1953). O PTB, fundado em 1945, reuniu o trabalhismo até 1964, com João Goulart. Depois da anistia, Leonel Brizola fundou o PDT (1980). O desenvolvimentismo também influenciou governos de orientações diferentes, inclusive o regime militar.',
+ pro:['Industrialização e urbanização aceleradas do Brasil entre 1930 e 1980.','Criação de direitos trabalhistas que formalizaram milhões de pessoas.','Proteção de setores estratégicos e da autonomia nacional.'],
+ con:['Protecionismo pode gerar indústrias pouco competitivas e produtos caros.','Gasto público alto contribuiu, segundo críticos, para crises de dívida e inflação.','Proximidade histórica com práticas personalistas e clientelistas.'],
+ confusion:'Não se confunde com socialismo: o trabalhismo histórico aceita propriedade privada e empresários nacionais, com forte papel do Estado.',
+ read:['Celso Furtado — Formação Econômica do Brasil (1959)','Angela de Castro Gomes — A invenção do trabalhismo (1988)']},
+
+{id:'nacpop',name:'Esquerda nacional-popular',short:'Esq. nacional-popular',v:{eco:-70,soc:10,inst:45},
+ one:'Liderança forte que se apresenta como voz do “povo” contra elites econômicas e estrangeiras, com Estado interventor e menor apreço por freios institucionais.',
+ ideas:['Divisão política entre “povo” e “elites”, com um líder carismático como mediador.','Estatizações, controle de preços e redistribuição de renda de recursos naturais.','Tendência a concentrar poder no Executivo e a reformar instituições para ampliar mandatos ou reduzir controles.'],
+ origin:'Tem raízes nos populismos latino-americanos do século XX. Ganhou nova forma com o “socialismo do século XXI”, a partir do governo de Hugo Chávez na Venezuela (1999), com paralelos na Bolívia e no Equador. Os teóricos Ernesto Laclau e Chantal Mouffe defenderam o “populismo de esquerda” como estratégia democrática (Laclau, A razão populista, 2005).',
+ brazil:'No Brasil, o debate sobre populismo remonta a Vargas e ao período de 1945 a 1964. O termo é disputado e aplicado por diferentes autores a líderes de vários campos políticos.',
+ pro:['Inclusão política e social de grupos historicamente excluídos.','Uso das receitas de recursos naturais para reduzir a pobreza.','Mobilização popular e afirmação da soberania nacional.'],
+ con:['Concentração de poder, enfraquecimento do Judiciário e da imprensa, e risco de autoritarismo, como apontam críticos no caso venezuelano.','Controle de preços e estatizações associados a escassez, inflação alta e queda da produção.','Personalismo: o projeto depende do líder.'],
+ confusion:'“Populismo” é um estilo político (povo contra elite), não uma ideologia econômica: existe populismo de esquerda e de direita.',
+ read:['Ernesto Laclau — A razão populista (2005)','Steven Levitsky e Daniel Ziblatt — Como as democracias morrem (2018)']},
+
+{id:'jacob',name:'Jacobinismo (progressismo autoritário)',short:'Jacobinismo',v:{eco:-40,soc:-85,inst:80},
+ one:'Transformação social rápida imposta pelo Estado em nome da igualdade e da razão, com uso da força contra opositores e tradições.',
+ ideas:['A razão e o projeto de uma sociedade nova justificam romper rapidamente com tradições e religião.','Uma vanguarda que fala em nome do povo governa com poderes excepcionais.','Igualdade civil e laicismo radical, com repressão a quem resiste.'],
+ origin:'O nome vem do Clube dos Jacobinos, da Revolução Francesa. Sob Maximilien Robespierre e o Comitê de Salvação Pública, o período do Terror (1793–1794) suspendeu garantias e executou milhares de pessoas consideradas inimigas da Revolução. No mesmo período, a Convenção aboliu a escravidão nas colônias francesas (1794) e promoveu a descristianização.',
+ brazil:'No início da República, “jacobinos” era o apelido dos republicanos radicais que apoiavam Floriano Peixoto. Hoje o termo é usado no debate político para criticar quem quer impor mudanças sociais de cima para baixo ou pela força.',
+ pro:['Defensores históricos destacam conquistas como a abolição da escravidão nas colônias francesas (1794) e a igualdade civil.','Rompeu com privilégios aristocráticos e religiosos.','Ideia de que direitos universais não devem esperar o consenso dos privilegiados.'],
+ con:['O Terror suspendeu garantias e executou milhares de pessoas, muitas sem julgamento justo.','Perseguição religiosa e destruição de tradições populares.','A instabilidade e a concentração de poder do período contribuíram para o fim da república e a ascensão de Napoleão.'],
+ confusion:'Ser progressista nos costumes não significa aceitar autoritarismo: a maioria das correntes progressistas valoriza garantias e limites ao poder. O jacobinismo é a combinação específica de mudança radical com autoridade.',
+ read:['Hannah Arendt — Sobre a Revolução (1963)','Eric Hobsbawm — A Era das Revoluções (1962)']},
+
+{id:'libsoc',name:'Liberalismo social',short:'Liberalismo social',v:{eco:-20,soc:-65,inst:-60},
+ one:'Liberdade individual ampla nos costumes, democracia liberal e economia de mercado, com Estado garantindo oportunidades e proteção social.',
+ ideas:['Direitos civis e liberdades individuais como prioridade.','Mercado como base da economia, com intervenção para corrigir desigualdades de oportunidade.','Instituições fortes, Estado de Direito e pluralismo.'],
+ origin:'Deriva de John Stuart Mill (Sobre a Liberdade, 1859) e do “novo liberalismo” britânico do início do século XX (T. H. Green, L. T. Hobhouse). O Relatório Beveridge (1942), que inspirou o Estado de bem-estar britânico, foi escrito por um liberal. Na filosofia, John Rawls (Uma Teoria da Justiça, 1971) é sua grande referência.',
+ brazil:'Não existe uma tradição partidária única com esse nome no Brasil; suas ideias aparecem em setores de diferentes partidos e na defesa de direitos civis após 1988.',
+ pro:['Combina liberdades pessoais com preocupação social.','Base intelectual de muitas democracias liberais contemporâneas.','Defende direitos de minorias e o pluralismo.'],
+ con:['Conservadores dizem que ele enfraquece tradições e laços comunitários.','Liberais clássicos dizem que ele expande demais o Estado.','Socialistas dizem que ele não enfrenta a concentração de riqueza.'],
+ confusion:'Nos EUA, “liberal” costuma designar esse campo progressista; no Brasil, “liberal” geralmente significa liberal na economia. Cuidado com essa diferença.',
+ read:['John Stuart Mill — Sobre a Liberdade (1859)','John Rawls — Uma Teoria da Justiça (1971)']},
+
+{id:'dc',name:'Democracia cristã',short:'Democracia cristã',v:{eco:-35,soc:60,inst:-40},
+ one:'Inspirada na doutrina social da Igreja: solidariedade, dignidade humana, família e economia de mercado com proteção social.',
+ ideas:['Solidariedade e bem comum como guias da economia.','Subsidiariedade: decisões no nível mais próximo das pessoas (família, comunidade, município).','Valorização da família e de princípios morais cristãos, dentro da democracia.'],
+ origin:'Parte da encíclica Rerum Novarum (Leão XIII, 1891), que criticou tanto o capitalismo sem limites quanto o socialismo, e da Quadragesimo Anno (1931), que formulou a subsidiariedade. Após 1945, partidos democratas-cristãos governaram a Alemanha (Konrad Adenauer), a Itália (Alcide De Gasperi) e, mais tarde, o Chile (Eduardo Frei).',
+ brazil:'O Partido Democrata Cristão (PDC) existiu de 1945 a 1965, com nomes como Franco Montoro. Ideias da doutrina social cristã influenciaram partidos e movimentos de diferentes campos.',
+ pro:['Equilibra mercado, proteção social e valores comunitários.','Foi central na reconstrução democrática da Europa após a Segunda Guerra.','Valoriza instituições intermediárias como família e comunidade.'],
+ con:['Progressistas criticam suas posições sobre família, sexualidade e aborto.','Liberais econômicos criticam o peso do Estado social.','Laicistas questionam a influência religiosa na política.'],
+ confusion:'Não é sinônimo de qualquer partido religioso, nem de direita radical: historicamente ocupa o centro ou a centro-direita na economia.',
+ read:['Leão XIII — Rerum Novarum (1891)','Jacques Maritain — O Homem e o Estado (1951)']},
+
+{id:'centro',name:'Centrismo',short:'Centrismo',v:{eco:0,soc:-5,inst:-50},
+ one:'Pragmatismo: combina soluções de mercado e de Estado conforme a evidência, com defesa das instituições democráticas.',
+ ideas:['Avaliar políticas pelo resultado, não pela origem ideológica.','Economia de mercado com responsabilidade fiscal e políticas sociais focalizadas.','Moderação, negociação e estabilidade institucional.'],
+ origin:'A ideia de “meio-termo” é antiga (Aristóteles já falava da virtude como mediania). Na política contemporânea, ganhou força com a “Terceira Via” dos anos 1990, formulada por Anthony Giddens (A Terceira Via, 1998) e associada a governos como os de Tony Blair e Bill Clinton.',
+ brazil:'É importante não confundir centrismo ideológico com o “Centrão”, termo usado para um bloco parlamentar caracterizado mais pela negociação de cargos e recursos do que por um programa de ideias.',
+ pro:['Facilita acordos e reduz polarização.','Abertura para aprender com experiências de diferentes campos.','Valoriza estabilidade e previsibilidade.'],
+ con:['Críticos dizem que lhe falta um projeto claro e que ele evita conflitos necessários.','Pode virar apenas a média das posições do momento.','Os dois lados o acusam de ceder demais ao outro.'],
+ confusion:'Ficar no centro desta régua pode significar moderação ou combinação de posições fortes em direções opostas. As duas coisas são diferentes; veja o padrão de cada eixo no seu resultado.',
+ read:['Anthony Giddens — A Terceira Via (1998)','Aristóteles — Ética a Nicômaco']},
+
+{id:'esm',name:'Economia social de mercado',short:'Econ. social de mercado',v:{eco:25,soc:10,inst:-50},
+ one:'Livre concorrência com regras fortes: o Estado garante a competição, a estabilidade da moeda e uma rede de proteção social.',
+ ideas:['Concorrência protegida pelo Estado contra monopólios e cartéis.','Estabilidade monetária e regras previsíveis.','Rede de proteção social e diálogo entre empresas e trabalhadores.'],
+ origin:'Nasce do ordoliberalismo da Escola de Freiburg (Walter Eucken, Franz Böhm) nos anos 1930 e 1940. Alfred Müller-Armack cunhou a expressão nos anos 1940, e Ludwig Erhard a aplicou no “milagre econômico” alemão do pós-guerra. O Tratado de Lisboa (2007) inclui a “economia social de mercado altamente competitiva” entre os objetivos da União Europeia.',
+ brazil:'É pouco citada pelo nome no Brasil, mas suas ideias aparecem em debates sobre defesa da concorrência (como o CADE), independência do Banco Central e regras fiscais.',
+ pro:['Associada à reconstrução e à prosperidade da Alemanha Ocidental.','Equilibra eficiência de mercado e coesão social.','Dá importância a instituições sólidas e regras estáveis.'],
+ con:['Liberais mais radicais a consideram intervencionista demais.','Críticos à esquerda dizem que a disciplina fiscal limita investimentos sociais.','Seu sucesso depende de instituições fortes, nem sempre presentes.'],
+ confusion:'Não é o mesmo que social-democracia: aqui o centro é a concorrência; a proteção social é um complemento, não o motor.',
+ read:['Ludwig Erhard — Bem-estar para todos (1957)','Walter Eucken — Fundamentos da Política Econômica']},
+
+{id:'libclass',name:'Liberalismo clássico',short:'Liberalismo clássico',v:{eco:65,soc:-35,inst:-50},
+ one:'Propriedade privada, livre mercado, Estado limitado e liberdades individuais, com o governo restrito a funções essenciais.',
+ ideas:['Mercado e concorrência como melhores coordenadores da economia.','Estado limitado: segurança, justiça, contratos e alguns bens públicos.','Liberdade individual e Estado de Direito.'],
+ origin:'Começa com John Locke (Segundo Tratado sobre o Governo, 1689) e Adam Smith (A Riqueza das Nações, 1776). No século XX foi renovado por Friedrich Hayek (O Caminho da Servidão, 1944) e Milton Friedman (Capitalismo e Liberdade, 1962), e influenciou as reformas de mercado dos anos 1980 e 1990, chamadas por críticos de “neoliberalismo”.',
+ brazil:'No Brasil, “liberal” costuma significar liberal na economia. Ideias liberais estiveram presentes desde o Império e voltaram ao centro do debate com as privatizações dos anos 1990 e as reformas econômicas recentes, debatidas por governos de diferentes orientações.',
+ pro:['Associado ao crescimento econômico e à inovação em economias de mercado.','Limita o poder do governo sobre a vida das pessoas.','Igualdade de todos perante a lei.'],
+ con:['Críticos dizem que gera desigualdade e insegurança para os mais pobres.','Mercados têm falhas (monopólios, poluição, crises financeiras) que exigem Estado.','Conservadores dizem que o individualismo enfraquece a comunidade.'],
+ confusion:'Liberalismo clássico não é libertarianismo: aceita um Estado com funções essenciais e, muitas vezes, alguma rede de proteção.',
+ read:['Adam Smith — A Riqueza das Nações (1776)','Friedrich Hayek — O Caminho da Servidão (1944)','Milton Friedman — Capitalismo e Liberdade (1962)']},
+
+{id:'libert',name:'Libertarianismo',short:'Libertarianismo',v:{eco:90,soc:-50,inst:-85},
+ one:'Liberdade individual máxima: Estado mínimo (ou nenhum), propriedade privada e trocas voluntárias, tanto na economia quanto na vida pessoal.',
+ ideas:['Princípio da não agressão: ninguém pode iniciar força contra outra pessoa ou sua propriedade.','Estado mínimo (polícia, justiça, defesa) ou, na versão anarcocapitalista, nenhum Estado.','Liberdade pessoal ampla: drogas, armas e escolhas de vida são decisões individuais.'],
+ origin:'Tem raízes no liberalismo clássico e na Escola Austríaca de economia (Ludwig von Mises, Ação Humana, 1949). Robert Nozick fez a defesa filosófica do Estado mínimo (Anarquia, Estado e Utopia, 1974), e Murray Rothbard formulou o anarcocapitalismo. Partidos libertários surgiram nos EUA nos anos 1970.',
+ brazil:'Ganhou visibilidade no Brasil a partir dos anos 2010, por meio de institutos, publicações e movimentos de jovens.',
+ pro:['Coerência: defende a liberdade individual tanto na economia quanto nos costumes.','Desconfiança de todo poder concentrado.','Valoriza inovação, empreendedorismo e responsabilidade individual.'],
+ con:['Críticos dizem que deixa os mais vulneráveis sem proteção.','Dúvidas sobre bens públicos, meio ambiente e monopólios sem Estado.','Conservadores criticam a liberação de drogas e de outras condutas.'],
+ confusion:'Neste teste, libertários costumam ter posições combinadas nos costumes, por exemplo a favor de liberar drogas e também a favor do porte de armas. Isso é coerente com a ideia de liberdade individual.',
+ read:['Robert Nozick — Anarquia, Estado e Utopia (1974)','Ludwig von Mises — Ação Humana (1949)']},
+
+{id:'paleo',name:'Paleolibertarianismo',short:'Paleolibertarianismo',v:{eco:90,soc:70,inst:-70},
+ one:'Estado mínimo e mercado livre, combinados com valores culturais tradicionais sustentados pela família, pela religião e pela comunidade, e não pelo governo.',
+ ideas:['Mercado livre e Estado mínimo, ou mesmo nenhum Estado.','Tradição, religião e família como base moral da sociedade, mantidas por instituições voluntárias e não por leis.','Descentralização radical e desconfiança de governos centrais e de organismos internacionais.'],
+ origin:'O termo foi proposto por Llewellyn Rockwell em 1990, em parceria com Murray Rothbard, para aproximar o libertarianismo do conservadorismo cultural. Hans-Hermann Hoppe desenvolveu a corrente (Democracia: o deus que falhou, 2001), com críticas inclusive à democracia de massas.',
+ brazil:'Tem presença em parte dos movimentos libertários e conservadores que cresceram na internet brasileira a partir dos anos 2010, com a tradução de autores da Escola Austríaca.',
+ pro:['Combina liberdade econômica com valores tradicionais, sem depender do Estado para impô-los.','Desconfiança coerente de qualquer poder centralizado.','Valoriza comunidades locais e instituições voluntárias.'],
+ con:['Outros libertários dizem que ela abandona a neutralidade moral do libertarianismo.','Críticos apontam aproximações históricas da corrente com nacionalismos e posições excludentes.','As críticas de Hoppe à democracia são vistas por muitos como antidemocráticas.'],
+ confusion:'Não é o mesmo que liberal-conservadorismo: o paleolibertário quer o Estado mínimo também na segurança e nos costumes. Para ele, a tradição deve ser mantida pela sociedade, não pela lei.',
+ read:['Hans-Hermann Hoppe — Democracia: o deus que falhou (2001)','Murray Rothbard — A Ética da Liberdade (1982)']},
+
+{id:'libcons',name:'Liberal-conservadorismo',short:'Liberal-conservadorismo',v:{eco:70,soc:50,inst:-30},
+ one:'Liberal na economia e conservador nos costumes: mercado livre, Estado enxuto e valorização da família, da religião e da ordem.',
+ ideas:['Livre mercado, privatizações e impostos baixos.','Tradição, família e valores morais como base da sociedade.','Ordem pública e Estado firme na segurança, dentro da democracia.'],
+ origin:'Nos EUA dos anos 1950 e 1960, Frank Meyer e William F. Buckley propuseram o “fusionismo”, que uniu liberais econômicos e conservadores culturais. A fórmula marcou os governos de Ronald Reagan (1981–1989) e Margaret Thatcher (1979–1990).',
+ brazil:'Nas últimas décadas, “liberal na economia, conservador nos costumes” tornou-se uma autodefinição frequente de parte da direita brasileira.',
+ pro:['Combina crescimento econômico com estabilidade social e moral.','Responsabilidade individual e familiar em vez de dependência do Estado.','Ênfase em segurança e ordem.'],
+ con:['Críticos apontam tensão interna: o mercado livre também transforma costumes.','Progressistas criticam posições sobre minorias e direitos reprodutivos.','Críticos sociais dizem que reformas de mercado aumentaram a desigualdade.'],
+ confusion:'Não é o mesmo que autoritarismo: o liberal-conservadorismo clássico defende a democracia e o Estado de Direito.',
+ read:['Frank Meyer — In Defense of Freedom (1962)','Roger Scruton — Como ser um conservador (2014)']},
+
+{id:'cons',name:'Conservadorismo',short:'Conservadorismo',v:{eco:30,soc:70,inst:-30},
+ one:'Prudência diante de mudanças: preservar instituições, tradições e laços comunitários que resistiram ao tempo, reformando com cautela.',
+ ideas:['A sociedade é herança entre gerações; mudanças bruscas tendem a destruir mais do que criar.','Valorização de família, religião, comunidade e instituições.','Desconfiança de projetos que tentam redesenhar a sociedade a partir de teorias abstratas.'],
+ origin:'Edmund Burke é considerado o pai do conservadorismo moderno (Reflexões sobre a Revolução na França, 1790). Depois vieram autores como Russell Kirk (A Mentalidade Conservadora, 1953), Michael Oakeshott e Roger Scruton. Partidos conservadores governaram muitas democracias ao longo dos séculos XIX e XX.',
+ brazil:'No Império, o Partido Conservador (formado a partir da década de 1830) disputava o poder com o Partido Liberal. Hoje, o conservadorismo cultural e religioso é uma força relevante na sociedade e no Congresso.',
+ pro:['Protege instituições que levaram séculos para se formar.','Valoriza comunidade, família e pertencimento.','Prudência evita reformas mal pensadas.'],
+ con:['Progressistas dizem que ele preserva injustiças e atrasa direitos.','Críticos dizem que ele pode idealizar o passado.','Na economia, varia muito: há conservadores estatistas e liberais.'],
+ confusion:'Ser conservador nos costumes não significa ser contra a democracia; o conservadorismo clássico valoriza o Estado de Direito e a divisão de poderes.',
+ read:['Edmund Burke — Reflexões sobre a Revolução na França (1790)','Russell Kirk — A Mentalidade Conservadora (1953)']},
+
+{id:'autmerc',name:'Autoritarismo de mercado',short:'Autorit. de mercado',v:{eco:85,soc:40,inst:85},
+ one:'Economia de mercado e abertura econômica conduzidas por um governo autoritário, que restringe oposição, imprensa e direitos políticos em nome da ordem e do crescimento.',
+ ideas:['Liberalização econômica, privatizações e abertura comercial impostas de cima para baixo.','Supressão de partidos, sindicatos e oposição para garantir “estabilidade”.','Ordem, segurança e combate ao “inimigo interno” como prioridade.'],
+ origin:'O exemplo mais estudado é o Chile sob Augusto Pinochet (1973–1990), que chegou ao poder por golpe militar e aplicou reformas de mercado formuladas por economistas formados em Chicago (os “Chicago Boys”). O cientista político Guillermo O’Donnell chamou regimes militares sul-americanos da época de “autoritarismo burocrático” (1973); para casos posteriores em outras regiões, fala-se em “capitalismo autoritário”.',
+ brazil:'O regime militar brasileiro (1964–1985) também foi autoritário, mas sua política econômica foi predominantemente estatista e desenvolvimentista, o que o diferencia do caso chileno; no mapa, ficaria mais perto do nacionalismo autoritário.',
+ pro:['Defensores atribuem ao modelo chileno a estabilização da economia e o crescimento nas décadas seguintes.','Reformas difíceis implementadas sem bloqueios políticos.','Ordem e previsibilidade para investimentos.'],
+ con:['Violações de direitos humanos: no Chile, as comissões Rettig e Valech reconheceram milhares de mortos, desaparecidos, presos políticos e torturados.','Supressão da democracia, da imprensa livre e dos sindicatos.','Crises graves no período, como a de 1982, e aumento da desigualdade, segundo críticos.'],
+ confusion:'Mostra que economia de mercado e democracia não andam automaticamente juntas, assim como economia estatal e autoritarismo também não.',
+ read:['Guillermo O’Donnell — Modernização e autoritarismo burocrático (1973)','Pamela Constable e Arturo Valenzuela — A Nation of Enemies: Chile Under Pinochet (1991)']},
+
+{id:'naccons',name:'Direita nacional-conservadora',short:'Dir. nacional-conservadora',v:{eco:25,soc:85,inst:45},
+ one:'Soberania nacional, religião e tradição como centro da identidade política, com liderança forte e desconfiança de elites, organismos internacionais e de parte das instituições.',
+ ideas:['Nação, família e religião como pilares da comunidade política.','Crítica ao “globalismo”, à imigração em massa e a organismos internacionais.','Tendência a ampliar o poder do Executivo e a confrontar tribunais, imprensa e outras instituições vistas como dominadas por elites.'],
+ origin:'O nacional-conservadorismo contemporâneo ganhou forma nos anos 2010. Yoram Hazony (A Virtude do Nacionalismo, 2018) é um de seus teóricos, e o primeiro-ministro húngaro Viktor Orbán defendeu, em 2014, a ideia de uma “democracia iliberal”. Há paralelos em movimentos de vários países da Europa e das Américas.',
+ brazil:'No Brasil, parte da direita surgida na década de 2010 incorporou temas desse movimento, como soberania nacional, crítica ao globalismo e valorização da religião na vida pública.',
+ pro:['Dá voz a quem se sente ignorado por elites políticas e culturais.','Defesa da identidade nacional e da soberania.','Valoriza religião e família em sociedades em rápida transformação.'],
+ con:['Críticos apontam riscos às instituições, à imprensa e à independência do Judiciário.','Hostilidade a minorias e a imigrantes, segundo críticos.','Personalismo e polarização.'],
+ confusion:'“Populismo” é um estilo político, não uma ideologia: aqui aparece combinado com conservadorismo e nacionalismo, assim como, à esquerda, aparece combinado com estatismo.',
+ read:['Yoram Hazony — A Virtude do Nacionalismo (2018)','Steven Levitsky e Daniel Ziblatt — Como as democracias morrem (2018)']},
+
+{id:'nacaut',name:'Nacionalismo autoritário',short:'Nac. autoritário',v:{eco:5,soc:90,inst:90},
+ one:'A nação acima do indivíduo: Estado forte, partido ou chefe único, ordem e unidade nacional impostas, sem pluralismo político.',
+ ideas:['Unidade nacional imposta pelo Estado; oposição tratada como inimiga.','Corporativismo: Estado organiza capital e trabalho em corporações e controla sindicatos.','Culto à ordem, à hierarquia e, frequentemente, a um líder.'],
+ origin:'Sua forma mais conhecida é o fascismo italiano de Benito Mussolini (no poder a partir de 1922). O nazismo alemão foi uma variante radical, com racismo de Estado e genocídio (o Holocausto). Regimes como os de Francisco Franco (Espanha) e António de Oliveira Salazar (Portugal) também são classificados por historiadores como autoritários de matriz nacionalista.',
+ brazil:'A Ação Integralista Brasileira (1932), liderada por Plínio Salgado, foi o movimento de inspiração fascista no país. O Estado Novo de Vargas (1937–1945) e o regime militar (1964–1985) são frequentemente citados por historiadores como regimes autoritários com traços nacionalistas, embora com diferenças importantes em relação ao fascismo europeu.',
+ pro:['Seus defensores históricos alegavam trazer ordem, unidade e fim de conflitos.','Modernização econômica comandada pelo Estado.','Apelo à identidade e ao orgulho nacional.'],
+ con:['Supressão de partidos, sindicatos livres e imprensa; perseguição a opositores e minorias.','Censura, tortura e violência de Estado.','No extremo nazista, genocídio e guerra mundial.'],
+ confusion:'Não é sinônimo de “direita” nem de conservadorismo: o conservadorismo democrático defende instituições e limites ao poder.',
+ read:['Robert Paxton — A Anatomia do Fascismo (2004)','Hannah Arendt — Origens do Totalitarismo (1951)']}
+];
+
+// ============================================================
+// GLOSSÁRIO DE CONCEITOS (lupas das perguntas e dos eixos)
+// ============================================================
+const CONCEPTS={
+'esquerda-direita':{t:'Esquerda e direita: de onde vêm?',p:['Os termos nasceram na Assembleia Nacional da Revolução Francesa, em 1789. À direita do presidente sentavam-se os que queriam manter amplos poderes ao rei (como o direito de veto); à esquerda, os que queriam limitar esses poderes e transformar a ordem social.','Com o tempo, “esquerda” passou a ser associada à busca de igualdade e mudança social, e “direita” à defesa da ordem, da tradição, da propriedade e da liberdade de mercado. O filósofo Norberto Bobbio (Direita e Esquerda, 1994) propôs que a diferença central é a atitude diante da igualdade.','Hoje muitos estudiosos preferem mapas com mais de uma dimensão, porque uma pessoa pode ser, por exemplo, liberal na economia e progressista nos costumes. É isso que este teste faz.']},
+'centro':{t:'O que é “centro”?',p:['Na régua deste teste, “centro” é a faixa entre −15 e +15. Chegar ali pode significar duas coisas bem diferentes: moderação (respostas no meio) ou combinação (posições fortes que apontam para lados opostos e se compensam).','Por isso o resultado mostra, em cada eixo, se suas posições foram alinhadas, moderadas ou combinadas.','Não confunda centro ideológico com o “Centrão”, apelido de um bloco parlamentar brasileiro.']},
+'eixo-economia':{t:'Eixo econômico: Estado × Mercado',p:['Mede quem você acha que deve organizar a produção, a renda e os serviços.','Lado “Estado”: mais impostos progressivos, empresas públicas, proteção trabalhista, gastos sociais e regulação de preços.','Lado “Mercado”: mais concorrência, privatizações e concessões, impostos menores, regras flexíveis e controle de gastos.','Nenhum dos lados é “contra” o outro por definição: quase todas as economias reais são mistas. A questão é a dose.']},
+'eixo-costumes':{t:'Eixo de costumes: Progressista × Conservador',p:['Mede como você equilibra autonomia individual e mudança social, de um lado, com tradição, religião e continuidade cultural, do outro.','Inclui temas como família, aborto, drogas, armas, religião e Estado, escola e cotas. Pesquisas brasileiras de valores, como as do Datafolha, costumam tratar temas como armas, drogas, pena de morte e homossexualidade nesse campo.','Algumas correntes têm posições combinadas aqui: libertários, por exemplo, costumam defender tanto liberar drogas quanto o porte de armas.']},
+'eixo-instituicoes':{t:'Eixo institucional: Garantias × Autoridade',p:['Mede quanto poder você aceita dar a governantes, juízes, polícia e outras autoridades em nome da ordem, da segurança ou da proteção da democracia, e quanto valoriza limites a esse poder.','Atenção: este eixo não é de esquerda nem de direita. Algumas perguntas trazem posições de autoridade hoje mais associadas à direita (por exemplo, mais poder à polícia) e outras mais associadas à esquerda (por exemplo, regular a mídia).','Por isso ele não entra na régua esquerda–direita e é mostrado separadamente.']},
+'progressividade':{t:'Progressividade tributária',p:['Um imposto é progressivo quando a alíquota sobe conforme a renda ou a riqueza, como nas faixas do Imposto de Renda. É regressivo quando pesa proporcionalmente mais para quem ganha menos, como costuma acontecer com impostos sobre o consumo.','Defensores dizem que a progressividade reduz a desigualdade e é mais justa. Críticos dizem que alíquotas altas desestimulam investimento e trabalho e estimulam a evasão.']},
+'privatizacao':{t:'Privatização, concessão e estatal',p:['Na privatização, o Estado vende a empresa. Na concessão, o Estado continua dono do serviço, mas um operador privado o presta por um prazo, com metas e tarifas reguladas. Na estatal, o próprio Estado opera.','Defensores da participação privada citam eficiência e capacidade de investimento. Defensores das estatais citam o controle público, o interesse social e a proteção contra tarifas abusivas.']},
+'direitos-trabalhistas':{t:'Direitos trabalhistas e CLT',p:['A Consolidação das Leis do Trabalho (CLT, 1943) reúne direitos como férias, 13º salário, FGTS e limite de jornada. A reforma trabalhista de 2017 ampliou o espaço para acordos entre empresas e empregados.','Quem defende mais proteção diz que ela equilibra uma relação desigual. Quem defende mais flexibilidade diz que custos altos geram informalidade e desemprego.']},
+'estado-bem-estar':{t:'Estado de bem-estar social',p:['É o conjunto de políticas públicas que protegem as pessoas contra riscos da vida: doença, velhice, desemprego e pobreza. Ganhou força na Europa após a Segunda Guerra.','Há modelos diferentes: prestação direta pelo Estado (como o SUS), financiamento público com prestadores privados (como vouchers) ou seguros obrigatórios. A pergunta deste teste é sobre o modelo, não sobre ter ou não proteção.']},
+'responsabilidade-fiscal':{t:'Responsabilidade fiscal e dívida pública',p:['O governo gasta mais do que arrecada quando tem déficit e financia a diferença com dívida. Regras fiscais limitam esse crescimento.','A escola keynesiana (John Maynard Keynes, 1936) defende gastar mais em recessões para estimular a economia. Outras correntes alertam que dívida alta eleva os juros, a inflação e o risco de crise.']},
+'protecionismo':{t:'Protecionismo × abertura comercial',p:['Protecionismo é usar tarifas, cotas e subsídios para proteger produtores nacionais. Abertura comercial é reduzir essas barreiras.','Defensores da proteção citam empregos industriais e o desenvolvimento tecnológico nacional (argumento da “indústria nascente”). Defensores da abertura citam preços menores, competitividade e acesso a tecnologia.']},
+'licenciamento':{t:'Licenciamento ambiental',p:['É a autorização que obras e atividades com impacto ambiental precisam obter, com estudos e condições para reduzir danos.','Quem defende regras rígidas cita danos irreversíveis, a mudança do clima e a biodiversidade. Quem defende simplificação cita demora, insegurança jurídica e projetos travados.']},
+'livre-mercado':{t:'Livre mercado e regulação',p:['No livre mercado, preços e quantidades resultam da oferta e da demanda. Na regulação, o Estado define regras, limites ou preços.','Defensores do mercado dizem que preços livres sinalizam escassez e estimulam a eficiência. Defensores da regulação lembram falhas de mercado, como monopólios, setores essenciais e crises.']},
+'laicidade':{t:'Laicidade',p:['Estado laico é aquele que não adota religião oficial e trata todas as crenças, e a ausência delas, com igualdade. A Constituição de 1988 estabelece que o Brasil é laico e garante a liberdade religiosa.','Há interpretações diferentes: uma separação estrita entre religião e políticas públicas, ou uma laicidade “colaborativa”, em que valores religiosos podem inspirar leis aprovadas democraticamente.']},
+'acoes-afirmativas':{t:'Ações afirmativas',p:['São políticas que dão tratamento diferenciado temporário a grupos historicamente desfavorecidos, como as cotas. Em 2012, o STF considerou constitucionais as cotas raciais em universidades.','Defensores dizem que elas corrigem desigualdades históricas e ampliam a diversidade. Críticos preferem critérios universais, como a renda, e apontam o risco de reforçar divisões por raça.']},
+'separacao-poderes':{t:'Separação de poderes e freios e contrapesos',p:['Ideia sistematizada por Montesquieu (O Espírito das Leis, 1748): dividir o poder entre Executivo, Legislativo e Judiciário para que um controle o outro.','Quem prioriza garantias acha que esses freios protegem contra abusos. Quem prioriza autoridade acha que, em certos momentos, eles impedem um governo eleito de agir.']},
+'devido-processo':{t:'Devido processo legal e garantias',p:['São regras que protegem qualquer pessoa diante do Estado: direito de defesa, presunção de inocência, mandado judicial para buscas e provas obtidas legalmente.','Quem as prioriza diz que elas protegem inocentes e evitam perseguições. Quem quer flexibilizá-las diz que formalidades excessivas geram impunidade.']},
+'liberdade-expressao':{t:'Liberdade de expressão: dois modelos',p:['No modelo americano (Primeira Emenda), quase toda fala é protegida, mesmo ofensiva, e a resposta ao discurso ruim é mais discurso. No modelo europeu, há mais restrições legais a discurso de ódio e desinformação.','O Brasil fica entre os dois: a Constituição protege a liberdade de expressão, mas a lei pune crimes como calúnia e racismo. O debate atual é sobre redes sociais, plataformas e quem decide o que remover.']},
+'totalitarismo':{t:'Autoritarismo e totalitarismo',p:['Regimes autoritários concentram o poder e limitam a oposição. Regimes totalitários vão além: tentam controlar todos os aspectos da vida, com ideologia oficial, partido único e terror.','Hannah Arendt (Origens do Totalitarismo, 1951) analisou o nazismo e o stalinismo como as duas grandes formas totalitárias do século XX. Ou seja, o autoritarismo apareceu historicamente à esquerda e à direita.']}
+};
+
+// ============================================================
+// CONFIGURAÇÃO
+// Endereço do site (sem https://). Aparece no card dos Stories.
+// Se ficar vazio, o card usa o endereço atual da página ou “link na bio”.
+// ============================================================
+const SITE_URL='emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica';
+const IG_HANDLE='danielmelo_eu';
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=n=>(n>0?'+':'')+String(n).replace('.',',');
+const STORE='bussola-politica-v3';
+const fresh=()=>({v:3,answers:Array(NQ).fill(null),i:0,dilemmaIds:[],dilemmaAnswers:{},refined:false,weight:50,done:false});
+let state=fresh();
+try{const s=JSON.parse(localStorage.getItem(STORE)||'null');if(s&&s.v===3&&Array.isArray(s.answers)&&s.answers.length===NQ){state={...fresh(),...s,answers:s.answers.map(x=>[0,1,2,3,4,5].includes(x)?x:null)};}}catch(e){}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){}}
+function show(view){['welcome','quiz','refinement','results'].forEach(id=>$(id).classList.toggle('hide',id!==view));['method','library'].forEach(id=>$(id).classList.toggle('hide',view==='quiz'||view==='refinement'));window.scrollTo({top:0,behavior:'instant'});}
+
+// ------------------------------------------------------------
+// CÁLCULO
+// ------------------------------------------------------------
+function oriented(q,a){return (a===null||a===undefined||a===DUNNO)?null:(2-a)*q.aPole;}
+function axisValues(d,withDilemmas=state.refined){const out=[];QUESTIONS.forEach((q,i)=>{if(q.d!==d)return;const v=oriented(q,state.answers[i]);if(v!==null)out.push({v,q,i,a:state.answers[i]});});
+ if(withDilemmas){state.dilemmaIds.forEach(id=>{const D=DILEMMAS[id],a=state.dilemmaAnswers[id];if(D.d===d&&a!==undefined)out.push({v:D.choices[a][1],dil:id,a});});}return out;}
+function axisScore(d,withD){const vals=axisValues(d,withD);return vals.length?Math.round(50*vals.reduce((s,x)=>s+x.v,0)/vals.length):0;}
+function vector(){return {eco:axisScore('eco'),soc:axisScore('soc'),inst:axisScore('inst')};}
+function overall(v,w=state.weight){return Math.round((v.eco*w+v.soc*(100-w)))/100;}
+function band(n){if(n<-55)return 'Esquerda';if(n<-15)return 'Centro-esquerda';if(n<=15)return 'Centro';if(n<=55)return 'Centro-direita';return 'Direita';}
+const SIGMA=45, W={eco:.4,soc:.4,inst:.2};
+function compare(v){return IDEOLOGIES.map(x=>{const d2=W.eco*(v.eco-x.v.eco)**2+W.soc*(v.soc-x.v.soc)**2+W.inst*(v.inst-x.v.inst)**2;return {...x,score:10*Math.exp(-.5*d2/SIGMA**2)};}).sort((a,b)=>b.score-a.score);}
+function pattern(d){const vals=axisValues(d),n=vals.length,A=AXES[d];if(n<3)return {k:'few',label:'Poucas respostas',text:'Menos de 3 respostas válidas neste eixo; o resultado aqui é pouco informativo.'};
+ const pos=vals.filter(x=>x.v>0).length,neg=vals.filter(x=>x.v<0).length,mid=n-pos-neg,meanAbs=vals.reduce((s,x)=>s+Math.abs(x.v),0)/n,sc=axisScore(d);
+ if(pos>=2&&neg>=2&&Math.abs(sc)<=40)return {k:'mixed',label:'Posições combinadas',text:`Você escolheu ${neg}× o lado “${A.neg}”, ${pos}× o lado “${A.pos}”${mid?` e ${mid}× o meio`:''}. Seu número fica perto do centro porque essas escolhas se compensam, não necessariamente por moderação.`};
+ if(meanAbs<.8)return {k:'moderate',label:'Posições moderadas',text:`A maior parte das respostas ficou no meio ou em “um pouco mais perto”. ${neg}× “${A.neg}”, ${pos}× “${A.pos}”, ${mid}× no meio.`};
+ const side=sc<0?A.neg:A.pos;return {k:'aligned',label:'Posições alinhadas',text:`A maioria das respostas apontou para o lado “${side}”: ${neg}× “${A.neg}”, ${pos}× “${A.pos}”, ${mid}× no meio.`};}
+function axisText(d,n){const A=AXES[d];return n<-20?`Você tende a preferir ${A.negLong}.`:n>20?`Você tende a preferir ${A.posLong}.`:'Você fica perto do meio neste eixo.';}
+function dunnoCount(){return state.answers.filter(a=>a===DUNNO).length;}
+
+// ------------------------------------------------------------
+// QUESTIONÁRIO
+// ------------------------------------------------------------
+function renderQuestion(){const i=state.i,q=QUESTIONS[i],A=AXES[q.d],ans=state.answers[i];
+ $('q-axis').innerHTML=`${esc(A.name)} <button class="lupa" type="button" data-info="c:${A.term}" aria-label="Sobre o eixo ${esc(A.name)}">🔍</button>`;
+ $('q-count').textContent=`Pergunta ${i+1} de ${NQ}`;
+ $('progress-fill').style.width=(state.answers.filter(x=>x!==null).length/NQ*100)+'%';
+ const leanA=ans===0||ans===1,leanB=ans===3||ans===4;
+ $('q-pair').innerHTML=`<div class="pos${leanA?' lean':''}"><span class="letter">A</span>${esc(q.a)}</div><div class="pos${leanB?' lean':''}"><span class="letter">B</span>${esc(q.b)}</div>`;
+ const terms=q.terms.length?`<span class="terms">🔍 Entenda: ${q.terms.map(t=>`<button class="termlink" type="button" data-info="c:${t}">${esc(CONCEPTS[t].t)}</button>`).join('')}</span>`:'';
+ $('q-context').innerHTML=`<strong>Contexto:</strong> ${esc(q.ex)}${terms}`;
+ $('q-scale').replaceChildren();SCALE.forEach((s,k)=>{const b=document.createElement('button');b.type='button';b.innerHTML=`<span class="tag">${s.s}</span>${esc(s.t)}`;b.setAttribute('aria-pressed',ans===k?'true':'false');b.onclick=()=>choose(k);$('q-scale').appendChild(b);});
+ $('q-dunno').setAttribute('aria-pressed',ans===DUNNO?'true':'false');
+ $('q-prev').textContent=i===0?'← Início':'← Voltar';
+ $('q-next').textContent=i===NQ-1?'Concluir →':'Próxima →';$('q-next').disabled=ans===null;}
+let advanceTimer=null;
+function choose(k){state.answers[state.i]=k;persist();renderQuestion();clearTimeout(advanceTimer);advanceTimer=setTimeout(nextQuestion,280);}
+function nextQuestion(){clearTimeout(advanceTimer);if(state.answers[state.i]===null)return;if(state.i<NQ-1){state.i++;persist();renderQuestion();window.scrollTo({top:0,behavior:'instant'});}else{goDilemmas();}}
+function goDilemmas(){const first=state.answers.findIndex(a=>a===null);if(first>=0){state.i=first;renderQuestion();return;}renderDilemmas();show('refinement');}
+
+function chooseDilemmas(){return ['eco','soc','inst'].map(d=>{const p=pattern(d),sc=axisScore(d,false);return (Math.abs(sc)<25||p.k==='mixed')?DILEMMA_PAIRS[d][0]:DILEMMA_PAIRS[d][1];});}
+function renderDilemmas(){state.dilemmaIds=chooseDilemmas();persist();$('dilemma-warn').classList.add('hide');$('dilemma-list').replaceChildren();
+ state.dilemmaIds.forEach((id,i)=>{const D=DILEMMAS[id],el=document.createElement('article');el.className='dilemma';el.innerHTML=`<span class="eyebrow">Dilema ${i+1} de 3 · ${AXES[D.d].name}</span><h3>${esc(D.title)}</h3><p>${esc(D.scenario)}</p><div role="group" aria-label="${esc(D.title)}"></div>`;
+  D.choices.forEach((c,j)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=c[0];b.setAttribute('aria-pressed',state.dilemmaAnswers[id]===j?'true':'false');b.onclick=()=>{state.dilemmaAnswers[id]=j;persist();el.querySelectorAll('.opt').forEach((x,k)=>x.setAttribute('aria-pressed',k===j?'true':'false'));};el.querySelector('div').appendChild(b);});
+  $('dilemma-list').appendChild(el);});}
+
+// ------------------------------------------------------------
+// RESULTADO
+// ------------------------------------------------------------
+function ideoById(id){return IDEOLOGIES.find(x=>x.id===id);}
+function nearestWhere(v,fn){return compare(v).find(fn);}
+function renderResults(){const v=vector(),rank=compare(v),ov=overall(v),b=band(ov),dk=dunnoCount();
+ state.done=true;persist();
+ $('result-band').textContent=b;
+ $('refined-chip').textContent=state.refined?'Com os 3 dilemas':'Baseado nas 24 perguntas';
+ $('dunno-chip').hidden=!dk;$('dunno-chip').textContent=`${dk} “não sei” fora do cálculo`;
+ const close=rank[0].score-rank[1].score<.4;
+ $('result-intro').textContent=dk>=10?'Muitas respostas ficaram como “Não sei”. A régua aponta uma faixa, mas há pouca informação para comparar correntes com segurança.':`Na régua que combina economia e costumes, suas respostas ficam na faixa “${b.toLowerCase()}”. O retrato completo está nos três eixos, no mapa e nas correntes que compartilham partes do seu pensamento.${close?' As duas correntes mais próximas têm notas muito parecidas.':''}`;
+ renderCompass(v,rank);
+ $('axes').innerHTML=['eco','soc','inst'].map(d=>{const A=AXES[d],p=pattern(d);return `<div class="axis"><div class="axis-top"><span>${A.name}<button class="lupa" type="button" data-info="c:${A.term}" aria-label="Sobre o eixo ${A.name}">🔍</button></span><span>${fmt(v[d])}</span></div><div class="axis-bar"><div class="axis-pin" style="left:${(v[d]+100)/2}%"></div></div><div class="axis-ends"><span>${A.neg}</span><span>${A.pos}</span></div><div class="pattern"><b>${p.label}.</b> ${axisText(d,v[d])} ${esc(p.text)}</div></div>`;}).join('');
+ renderOverall(v);renderDrivers();
+ $('ranking').innerHTML=rank.map((x,i)=>{const diff={eco:Math.abs(v.eco-x.v.eco),soc:Math.abs(v.soc-x.v.soc),inst:Math.abs(v.inst-x.v.inst)},ks=['eco','soc','inst'],kmin=ks.reduce((a,c)=>diff[a]<=diff[c]?a:c),kmax=ks.reduce((a,c)=>diff[a]>=diff[c]?a:c);
+  return `<div class="rank${i>=5?' extra':''}"><div class="rank-head"><span class="rank-order">${i+1}º</span><span class="rank-title">${esc(x.name)} <span class="shape" title="${x.v.inst>0?'Aceita mais autoridade':'Prioriza garantias'}">${x.v.inst>0?'◆':'●'}</span> <button class="lupa" type="button" data-info="i:${x.id}" aria-label="Ficha: ${esc(x.name)}">🔍</button></span><span class="rank-score">${x.score.toFixed(1).replace('.',',')}/10</span></div><div class="rank-track"><b style="width:${(x.score*10).toFixed(1)}%"></b></div><p>${esc(x.one)}</p><div class="why">Mais perto em <b>${AXES[kmin].name.toLowerCase()}</b> (diferença de ${diff[kmin]}); mais distante em <b>${AXES[kmax].name.toLowerCase()}</b> (${diff[kmax]}). Referência: economia ${fmt(x.v.eco)}, costumes ${fmt(x.v.soc)}, instituições ${fmt(x.v.inst)}.</div></div>`;}).join('');
+ $('ranking').parentElement.classList.remove('show-all');$('toggle-rank').textContent='Ver todas as 19 correntes';
+ $('nuances').innerHTML=nuanceTexts(v).map(x=>`<div class="highlight">${x}</div>`).join('');
+ show('results');}
+
+function renderOverall(v){const ov=overall(v);$('overall-pointer').style.left=`${(ov+100)/2}%`;$('overall-name').textContent=`${band(ov)} · índice ${fmt(ov)}`;$('weight-label').textContent=`${state.weight}%`;$('weight-economic').value=state.weight;
+ $('formula-overall').textContent=`${state.weight}% × economia (${fmt(v.eco)}) + ${100-state.weight}% × costumes (${fmt(v.soc)}) = ${fmt(ov)}`;
+ const alt=[30,50,70].map(w=>({w,b:band(overall(v,w))})),distinct=[...new Set(alt.map(x=>x.b))];
+ $('sensitivity').textContent=distinct.length===1?`Testando pesos de 30%, 50% e 70% para a economia, você continua na faixa “${distinct[0]}”.`:`Sua faixa muda conforme o peso: ${alt.map(x=>`${x.w}% → ${x.b.toLowerCase()}`).join(' · ')}. Ou seja, o resultado depende de quanto peso se dá a cada dimensão.`;
+ const side=ov<-15?'esquerda':ov>15?'direita':null;
+ $('overall-description').textContent=side?`Nesta régua, suas respostas ficam à ${side} do centro: na média, você escolheu mais vezes posições associadas à ${side} em economia e/ou costumes. A régua não diz nada sobre democracia e instituições; isso é medido à parte, no terceiro eixo.`:'Nesta régua, suas respostas ficam perto do centro. Isso pode refletir moderação (respostas no meio) ou combinação (posições fortes em direções opostas que se compensam). Veja o padrão de cada eixo para saber qual é o seu caso.';}
+
+function driverItem(x){const strong=Math.abs(x.v)===2;let text;if(x.dil){text='Dilema: '+DILEMMAS[x.dil].choices[x.a][0].toLowerCase();}else{text=(x.a<=1?x.q.aS:x.q.bS);}return {text,strong,abs:Math.abs(x.v)};}
+function renderDrivers(){$('drivers').innerHTML=['eco','soc','inst'].map(d=>{const A=AXES[d],vals=axisValues(d),neg=vals.filter(x=>x.v<0).map(driverItem).sort((a,b)=>b.abs-a.abs),pos=vals.filter(x=>x.v>0).map(driverItem).sort((a,b)=>b.abs-a.abs),mid=vals.filter(x=>x.v===0).length;
+ const list=arr=>arr.length?`<ul>${arr.map(x=>`<li>${esc(x.text)}<span class="str">${x.strong?'forte':'leve'}</span></li>`).join('')}</ul>`:'<p class="none">Nenhuma resposta para este lado.</p>';
+ return `<div class="drv"><h3><span>${A.name}</span><span>${fmt(axisScore(d))}</span></h3><h4>Puxaram para “${A.neg}”</h4>${list(neg)}<h4>Puxaram para “${A.pos}”</h4>${list(pos)}${mid?`<p class="secondary-caption">${mid} resposta(s) no meio.</p>`:''}</div>`;}).join('');}
+
+function sideName(d,n){return n<0?AXES[d].negLong:AXES[d].posLong;}
+function nuanceTexts(v){const out=[];
+ ['eco','soc','inst'].forEach(d=>{const p=pattern(d);if(p.k==='mixed'){const vals=axisValues(d),n=vals.filter(x=>x.v<0).map(driverItem).sort((a,b)=>b.abs-a.abs)[0],ps=vals.filter(x=>x.v>0).map(driverItem).sort((a,b)=>b.abs-a.abs)[0];out.push(`Em <b>${AXES[d].name.toLowerCase()}</b>, você escolheu posições dos dois lados, por exemplo “${esc(n.text)}” e também “${esc(ps.text)}”. Isso é comum: muita gente decide tema a tema, e não por pacote.`);}});
+ if(Math.abs(v.eco)>=25&&Math.abs(v.soc)>=25){const near=nearestWhere(v,x=>Math.sign(x.v.eco)===Math.sign(v.eco)&&Math.sign(x.v.soc)===Math.sign(v.soc));out.push(`Você combina <b>${sideName('eco',v.eco)}</b> na economia com <b>${sideName('soc',v.soc)}</b> nos costumes.${near?` Entre as referências, a corrente mais próxima com essa mesma combinação é <button class="termlink" type="button" data-info="i:${near.id}">${esc(near.name)}</button>.`:''}`);}
+ if(Math.abs(v.inst)>=25){const s=Math.sign(v.inst),L=nearestWhere(v,x=>x.v.eco<0&&Math.sign(x.v.inst)===s),R=nearestWhere(v,x=>x.v.eco>0&&Math.sign(x.v.inst)===s);out.push(`No eixo de instituições você ficou do lado <b>${s<0?'das garantias e dos limites ao poder':'de mais autoridade'}</b>. Esse eixo atravessa esquerda e direita: há correntes com essa posição nos dois campos, como <button class="termlink" type="button" data-info="i:${L.id}">${esc(L.name)}</button> e <button class="termlink" type="button" data-info="i:${R.id}">${esc(R.name)}</button>.`);}
+ const dk=dunnoCount();if(dk>=4)out.push(`Você marcou “Não sei” em ${dk} perguntas. Elas não entram na conta; se quiser, revise esses temas usando as lupas 🔍 e responda depois.`);
+ if(!out.length)out.push('Suas respostas ficaram perto do meio nos três eixos. Isso pode indicar moderação ou indecisão em vários temas. Usar as lupas 🔍 para conhecer os argumentos de cada lado pode ajudar a formar uma posição.');
+ if(state.refined)out.push('Os três dilemas foram incluídos no cálculo com o mesmo peso de uma pergunta.');
+ return out.slice(0,5);}
+
+// Bússola 2D (SVG)
+const LABEL_POS={'soc-aut':[0,21,'middle'],'anarq':[0,18,'middle'],'soc-dem':[0,18,'middle'],'socdem':[9,4,'start'],'trab':[0,-12,'middle'],'nacpop':[9,-8,'start'],'jacob':[0,18,'middle'],'libsoc':[0,18,'middle'],'dc':[9,4,'start'],'centro':[0,18,'middle'],'esm':[9,4,'start'],'libclass':[0,18,'middle'],'libert':[-9,18,'end'],'paleo':[8,-11,'end'],'libcons':[0,-11,'middle'],'autmerc':[6,19,'end'],'cons':[0,18,'middle'],'naccons':[9,4,'start'],'nacaut':[-10,4,'end']};
+function compassSVG(v,rank,{size=520,showAll=true,highlight=3}={}){const pad=44,S=size-pad*2,X=e=>pad+(e+100)/200*S,Y=s=>pad+(100-s)/200*S,top=rank.slice(0,highlight).map(x=>x.id);
+ let g=`<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Mapa de economia e costumes com sua posição e as correntes de referência"><rect x="${pad}" y="${pad}" width="${S}" height="${S}" rx="14" fill="#f6f9f8" stroke="#d9e2e0"/>`;
+ for(let k=-50;k<=50;k+=50){if(k===0)continue;g+=`<line x1="${X(k)}" y1="${pad}" x2="${X(k)}" y2="${pad+S}" stroke="#e6ecea"/><line x1="${pad}" y1="${Y(k)}" x2="${pad+S}" y2="${Y(k)}" stroke="#e6ecea"/>`;}
+ g+=`<line x1="${X(0)}" y1="${pad}" x2="${X(0)}" y2="${pad+S}" stroke="#9fb3b0" stroke-dasharray="4 4"/><line x1="${pad}" y1="${Y(0)}" x2="${pad+S}" y2="${Y(0)}" stroke="#9fb3b0" stroke-dasharray="4 4"/>`;
+ const lab='font-size="12" font-weight="800" fill="#586876"';
+ g+=`<text x="${pad}" y="${pad+S+26}" ${lab}>← Estado</text><text x="${pad+S}" y="${pad+S+26}" ${lab} text-anchor="end">Mercado →</text><text x="${size/2}" y="${pad-16}" ${lab} text-anchor="middle">↑ Conservador</text><text x="${size/2}" y="${pad+S+26}" ${lab} text-anchor="middle">↓ Progressista</text>`;
+ IDEOLOGIES.forEach(x=>{const cx=X(x.v.eco),cy=Y(x.v.soc),hi=top.includes(x.id),fill=hi?'#126c67':'#ffffff',stroke=hi?'#0b4f4b':'#6c8590',r=hi?7:5.5,[dx,dy,an]=LABEL_POS[x.id]||[9,4,'start'];
+  const mark=x.v.inst>0?`<rect x="${cx-r}" y="${cy-r}" width="${2*r}" height="${2*r}" transform="rotate(45 ${cx} ${cy})" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`:`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
+  g+=`<g class="ideo" data-info="i:${x.id}" tabindex="0" role="button" aria-label="${esc(x.name)}">${mark}${showAll||hi?`<text x="${cx+dx}" y="${cy+dy}" text-anchor="${an}" font-size="${hi?12:10.5}" font-weight="${hi?850:650}" fill="${hi?'#0b4f4b':'#5d717b'}" paint-order="stroke" stroke="#f6f9f8" stroke-width="3">${esc(x.short)}</text>`:''}</g>`;});
+ const ux=X(v.eco),uy=Y(v.soc);g+=`<circle cx="${ux}" cy="${uy}" r="16" fill="#152a3722"/><circle cx="${ux}" cy="${uy}" r="9" fill="#152a37" stroke="#fff" stroke-width="3"/><text x="${ux}" y="${uy-17}" text-anchor="middle" font-size="13" font-weight="900" fill="#152a37" paint-order="stroke" stroke="#fff" stroke-width="4">Você</text></svg>`;return g;}
+function renderCompass(v,rank){$('compass').innerHTML=compassSVG(v,rank);}
+
+// ------------------------------------------------------------
+// LUPA (fichas) e BIBLIOTECA
+// ------------------------------------------------------------
+function openModal(dlg){if(typeof dlg.showModal==='function'){if(!dlg.open)dlg.showModal();}else{dlg.setAttribute('open','');}}
+function closeModal(dlg){if(typeof dlg.close==='function')dlg.close();else dlg.removeAttribute('open');}
+function openInfo(key){const [type,id]=key.split(':');let h='';
+ if(type==='i'){const x=ideoById(id);if(!x)return;h=`<article class="info"><span class="info-kicker">Corrente política ${x.v.inst>0?'◆':'●'}</span><h2 id="info-title">${esc(x.name)}</h2><p class="lead">${esc(x.one)}</p>
+  <div class="coord"><span>Economia ${fmt(x.v.eco)} (${x.v.eco<0?'Estado':x.v.eco>0?'Mercado':'meio'})</span><span>Costumes ${fmt(x.v.soc)} (${x.v.soc<0?'Progressista':x.v.soc>0?'Conservador':'meio'})</span><span>Instituições ${fmt(x.v.inst)} (${x.v.inst<0?'Garantias':'Autoridade'})</span></div>
+  <h3>Ideias centrais</h3><ul>${x.ideas.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+  <h3>Origem histórica</h3><p>${esc(x.origin)}</p><h3>No Brasil</h3><p>${esc(x.brazil)}</p>
+  <div class="proscons"><div class="box"><h3>O que defensores argumentam</h3><ul>${x.pro.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div><div class="box"><h3>O que críticos apontam</h3><ul>${x.con.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div></div>
+  <h3>Confusão comum</h3><p class="confusion">${esc(x.confusion)}</p><h3>Para saber mais</h3><ul>${x.read.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+  <p class="note">Ficha editorial resumida, escrita no mesmo formato para todas as correntes. As tradições reais são diversas por dentro; as coordenadas são referências simplificadas usadas no cálculo.</p></article>`;}
+ else{const c=CONCEPTS[id];if(!c)return;h=`<article class="info"><span class="info-kicker">Conceito</span><h2 id="info-title">${esc(c.t)}</h2>${c.p.map(t=>`<p>${esc(t)}</p>`).join('')}</article>`;}
+ $('info-body').innerHTML=h;openModal($('info'));$('info').querySelector('.modal-inner').scrollTop=0;}
+function renderLibrary(){$('lib-ideologies').innerHTML=IDEOLOGIES.map(x=>`<button class="lib-card" type="button" data-info="i:${x.id}"><b>${esc(x.name)} ${x.v.inst>0?'◆':'●'}</b><span>${esc(x.one)}</span><span class="coords">Econ. ${fmt(x.v.eco)} · Cost. ${fmt(x.v.soc)} · Inst. ${fmt(x.v.inst)}</span></button>`).join('');
+ $('lib-concepts').innerHTML=Object.entries(CONCEPTS).map(([k,c])=>`<button type="button" data-info="c:${k}">🔍 ${esc(c.t)}</button>`).join('');}
+
+// ------------------------------------------------------------
+// RELATÓRIO
+// ------------------------------------------------------------
+function report(){const v=vector(),ov=overall(v),rank=compare(v);
+ return `BÚSSOLA POLÍTICA — RELATÓRIO PESSOAL\ncriado por @${IG_HANDLE}\n\nFaixa geral: ${band(ov)} (índice ${fmt(ov)}; economia ${state.weight}%, costumes ${100-state.weight}%)\nEconomia: ${fmt(v.eco)} (${pattern('eco').label})\nCostumes: ${fmt(v.soc)} (${pattern('soc').label})\nInstituições: ${fmt(v.inst)} (${pattern('inst').label})\nDilemas incluídos: ${state.refined?'sim':'não'} · Respostas “não sei”: ${dunnoCount()}\n\nAFINIDADES (notas comparativas, não probabilidades)\n${rank.map((x,i)=>`${i+1}. ${x.name}: ${x.score.toFixed(1)}/10`).join('\n')}\n\nSUAS RESPOSTAS\n${QUESTIONS.map((q,i)=>{const a=state.answers[i];return `${i+1}. [${AXES[q.d].name}]\n   A: ${q.a}\n   B: ${q.b}\n   → ${a===null?'sem resposta':a===DUNNO?'Não sei / prefiro não opinar':SCALE[a].t}`;}).join('\n\n')}${state.refined?'\n\nDILEMAS\n'+state.dilemmaIds.map(id=>`${DILEMMAS[id].title}: ${DILEMMAS[id].choices[state.dilemmaAnswers[id]][0]}`).join('\n'):''}\n\nAVISO: modelo exploratório e editorial, sem validação científica e sem IA. As notas dependem das perguntas, dos pesos e dos perfis de referência.`;}
+
+// ------------------------------------------------------------
+// CARD PARA STORIES (1080×1920)
+// Todo o conteúdo fica entre y=230 e y=1620: são as zonas seguras,
+// fora das áreas cobertas pela interface do Instagram (topo e
+// campo “Enviar mensagem”). Todo texto usa o mesmo sistema de
+// alinhamento (textBaseline explícito) e encolhe para caber,
+// em vez de transbordar.
+// ------------------------------------------------------------
+function siteLabel(){if(SITE_URL)return SITE_URL.replace(/^https?:\/\//,'').replace(/\/$/,'');if(/^https?:$/.test(location.protocol)&&location.host){let p=location.pathname.replace(/index\.html$/,'');if(p==='/')p='';return location.host+p;}return '';}
+function buildStoryCanvas(){
+ const v=vector(),rank=compare(v),ov=overall(v),b=band(ov),top3=rank.slice(0,3);
+ const W=1080,H=1920,P=72,IW=W-2*P,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+ const FF='system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',font=(s,w)=>`${w} ${s}px ${FF}`;
+ const rr=(X,Y,w,h,r)=>{r=Math.min(r,w/2,h/2);x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();};
+ const box=(X,Y,w,h,r,fill,stroke)=>{rr(X,Y,w,h,r);x.fillStyle=fill;x.fill();if(stroke){x.strokeStyle=stroke;x.lineWidth=2;x.stroke();}};
+ const text=(s,X,Y,o={})=>{const {size=28,weight=500,color='#fff',align='left',base='top',maxW=0,min=14}=o;let sz=size;x.font=font(sz,weight);if(maxW)while(x.measureText(s).width>maxW&&sz>min){sz--;x.font=font(sz,weight);}x.fillStyle=color;x.textAlign=align;x.textBaseline=base;x.fillText(s,X,Y);return x.measureText(s).width;};
+ const measure=(s,size,weight)=>{x.font=font(size,weight);return x.measureText(s).width;};
+ const igIcon=(cx,cy,s,color)=>{x.save();x.strokeStyle=color;x.lineWidth=s*.1;rr(cx-s/2,cy-s/2,s,s,s*.3);x.stroke();x.beginPath();x.arc(cx,cy,s*.23,0,Math.PI*2);x.stroke();x.beginPath();x.arc(cx+s*.26,cy-s*.26,s*.065,0,Math.PI*2);x.fillStyle=color;x.fill();x.restore();};
+ const dot=(cx,cy,r,fill,stroke,lw,diamond)=>{x.beginPath();if(diamond){x.moveTo(cx,cy-r*1.25);x.lineTo(cx+r*1.25,cy);x.lineTo(cx,cy+r*1.25);x.lineTo(cx-r*1.25,cy);x.closePath();}else x.arc(cx,cy,r,0,Math.PI*2);x.fillStyle=fill;x.fill();if(stroke){x.strokeStyle=stroke;x.lineWidth=lw;x.stroke();}};
+ // Fundo
+ const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0d1b24');g.addColorStop(1,'#123645');x.fillStyle=g;x.fillRect(0,0,W,H);
+ x.fillStyle='rgba(255,255,255,0.035)';[[980,150,260],[60,1780,240],[1040,1860,180]].forEach(([a,b2,r])=>{x.beginPath();x.arc(a,b2,r,0,Math.PI*2);x.fill();});
+ // Cabeçalho
+ text('BÚSSOLA POLÍTICA',P,230,{size:30,weight:800,color:'#9fd6cb'});
+ text('Minha posição política',P,276,{size:74,weight:850,maxW:IW});
+ // Faixa geral
+ let Y=392;box(P,Y,IW,244,32,'rgba(255,255,255,0.07)','rgba(255,255,255,0.10)');
+ text('Faixa na régua esquerda–direita',P+36,Y+30,{size:24,weight:700,color:'#bcd6da',maxW:IW-72-240});
+ text(`índice ${fmt(ov)}`,P+IW-36,Y+30,{size:26,weight:700,color:'#bcd6da',align:'right'});
+ text(b,P+36,Y+66,{size:70,weight:850,maxW:IW-72});
+ const rx=P+36,ry=Y+170,rw=IW-72,rh=20,seg=rw/5,cols=['#8fa9b3','#b9c8ce','#e1e8ea','#b9c8ce','#8fa9b3'];
+ for(let i=0;i<5;i++)box(rx+i*seg+(i?4:0),ry,seg-(i&&i<4?8:4),rh,9,cols[i]);
+ ['Esquerda','Centro-esq.','Centro','Centro-dir.','Direita'].forEach((t,i)=>text(t,rx+i*seg+seg/2,ry+rh+12,{size:20,weight:600,color:'#c9dadd',align:'center'}));
+ const px=Math.max(rx+8,Math.min(rx+rw-8,rx+(ov+100)/200*rw));x.fillStyle='#fff';x.fillRect(px-3,ry-12,6,rh+20);dot(px,ry-14,12,'#fff','#0d1b24',4);
+ // Bússola 2D
+ Y=660;const CW=470;box(P,Y,CW,470,32,'#f4f8f7');
+ const S=360,ox=P+(CW-S)/2,oy=Y+56,IN=16,MX=e=>ox+IN+(e+100)/200*(S-2*IN),MY=s=>oy+IN+(100-s)/200*(S-2*IN);
+ box(ox,oy,S,S,16,'#ffffff','#d5e0de');
+ x.save();x.setLineDash([6,6]);x.strokeStyle='#a9bcb9';x.lineWidth=2;x.beginPath();x.moveTo(MX(0),oy);x.lineTo(MX(0),oy+S);x.moveTo(ox,MY(0));x.lineTo(ox+S,MY(0));x.stroke();x.restore();
+ text('↑ Conservador',P+CW/2,Y+20,{size:20,weight:800,color:'#586876',align:'center'});
+ text('← Estado',ox,oy+S+14,{size:17,weight:800,color:'#586876'});
+ text('Mercado →',ox+S,oy+S+14,{size:17,weight:800,color:'#586876',align:'right'});
+ text('↓ Progressista',P+CW/2,oy+S+14,{size:17,weight:800,color:'#586876',align:'center'});
+ IDEOLOGIES.forEach(id=>{if(top3.some(t=>t.id===id.id))return;dot(MX(id.v.eco),MY(id.v.soc),6,'#ffffff','#9db0b8',2.5,id.v.inst>0);});
+ const ux=MX(v.eco),uy=MY(v.soc);dot(ux,uy,24,'rgba(21,42,55,0.18)');dot(ux,uy,13,'#152a37','#ffffff',4);
+ // Pontos numerados por cima do marcador, para nunca ficarem escondidos
+ top3.forEach((t,i)=>{const cx=MX(t.v.eco),cy=MY(t.v.soc);dot(cx,cy,15,'#126c67','#ffffff',3,t.v.inst>0);text(String(i+1),cx,cy+1,{size:18,weight:900,color:'#fff',align:'center',base:'middle'});});
+ // Rótulo “Você”: primeira posição que não cobre os pontos numerados nem os textos do quadro
+ x.font=font(22,900);const yw=x.measureText('Você').width,yh=22,dots=top3.map(t=>[MX(t.v.eco),MY(t.v.soc)]);
+ const cands=[[ux-yw/2,uy-26-yh],[ux-yw/2,uy+26],[ux+26,uy-yh/2],[ux-26-yw,uy-yh/2],[ux+20,uy-20-yh],[ux-20-yw,uy-20-yh],[ux+20,uy+20],[ux-20-yw,uy+20],[ux-yw/2,uy-50-yh],[ux+48,uy-yh/2],[ux-48-yw,uy-yh/2],[ux-yw/2,uy+50]];
+ const inCard=([bx,by])=>bx>=P+10&&bx+yw<=P+CW-10&&by>=Y+44&&by+yh<=oy+S+10;
+ const fits=c2=>inCard(c2)&&dots.every(([dx,dy])=>dx+19<c2[0]||dx-19>c2[0]+yw||dy+19<c2[1]||dy-19>c2[1]+yh);
+ const [lx,lyy]=cands.find(fits)||cands.find(inCard)||cands[0];
+ x.save();x.lineWidth=6;x.strokeStyle='#ffffff';x.textAlign='left';x.textBaseline='top';x.strokeText('Você',lx,lyy);x.fillStyle='#152a37';x.fillText('Você',lx,lyy);x.restore();
+ // Eixos
+ const AXc=P+CW+22,AXw=IW-CW-22;['eco','soc','inst'].forEach((d,i)=>{const A=AXES[d],yy=Y+i*(140+25);box(AXc,yy,AXw,140,26,'rgba(255,255,255,0.93)');
+  text(A.name,AXc+26,yy+22,{size:28,weight:800,color:'#16303c'});text(fmt(v[d]),AXc+AXw-26,yy+20,{size:34,weight:850,color:'#16303c',align:'right'});
+  const bx=AXc+26,bw=AXw-52,by=yy+74;box(bx,by,bw,14,7,'#dde6e8');x.fillStyle='#9fb3b0';x.fillRect(bx+bw/2-1,by-5,2,24);dot(bx+(v[d]+100)/200*bw,by+7,12,'#152a37','#ffffff',3);
+  text(A.neg,bx,by+28,{size:19,weight:600,color:'#5e7480'});text(A.pos,bx+bw,by+28,{size:19,weight:600,color:'#5e7480',align:'right'});});
+ // Ranking
+ Y=1152;box(P,Y,IW,300,32,'rgba(255,255,255,0.07)','rgba(255,255,255,0.10)');
+ text('Correntes mais próximas',P+36,Y+28,{size:30,weight:800});
+ top3.forEach((t,i)=>{const cy=Y+106+i*70;dot(P+36+22,cy,22,'#126c67');text(String(i+1),P+36+22,cy+1,{size:24,weight:900,align:'center',base:'middle'});
+  text(t.name,P+36+60,cy,{size:33,weight:800,base:'middle',maxW:IW-72-60-150,min:20});text(`${t.score.toFixed(1).replace('.',',')}/10`,P+IW-36,cy,{size:30,weight:800,color:'#bfe3da',align:'right',base:'middle'});});
+ // Rodapé (CTA + assinatura + aviso)
+ const site=siteLabel();text(site?`Faça o seu: ${site}`:'Faça o seu teste: link na bio',W/2,1478,{size:28,weight:700,align:'center',maxW:IW});
+ const cy=1546,s1='criado por',s2='@'+IG_HANDLE,w1=measure(s1,24,500),w2=measure(s2,30,800),ic=34,gap1=14,gap2=10,tot=w1+gap1+ic+gap2+w2;let sx=(W-tot)/2;
+ text(s1,sx,cy,{size:24,weight:500,color:'#bcd6da',base:'middle'});sx+=w1+gap1;igIcon(sx+ic/2,cy,ic,'#9fd6cb');sx+=ic+gap2;text(s2,sx,cy,{size:30,weight:800,color:'#9fd6cb',base:'middle'});
+ text('Teste educativo, sem IA. Resultado ilustrativo; não é recomendação de voto.',W/2,1584,{size:19,weight:500,color:'rgba(222,236,238,0.75)',align:'center',maxW:IW});
+ return c;}
+function dataURLtoBlob(u){const [h,d]=u.split(','),bin=atob(d),arr=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);return new Blob([arr],{type:(h.match(/:(.*?);/)||[])[1]||'image/png'});}
+let cardFile=null;
+function exportStoryCard(){const c=buildStoryCanvas(),url=c.toDataURL('image/png');$('card-img').src=url;$('card-download').href=url;
+ cardFile=null;$('card-share').hidden=true;
+ try{const f=new File([dataURLtoBlob(url)],'minha-bussola-politica.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){cardFile=f;$('card-share').hidden=false;}}catch(e){}
+ openModal($('card-modal'));$('share-status').textContent='';}
+
+// ------------------------------------------------------------
+// EVENTOS
+// ------------------------------------------------------------
+function updateResume(){const any=state.answers.some(a=>a!==null);$('resume-hint').hidden=!any;$('resume').textContent=state.done?'Ver meu último resultado':'Continuar de onde parei';}
+function startQuiz(){const first=state.answers.findIndex(a=>a===null);state.i=first<0?0:first;persist();renderQuestion();show('quiz');}
+$('start').onclick=startQuiz;
+$('resume').onclick=()=>{if(state.done&&state.answers.every(a=>a!==null))renderResults();else startQuiz();};
+$('see-method').onclick=()=>$('method').scrollIntoView({behavior:'smooth'});
+$('home-link').onclick=e=>{e.preventDefault();updateResume();show('welcome');};
+document.querySelectorAll('.navlink').forEach(a=>a.addEventListener('click',e=>{if(!$('quiz').classList.contains('hide')||!$('refinement').classList.contains('hide')){e.preventDefault();show('welcome');updateResume();setTimeout(()=>$(a.getAttribute('href').slice(1)).scrollIntoView({behavior:'smooth'}),30);}}));
+$('q-prev').onclick=()=>{clearTimeout(advanceTimer);if(state.i===0){updateResume();show('welcome');}else{state.i--;persist();renderQuestion();}};
+$('q-next').onclick=nextQuestion;
+$('q-dunno').onclick=()=>choose(DUNNO);
+document.addEventListener('keydown',e=>{if($('quiz').classList.contains('hide')||document.querySelector('dialog[open]'))return;if(e.target.tagName==='INPUT')return;
+ if(/^[1-5]$/.test(e.key))choose(+e.key-1);else if(e.key==='0'||e.key.toLowerCase()==='n')choose(DUNNO);});
+$('skip-dilemmas').onclick=()=>{state.refined=false;renderResults();};
+$('submit-dilemmas').onclick=()=>{if(state.dilemmaIds.some(id=>state.dilemmaAnswers[id]===undefined)){$('dilemma-warn').classList.remove('hide');return;}state.refined=true;renderResults();};
+$('weight-economic').oninput=e=>{state.weight=+e.target.value;persist();renderOverall(vector());};
+$('toggle-rank').onclick=()=>{const p=$('ranking').parentElement,on=p.classList.toggle('show-all');$('toggle-rank').textContent=on?'Mostrar só as 5 primeiras':'Ver todas as 19 correntes';};
+$('review-answers').onclick=()=>{state.i=0;renderQuestion();show('quiz');};
+$('reset').onclick=()=>{if(confirm('Apagar suas respostas deste navegador e recomeçar?')){state=fresh();persist();updateResume();show('welcome');}};
+$('copy-report').onclick=async()=>{try{await navigator.clipboard.writeText(report());$('share-status').textContent='Relatório copiado.';}catch(e){$('share-status').textContent='Não foi possível copiar automaticamente. Use “Baixar relatório”.';}};
+$('download-report').onclick=()=>{const u=URL.createObjectURL(new Blob([report()],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='minha-bussola-politica.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);};
+$('print-report').onclick=()=>window.print();
+$('export-story').onclick=()=>{try{exportStoryCard();}catch(e){console.error(e);$('share-status').textContent='Não foi possível gerar o card neste navegador. Tente atualizar o navegador ou use “Imprimir / PDF”.';}};
+$('card-share').onclick=async()=>{if(!cardFile)return;try{await navigator.share({files:[cardFile],title:'Minha Bússola Política',text:`Fiz a Bússola Política de @${IG_HANDLE}`});}catch(e){}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-info]');if(t){e.preventDefault();openInfo(t.dataset.info);return;}const cl=e.target.closest('[data-close]');if(cl){closeModal(cl.closest('dialog'));return;}if(e.target.tagName==='DIALOG')closeModal(e.target);});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('g.ideo')){e.preventDefault();openInfo(e.target.dataset.info);}});
+renderLibrary();updateResume();
+// Cálculos públicos e determinísticos; nenhuma requisição de rede, nenhum script de terceiros.
+
+</script>
+</body></html>

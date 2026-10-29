@@ -7,6 +7,9 @@ Soluções e painéis públicos de Daniel Melo. Cada solução fica em sua próp
 | Solução | Acessar online | Pasta |
 | --- | --- | --- |
 | Atlas da Segurança Pública — Brasil | [Abrir o painel](https://emaildodanielmelo-maker.github.io/dan-melo-publico/atlas-seguranca-brasil/) | [`atlas-seguranca-brasil/`](atlas-seguranca-brasil/) |
+| Bússola Política | [Fazer o teste](https://emaildodanielmelo-maker.github.io/dan-melo-publico/bussola-politica/) | [`bussola-politica/`](bussola-politica/) |
+
+O portfólio com busca e filtro por tema está em https://emaildodanielmelo-maker.github.io/dan-melo-publico/.
 
 ## Como usar
 
@@ -17,6 +20,6 @@ Soluções e painéis públicos de Daniel Melo. Cada solução fica em sua próp
 
 1. Crie uma pasta nova na raiz, com `index.html` (ou uma pasta de publicação) e um `README.md`.
 2. Use caminhos relativos (`./arquivo.js`), nunca absolutos (`/arquivo.js`), para o site funcionar numa subpasta.
-3. Adicione um cartão na `index.html` da raiz e uma linha na tabela acima.
+3. Adicione um cartão (`<article class="card" data-tags="...">`) na `index.html` da raiz e uma linha na tabela acima. Os filtros por tema do portfólio são montados a partir das `data-tags`.
 
 Tudo neste repositório é público, inclusive o histórico. Não coloque chaves, senhas ou dados pessoais.

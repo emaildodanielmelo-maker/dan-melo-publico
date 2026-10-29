@@ -4,40 +4,143 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dan Melo | Soluções públicas</title>
-  <meta name="description" content="Soluções e painéis públicos de Daniel Melo, com acesso direto pelo navegador." />
+  <meta name="description" content="Portfólio de soluções, painéis e ferramentas abertas de Daniel Melo. Tudo funciona direto no navegador, sem instalar nada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dan Melo | Soluções públicas" />
+  <meta property="og:description" content="Painéis e ferramentas abertas que funcionam direto no navegador." />
+  <meta property="og:locale" content="pt_BR" />
   <style>
-    :root { --bg:#f6f8f9; --card:#fff; --texto:#10252c; --suave:#51666d; --borda:#d9e2e5; --destaque:#112a32; --link:#0b6b78; }
+    :root { --bg:#f6f8f9; --card:#fff; --texto:#10252c; --suave:#51666d; --borda:#d9e2e5; --destaque:#112a32; --link:#0b6b78; --chip:#e6f0f2; --chip-ativo:#0b6b78; --chip-ativo-texto:#fff; }
     @media (prefers-color-scheme: dark) {
-      :root { --bg:#0d1a1f; --card:#13262d; --texto:#e8f0f2; --suave:#9fb4ba; --borda:#26414a; --destaque:#e8f0f2; --link:#5cc4d1; }
+      :root { --bg:#0d1a1f; --card:#13262d; --texto:#e8f0f2; --suave:#9fb4ba; --borda:#26414a; --destaque:#e8f0f2; --link:#5cc4d1; --chip:#1b3640; --chip-ativo:#5cc4d1; --chip-ativo-texto:#0d1a1f; }
     }
     * { box-sizing:border-box; }
     body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--texto); line-height:1.5; }
-    main { max-width:760px; margin:0 auto; padding:48px 16px; }
-    h1 { font-size:1.9rem; margin:0 0 8px; color:var(--destaque); }
-    p.sub { color:var(--suave); margin:0 0 32px; }
-    .card { display:block; background:var(--card); border:1px solid var(--borda); border-radius:12px; padding:20px; margin-bottom:16px; text-decoration:none; color:inherit; }
-    .card:hover, .card:focus-visible { border-color:var(--link); }
-    .card h2 { margin:0 0 6px; font-size:1.2rem; color:var(--link); }
-    .card p { margin:0 0 10px; color:var(--suave); }
-    .card small { color:var(--suave); }
-    footer { margin-top:32px; font-size:.9rem; color:var(--suave); }
+    main { max-width:960px; margin:0 auto; padding:48px 16px; }
+    header { margin-bottom:28px; }
+    h1 { font-size:2rem; margin:0 0 8px; color:var(--destaque); }
+    p.sub { color:var(--suave); margin:0 0 6px; max-width:60ch; }
+    p.sub a { color:var(--link); }
+    .filtros { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:20px; }
+    .filtros input { flex:1 1 220px; min-width:0; padding:10px 14px; font:inherit; color:var(--texto); background:var(--card); border:1px solid var(--borda); border-radius:10px; }
+    .filtros input:focus-visible { outline:2px solid var(--link); outline-offset:1px; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { font:inherit; font-size:.85rem; padding:6px 12px; border-radius:999px; border:1px solid var(--borda); background:var(--chip); color:var(--texto); cursor:pointer; }
+    .chip:focus-visible { outline:2px solid var(--link); outline-offset:1px; }
+    .chip[aria-pressed="true"] { background:var(--chip-ativo); color:var(--chip-ativo-texto); border-color:var(--chip-ativo); }
+    .contagem { color:var(--suave); font-size:.9rem; margin:0 0 16px; }
+    .grade { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+    .card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--borda); border-radius:12px; padding:20px; }
+    .card:hover, .card:focus-within { border-color:var(--link); }
+    .card[hidden] { display:none; }
+    .icone { font-size:1.8rem; line-height:1; margin-bottom:10px; }
+    .card h2 { margin:0 0 6px; font-size:1.15rem; color:var(--link); }
+    .card p { margin:0 0 12px; color:var(--suave); font-size:.95rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; padding:0; list-style:none; }
+    .tags li { font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--chip); color:var(--suave); }
+    .acoes { display:flex; flex-wrap:wrap; gap:14px; margin-top:auto; font-size:.92rem; }
+    .acoes a { color:var(--link); font-weight:600; text-decoration:none; }
+    .acoes a.sec { font-weight:400; }
+    .acoes a:hover, .acoes a:focus-visible { text-decoration:underline; }
+    .vazio { color:var(--suave); padding:24px 0; }
+    footer { margin-top:40px; font-size:.9rem; color:var(--suave); }
     footer a { color:var(--link); }
   </style>
 </head>
 <body>
   <main>
-    <h1>Soluções públicas</h1>
-    <p class="sub">Painéis e ferramentas abertas, que funcionam direto no navegador, sem instalar nada.</p>
+    <header>
+      <h1>Soluções públicas</h1>
+      <p class="sub">Painéis e ferramentas abertas que funcionam direto no navegador, sem instalar nada. Por Daniel Melo, <a href="https://www.instagram.com/danielmelo_eu/" target="_blank" rel="noopener">@danielmelo_eu</a>.</p>
+    </header>
 
-    <a class="card" href="./atlas-seguranca-brasil/">
-      <h2>Atlas da Segurança Pública — Brasil</h2>
-      <p>Painel interativo com mapa, ranking, regiões, histórico, comparação entre UFs e simulações. Dados do Anuário FBSP e do SINESP-VDE, com denominadores do IBGE e do SENATRAN.</p>
-      <small>Abrir o painel →</small>
-    </a>
+    <div class="filtros">
+      <input id="busca" type="search" placeholder="Buscar solução…" aria-label="Buscar solução" />
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por tema">
+        <button class="chip" type="button" data-tag="" aria-pressed="true">Todas</button>
+      </div>
+    </div>
+    <p class="contagem" id="contagem" aria-live="polite"></p>
+
+    <!-- Para adicionar uma solução, copie um <article class="card"> e ajuste data-tags (separadas por vírgula, minúsculas) -->
+    <div class="grade" id="grade">
+      <article class="card" data-tags="dados,segurança pública,painel">
+        <div class="icone" aria-hidden="true">🗺️</div>
+        <h2>Atlas da Segurança Pública — Brasil</h2>
+        <p>Painel interativo com mapa, ranking, regiões, histórico, comparação entre UFs e simulações. Dados do Anuário FBSP e do SINESP-VDE, com denominadores do IBGE e do SENATRAN.</p>
+        <ul class="tags"><li>dados</li><li>segurança pública</li><li>painel</li></ul>
+        <div class="acoes">
+          <a href="./atlas-seguranca-brasil/">Abrir o painel →</a>
+          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/atlas-seguranca-brasil">Código</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="educação,política,teste">
+        <div class="icone" aria-hidden="true">🧭</div>
+        <h2>Bússola Política</h2>
+        <p>Teste educativo de posicionamento em três eixos (economia, costumes e instituições), com 19 correntes explicadas e card para os Stories. Sem IA, sem cadastro e sem coleta de dados.</p>
+        <ul class="tags"><li>educação</li><li>política</li><li>teste</li></ul>
+        <div class="acoes">
+          <a href="./bussola-politica/">Fazer o teste →</a>
+          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/blob/main/bussola-politica/METODOLOGIA.md">Metodologia</a>
+          <a class="sec" href="https://github.com/emaildodanielmelo-maker/dan-melo-publico/tree/main/bussola-politica">Código</a>
+        </div>
+      </article>
+    </div>
+    <p class="vazio" id="vazio" hidden>Nenhuma solução encontrada para esse filtro.</p>
 
     <footer>
       Código-fonte e arquivos para baixar: <a href="https://github.com/emaildodanielmelo-maker/dan-melo-publico">repositório no GitHub</a>.
     </footer>
   </main>
+
+  <script>
+    const cartoes = Array.from(document.querySelectorAll('.card'))
+    const campoBusca = document.getElementById('busca')
+    const areaChips = document.getElementById('chips')
+    const contagem = document.getElementById('contagem')
+    const vazio = document.getElementById('vazio')
+    let tagAtiva = ''
+
+    const tagsDe = c => c.dataset.tags.split(',')
+
+    function montarChips() {
+      const todas = [...new Set(cartoes.flatMap(tagsDe))].sort((a, b) => a.localeCompare(b, 'pt-BR'))
+      todas.forEach(tag => {
+        const b = document.createElement('button')
+        b.className = 'chip'
+        b.type = 'button'
+        b.dataset.tag = tag
+        b.setAttribute('aria-pressed', 'false')
+        b.textContent = tag
+        areaChips.appendChild(b)
+      })
+    }
+
+    function filtrar() {
+      const termo = campoBusca.value.trim().toLowerCase()
+      let visiveis = 0
+      cartoes.forEach(c => {
+        const okTag = !tagAtiva || tagsDe(c).includes(tagAtiva)
+        const okBusca = !termo || c.textContent.toLowerCase().includes(termo)
+        c.hidden = !(okTag && okBusca)
+        if (!c.hidden) visiveis++
+      })
+      contagem.textContent = visiveis + (visiveis === 1 ? ' solução' : ' soluções')
+      vazio.hidden = visiveis > 0
+    }
+
+    areaChips.addEventListener('click', e => {
+      const b = e.target.closest('.chip')
+      if (!b) return
+      tagAtiva = b.dataset.tag
+      areaChips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === b)))
+      filtrar()
+    })
+    campoBusca.addEventListener('input', filtrar)
+
+    montarChips()
+    filtrar()
+  </script>
 </body>
 </html>
